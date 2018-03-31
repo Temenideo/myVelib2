@@ -38,33 +38,25 @@ public class ParkingSlotTest {
 	@Test
 	public void testGetTimeOccupied() throws ParseException, BadParkingSlotCreationException, BadStateStationCreationException, BadTypeStationCreationException, NoEndStationAvailableException {
 		ParkingSlot pS = new ParkingSlot(null, "Occupied",new Station("Standard", "on service", new GPScoord(0,0), null));
-		String string = "2018.03.26 AD at 12:08:56 PDT";
-		String string2 = "2018.03.26 AD at 12:38:56 PDT";
-		String string3 = "2018.03.26 AD at 15:38:56 PDT";
-		String string4 = "2018.03.26 AD at 16:38:56 PDT";
-		String string5 = "2018.03.26 AD at 17:38:56 PDT";
-		String string6 = "2018.03.26 AD at 20:38:56 PDT";
+		String string = "2018.03.25 AD at 12:08:56 PDT";
+		String string2 = "2018.03.25 AD at 12:38:56 PDT";
+		String string3 = "2018.03.25 AD at 15:38:56 PDT";
+		String string4 = "2018.03.25 AD at 16:39:56 PDT";
 		DateFormat format = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z", Locale.ENGLISH);
-		Date date1 = format.parse(string);
-		Date date2 = format.parse(string2);
-		Date date3 = format.parse(string3);
-		Date date4 = format.parse(string4);
-		Date date5 = format.parse(string5);
-		Date date6 = format.parse(string6);
-		pS.getHistory().add(new TimeState(true,date1));
-		pS.getHistory().get(0).setEnd(date2);
-		pS.getHistory().add(new TimeState(true,date2));
-		pS.getHistory().get(1).setEnd(date3);
-		pS.getHistory().add(new TimeState(true,date3));
-		pS.getHistory().get(2).setEnd(date4);
-		pS.getHistory().add(new TimeState(true,date4));
-		pS.getHistory().get(2).setEnd(date5);
-		pS.getHistory().add(new TimeState(true,date5));
-		pS.getHistory().get(2).setEnd(date6);
-		System.out.println(pS.getHistory());
-		assertEquals(pS.getTimeOccupied(date1, date6),30);
+		Date datestart = format.parse(string);
+		Date dateend = format.parse(string2); 
+		Date dateend2 = format.parse(string3);
+		Date dateend3 = format.parse(string4);
+		pS.getHistory().remove(0);
+		pS.getHistory().add(new TimeState(true,datestart));
+		pS.getHistory().get(0).setEnd(dateend);
+		pS.getHistory().add(new TimeState(true,dateend));
+		pS.getHistory().get(1).setEnd(dateend2);
+		pS.getHistory().add(new TimeState(true,dateend2));
+		pS.getHistory().get(2).setEnd(dateend3);
+		assertEquals(pS.getTimeOccupied(datestart, dateend3),271);
 		
 		
-	}
+}
 
 }

@@ -110,40 +110,50 @@ public class ParkingSlot {
 	public long getTimeOccupied(Date start,Date end){
 		long timeOccupied=0;
 		int longueur=history.size();
-		for(int i=0;i<longueur;i++){
-			System.out.println(timeOccupied);
-			Date timeS = history.get(i).getStart();
-			Date timeE = history.get(i).getEnd();
+		for(int i=0;i<longueur-1;i++){
 			// prends en compte les cas ou le timeState est inclus dans l'intervalle d'étude
-			if (timeS.after(start) && timeE.before(end) && history.get(i).isOccupied()){
-				timeOccupied+=Card.getDuration(timeE, timeS, TimeUnit.MINUTES);
-				System.out.println(timeOccupied);
+			if (history.get(i).getStart().compareTo(start)>=0 && history.get(i).getEnd().compareTo(end)<=0 && history.get(i).isOccupied()){
+				timeOccupied=timeOccupied+getDuration(history.get(i).getStart(), history.get(i).getEnd(), TimeUnit.MINUTES);
 			}
 			// prends en compte les cas ou le timestate possède une partie dans l'intervalle mais sa fin est hors de la fenetre d'étude
-			if(timeS.after(start) && timeE.after(end) && history.get(i).isOccupied() && history.get(i).getStart().before(end)){
-				timeOccupied+=Card.getDuration(end, timeS, TimeUnit.MINUTES);
+			else if(history.get(i).getStart().compareTo(start)>=0 && history.get(i).getEnd().compareTo(end)>=0 && history.get(i).isOccupied() && history.get(i).getStart().compareTo(end)<=0){
+				timeOccupied=timeOccupied+getDuration(history.get(i).getStart(),end,TimeUnit.MINUTES);
 			}
 			// prends en compte les cas ou le timestate possède une partie dans l'intervalle mais son début est hors de la fenetre d'étude
-			if(timeE.before(end) && timeE.after(start) && history.get(i).isOccupied() && history.get(i).getStart().before(start)){
-				timeOccupied+=Card.getDuration(timeE, start, TimeUnit.MINUTES);
+			else if(history.get(i).getEnd().compareTo(end)<=0 && history.get(i).getEnd().compareTo(start)<=0 && history.get(i).isOccupied() && history.get(i).getStart().compareTo(start)<=0){
+				timeOccupied=timeOccupied+getDuration(start,history.get(i).getEnd(),TimeUnit.MINUTES);
 			}
-			// prends en compte les cas où l'intervalle d'étude est inclus dans le timestate
-			if(timeE.after(end) && history.get(i).isOccupied() && timeS.before(start)){
-				timeOccupied+=Card.getDuration(end, start, TimeUnit.MINUTES);
+			// prends en compte les cas ou l'intervalle d'étude est inclu dans le timestate
+			else if(history.get(i).getEnd().compareTo(end)>0 && history.get(i).isOccupied() && history.get(i).getStart().compareTo(start)<0){
+				timeOccupied=timeOccupied+getDuration(start,end,TimeUnit.MINUTES);
 			}
 		}
 		// permet de considerer le dernier timestate qui n'a pas encore d'attribut end et avec un début dans l'intervalle
-		if (history.get(longueur-1).getStart().after(start) && history.get(longueur-1).isOccupied() && history.get(longueur-1).getStart().before(end)){
-			timeOccupied+=Card.getDuration(end, history.get(longueur-1).getStart(), TimeUnit.MINUTES);
-			
+		if (history.get(longueur-1).getStart().compareTo(start)>=0 && history.get(longueur-1).isOccupied() && history.get(longueur-1).getStart().compareTo(end)<=0){
+			// prends en compte que le fait que la date de fin de la période d'étude pourrai être plus tard que la date actuelle
+			if(Calendar.getInstance().getTime().compareTo(end)<0){
+				timeOccupied=timeOccupied+getDuration(history.get(longueur-1).getStart(),Calendar.getInstance().getTime(),TimeUnit.MINUTES);
+			}
+			else {
+				timeOccupied=timeOccupied+getDuration(history.get(longueur-1).getStart(),end,TimeUnit.MINUTES);
+			}
 		}
 		// permet de considerer le dernier timestate qui n'a pas encore d'attribut end et avec un début avant l'intervalle
-		if (history.get(longueur-1).getStart().before(start) && history.get(longueur-1).isOccupied()){
-			timeOccupied+=Card.getDuration(end, start, TimeUnit.MINUTES);
+		if (history.get(longueur-1).getStart().compareTo(start)<0 && history.get(longueur-1).isOccupied()){
+			if(Calendar.getInstance().getTime().compareTo(end)<0){
+				timeOccupied=timeOccupied+getDuration(start,Calendar.getInstance().getTime(),TimeUnit.MINUTES);
+			}
+			else {
+				timeOccupied=timeOccupied+getDuration(start,end,TimeUnit.MINUTES);
+			}
 		}
-
 		return(timeOccupied);
 	}
+	public static long getDuration(Date date1, Date date2, TimeUnit timeUnit) {
+		long diffInMillies = date2.getTime()-date1.getTime();
+		return timeUnit.convert(diffInMillies, TimeUnit.MILLISECONDS);
+}
+
 	public Long getSlotID() {
 		return slotID;
 	}

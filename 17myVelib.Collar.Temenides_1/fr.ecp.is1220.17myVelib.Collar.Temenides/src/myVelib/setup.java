@@ -3,8 +3,21 @@ package myVelib;
 import myVelib.Bicycle.Electrical;
 import myVelib.Bicycle.Mechanical;
 import myVelib.ridePolicies.NoEndStationAvailableException;
-
+/**
+ * Classe remplissant le cahier des charges de la partie 2.5 sur l'initialisation d'un reseau
+ * @author xavier
+ *
+ */
 public class setup {
+	/**
+	 * Créer un reseau avec des stations, des parkings slots et des vélos selon les demandes de l'utilisateur
+	 * @param n nombre de station à créer
+	 * @param m nombre de parking slot à créer par station
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoEndStationAvailableException
+	 */
 	public static void startMyVelib(int n, int m) throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException{
 		Reseau res=Reseau.getInstance();
 		Station statTempo;

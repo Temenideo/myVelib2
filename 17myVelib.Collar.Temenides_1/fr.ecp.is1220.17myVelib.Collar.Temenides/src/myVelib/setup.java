@@ -28,8 +28,4 @@ public class setup {
 			System.out.println("Veulliez mettre des données valides");
 		}
 	}
-	public static void main(String[] args) throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException {
-		startMyVelib(10,10);
-		System.out.println(Reseau.getInstance());
-	}
 }

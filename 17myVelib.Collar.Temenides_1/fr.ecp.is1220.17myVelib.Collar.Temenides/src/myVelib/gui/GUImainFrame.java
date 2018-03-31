@@ -33,15 +33,7 @@ public class GUImainFrame extends JFrame{
 		getContentPane().add(tabbedPane);
 		
 		stationList = new JTable();
-		DefaultTableModel stationModel=new DefaultTableModel(new Object[][] {
-		},
-		new String[] {
-			"Station ID", "Name", "Type", "Status", "Bikes", "Free Slots","Location"
-		}
-	);
-		for (Station stat:Reseau.getInstance().getStationList()) {
-				stationModel.addRow(new Object[] {stat.getStationID(),stat.getName(),stat.getTypeStation(),stat.getState(),stat.getFreeBikes(),stat.getFreeSlots(),stat.getPosition()});	
-			}
+		
 		tabbedPane.addTab("Station List", null, stationList, null);
 		
 		userList = new JTable();
@@ -56,23 +48,32 @@ public class GUImainFrame extends JFrame{
 				refreshUsers();
 				}
 			public void refreshStations() {
-				
+				DefaultTableModel stationModel=new DefaultTableModel(new Object[][] {
+				},
+				new String[] {
+					"Station ID", "Name", "Type", "Status", "Bikes", "Free Slots","Location"
+				}
+			);
+				for (Station stat:Reseau.getInstance().getStationList()) {
+						stationModel.addRow(new Object[] {stat.getStationID(),stat.getName(),stat.getTypeStation(),stat.getState(),stat.getFreeBikes(),stat.getFreeSlots(),stat.getPosition()});	
+					}
+				stationList.setModel(stationModel);
 			};
 			public void refreshUsers() {
-				
+				DefaultTableModel userModel=new DefaultTableModel(new Object[][] {
+				},
+				new String[] {
+					"Station ID", "Name", "Type", "Status", "Bikes", "Free Slots","Location"
+				});
+				for (User user:Reseau.getInstance().getUserList()) {
+					userModel.addRow(new Object[] {user.getUserID(),user.getName(),user.getFirstName(),user.getTotalTime(),user.getTotalCharges(),user.getEarnedCredits()});	
+				}
+				userList.setModel(userModel);
 			};
 			
 		};
 		btnRefresh.addActionListener(refresh);
-		DefaultTableModel userModel=new DefaultTableModel(new Object[][] {
-		},
-		new String[] {
-			"Station ID", "Name", "Type", "Status", "Bikes", "Free Slots","Location"
-		}
-	);
-		for (User user:Reseau.getInstance().getUserList()) {
-				userModel.addRow(new Object[] {user.getUserID(),user.getName(),user.getFirstName(),user.getTotalTime(),user.getTotalCharges(),user.getEarnedCredits()});	
-			}
+		
 	}
 	
 		

@@ -1,0 +1,2520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:PapyrusJava="http://www.eclipse.org/papyrus/PapyrusJava/1" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <uml:Model xmi:id="_uAU24DBwEeiwnsGBcKNAhw" name="myVelib">
+    <packageImport xmi:type="uml:PackageImport" xmi:id="_uPRR0DBwEeiwnsGBcKNAhw">
+      <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+    </packageImport>
+    <packagedElement xmi:type="uml:Package" xmi:id="_zh5MkDBxEeiwnsGBcKNAhw" name="fr.ecp.is1220.17myVelib.Collar.Temenides">
+      <packagedElement xmi:type="uml:Package" xmi:id="_ziPx4DBxEeiwnsGBcKNAhw" name="myVelib">
+        <packagedElement xmi:type="uml:Class" xmi:id="_ziS1MDBxEeiwnsGBcKNAhw" name="Station" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zij68DBxEeiwnsGBcKNAhw" name="parkingSlotList" visibility="private" type="_ziebYDBxEeiwnsGBcKNAhw" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zimXMDBxEeiwnsGBcKNAhw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zim-QDBxEeiwnsGBcKNAhw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_ziwvQDBxEeiwnsGBcKNAhw" name="typeStation" visibility="private" type="_ziqooDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zizykDBxEeiwnsGBcKNAhw" name="state" visibility="private" type="_ziqooDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zi7uYDBxEeiwnsGBcKNAhw" name="position" visibility="private" type="_zi2O0DBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zi-KoDBxEeiwnsGBcKNAhw" name="compteur" visibility="private" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_NeU5EPaLEeW5KOK8aDMdgA"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_zjAm4DBxEeiwnsGBcKNAhw" name="defaultValue">
+              <language>JAVA</language>
+              <body>(long) 0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zjE4UDBxEeiwnsGBcKNAhw" name="stationID" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_NeU5EPaLEeW5KOK8aDMdgA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zjHUkDBxEeiwnsGBcKNAhw" name="name" visibility="private" type="_ziqooDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zjJw0DBxEeiwnsGBcKNAhw" name="freeSlots" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zjMNEDBxEeiwnsGBcKNAhw" name="freeBikes" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_zjSTsDBxEeiwnsGBcKNAhw" name="incomingRideList" visibility="private" type="_zjOCQDBxEeiwnsGBcKNAhw" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zjUI4DBxEeiwnsGBcKNAhw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zjUv8DBxEeiwnsGBcKNAhw" value="*"/>
+          </ownedAttribute>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_zicmMDBxEeiwnsGBcKNAhw" name="Station implements Observable" client="_ziS1MDBxEeiwnsGBcKNAhw" supplier="_ziUDUDBxEeiwnsGBcKNAhw" contract="_ziUDUDBxEeiwnsGBcKNAhw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zjw00DBxEeiwnsGBcKNAhw" name="Station" specification="_zjYaUDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jYJcDBxEeiwnsGBcKNAhw" name="parkingSlotList" type="_ziebYDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4jZXkDBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jZ-oDBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jalsDBxEeiwnsGBcKNAhw" name="typeStation" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4jca4DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jdB8DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jdpADBxEeiwnsGBcKNAhw" name="state" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4je3IDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jfeMDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jgFQDBxEeiwnsGBcKNAhw" name="position" type="_zi2O0DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4jhTYDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jh6cDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jh6cTBxEeiwnsGBcKNAhw" name="name" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4jjIkDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jjvoDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+    if (typeStation == &quot;Standard&quot; || typeStation == &quot;Plus&quot;) {&#xD;
+        if (state == &quot;on service&quot; || state == &quot;offline&quot;) {&#xD;
+            compteur = compteur + 1;&#xD;
+            stationID = compteur;&#xD;
+            this.parkingSlotList = parkingSlotList;&#xD;
+            this.typeStation = typeStation;&#xD;
+            this.state = state;&#xD;
+            this.position = position;&#xD;
+            this.name = name;&#xD;
+            this.incomingRideList = new ArrayList&lt;Location>();&#xD;
+            Reseau.getInstance().addStation(this);&#xD;
+        } else {&#xD;
+            throw new BadStateStationCreationException(state);&#xD;
+        }&#xD;
+    } else {&#xD;
+        throw new BadTypeStationCreationException(typeStation);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zkB6kDBxEeiwnsGBcKNAhw" name="Station" specification="_zjzREDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jk9wDBxEeiwnsGBcKNAhw" name="typeStation" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4jmL4DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4joBEDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jooIDBxEeiwnsGBcKNAhw" name="state" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4jp2QDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jqdUDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jrEYDBxEeiwnsGBcKNAhw" name="position" type="_zi2O0DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4jsSgDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jsSgTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4js5kDBxEeiwnsGBcKNAhw" name="name" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4juuwDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jvV0DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+    if (typeStation == &quot;Standard&quot; || typeStation == &quot;Plus&quot;) {&#xD;
+        if (state == &quot;on service&quot; || state == &quot;offline&quot;) {&#xD;
+            compteur = compteur + 1;&#xD;
+            stationID = compteur;&#xD;
+            this.parkingSlotList = new ArrayList&lt;ParkingSlot>();&#xD;
+            this.typeStation = typeStation;&#xD;
+            this.state = state;&#xD;
+            this.position = position;&#xD;
+            this.name = name;&#xD;
+            this.incomingRideList = new ArrayList&lt;Location>();&#xD;
+            Reseau.getInstance().addStation(this);&#xD;
+        } else {&#xD;
+            throw new BadStateStationCreationException(state);&#xD;
+        }&#xD;
+    } else {&#xD;
+        throw new BadTypeStationCreationException(typeStation);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zkGMADBxEeiwnsGBcKNAhw" name="getTypeStation" specification="_zkDvwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jv84DBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4jxLADBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4jxyEDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return typeStation;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zkLEgDBxEeiwnsGBcKNAhw" name="setTypeStation" specification="_zkIBMDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4jyZIDBxEeiwnsGBcKNAhw" name="typeStation" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4j0OUDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4j0OUTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    if (typeStation == &quot;Standard&quot; || typeStation == &quot;Plus&quot;) {&#xD;
+        this.typeStation = typeStation;&#xD;
+    } else {&#xD;
+        throw new BadTypeStationCreationException(typeStation);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zkOu4DBxEeiwnsGBcKNAhw" name="getParkingSlotList" specification="_zkM5sDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4j1ccDBxEeiwnsGBcKNAhw" type="_ziebYDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4j2DgDBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4j2qkDBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return parkingSlotList;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zkRyMDBxEeiwnsGBcKNAhw" name="getState" specification="_zkOu4TBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4j4fwDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4j6U8DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4j68ADBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return state;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zkaVEDBxEeiwnsGBcKNAhw" name="setState" specification="_zkWDoDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4j8KIDBxEeiwnsGBcKNAhw" name="state" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4j9YQDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4j9_UDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    if (state == &quot;on service&quot; || state == &quot;offline&quot;) {&#xD;
+        this.state = state;&#xD;
+    } else {&#xD;
+        throw new BadStateStationCreationException(state);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zkgbsDBxEeiwnsGBcKNAhw" name="getPosition" specification="_zkd_cDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4j-mYDBxEeiwnsGBcKNAhw" type="_zi2O0DBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4j_0gDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kAbkDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return position;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zkkGEDBxEeiwnsGBcKNAhw" name="getStationID" specification="_zkiQ4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kBCoDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_NeU5EPaLEeW5KOK8aDMdgA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kBpsDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kCQwDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return stationID;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zko-kDBxEeiwnsGBcKNAhw" name="getName" specification="_zkmiUDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kDe4DBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kEtADBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kFUEDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return name;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zktQADBxEeiwnsGBcKNAhw" name="getFreeSlots" specification="_zkra0DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kF7IDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kHJQDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kHJQTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return freeSlots;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zkw6YDBxEeiwnsGBcKNAhw" name="getFreeBikes" specification="_zkvFMDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kIXYDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kI-cDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kJlgDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return freeBikes;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zk7ScDBxEeiwnsGBcKNAhw" name="calcul" specification="_zk0kwDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    int free = 0;&#xD;
+    int bikes = 0;&#xD;
+    for (ParkingSlot pS : parkingSlotList) {&#xD;
+        if (pS.getState().equalsIgnoreCase(&quot;Free&quot;)) {&#xD;
+            free++;&#xD;
+        }&#xD;
+        if (pS.getState().equalsIgnoreCase(&quot;Occupied&quot;)) {&#xD;
+            bikes++;&#xD;
+        }&#xD;
+    }&#xD;
+    freeBikes = bikes;&#xD;
+    freeSlots = free;&#xD;
+    if (freeSlots == 0) {&#xD;
+        this.notifyEndRide();&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zlBZEDBxEeiwnsGBcKNAhw" name="availableBike" specification="_zk9usDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kKzoDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kMBwDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kMBwTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kMo0DBxEeiwnsGBcKNAhw" name="typeBike" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kOeADBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kPsIDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    if (freeBikes == 0) {&#xD;
+        return false;&#xD;
+    }&#xD;
+    if (typeBike == null) {&#xD;
+        return (availableBike(&quot;Electrical&quot;) || availableBike(&quot;Mechanical&quot;));&#xD;
+    }&#xD;
+    for (ParkingSlot pS : parkingSlotList) {&#xD;
+        if (pS.getState().equals(&quot;Occupied&quot;)) {&#xD;
+            if (pS.getBicycle().getTypeBike().equalsIgnoreCase(typeBike)) {&#xD;
+                return true;&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+    return false;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zlIGwDBxEeiwnsGBcKNAhw" name="NumberAvailableBike" specification="_zlD1UDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kQ6QDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kRhUDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kSIYDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kSvcDBxEeiwnsGBcKNAhw" name="typeBike" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kT9kDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kUkoDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    int numb = 0;&#xD;
+    for (ParkingSlot pS : parkingSlotList) {&#xD;
+        if (pS.getState().equals(&quot;Occupied&quot;)) {&#xD;
+            if (pS.getBicycle().getTypeBike().equalsIgnoreCase(typeBike)) {&#xD;
+                numb += 1;&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+    return numb;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zlLxIDBxEeiwnsGBcKNAhw" name="availableParkingSlot" specification="_zlJU4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kVLsDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kVywDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kWZ0DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return (this.freeSlots > 0);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zlSe0DBxEeiwnsGBcKNAhw" name="addParkingSlot" specification="_zlNmUDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kXn8DBxEeiwnsGBcKNAhw" name="pS" type="_ziebYDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kY2EDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kZdIDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    parkingSlotList.add(pS);&#xD;
+    pS.setStation(this);&#xD;
+    this.calcul();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zlXXUDBxEeiwnsGBcKNAhw" name="removeParkingSlot" specification="_zlUUADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kaEMDBxEeiwnsGBcKNAhw" name="pS" type="_ziebYDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kbSUDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kb5YDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    parkingSlotList.remove(pS);&#xD;
+    this.calcul();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zlcP0DBxEeiwnsGBcKNAhw" name="registerEndRide" specification="_zlZzkDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kcgcDBxEeiwnsGBcKNAhw" name="loc" type="_zjOCQDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4keVoDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4ke8sDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.incomingRideList.add(loc);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zlghQDBxEeiwnsGBcKNAhw" name="removeRide" specification="_zleFADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kfjwDBxEeiwnsGBcKNAhw" name="loc" type="_zjOCQDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kgx4DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4khY8DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.incomingRideList.remove(loc);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zlkysDBxEeiwnsGBcKNAhw" name="notifyEndRide" specification="_zlhvYDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (this.freeSlots == 0) {&#xD;
+        for (Location loc : incomingRideList) {&#xD;
+            loc.updateArrival(this);&#xD;
+        }&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zlt8oDBxEeiwnsGBcKNAhw" name="equals" specification="_zlqSQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kinEDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kkcQDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4klDUDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4klqYDBxEeiwnsGBcKNAhw" name="obj" type="_zlmn4DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4km4gDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4km4gTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    Station stat;&#xD;
+    if (obj instanceof Station) {&#xD;
+        stat = (Station) obj;&#xD;
+        return (stat.getStationID() == this.stationID);&#xD;
+    }&#xD;
+    return (false);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zly1IDBxEeiwnsGBcKNAhw" name="toString" specification="_zlwY4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4koGoDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kotsDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kotsTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return &quot;Station&quot; + stationID + &quot; &quot; + name + &quot; (&quot; + position + &quot;) Parking Slots:&quot; + parkingSlotList;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zl2fgDBxEeiwnsGBcKNAhw" name="numberOfRentsOperation" specification="_zl0qUDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kp70DBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kqi4DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4krxADBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    ArrayList&lt;Location> locationList = Reseau.getInstance().getLocationList();&#xD;
+    int compteur = 0;&#xD;
+    for (Location loc : locationList) {&#xD;
+        try {&#xD;
+            if (loc.getDeparture().equals(this) &amp;&amp; loc.isHasStarted()) {&#xD;
+                compteur++;&#xD;
+            }&#xD;
+        } finally {&#xD;
+        }&#xD;
+    }&#xD;
+    return (compteur);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zl6w8DBxEeiwnsGBcKNAhw" name="numberOfReturnOperation" specification="_zl47wDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ksYEDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4ktmMDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kuNQDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    ArrayList&lt;Location> locationList = Reseau.getInstance().getLocationList();&#xD;
+    int compteur = 0;&#xD;
+    for (Location loc : locationList) {&#xD;
+        if (loc.isHasEnded()) {&#xD;
+            try {&#xD;
+                if (loc.getEnd().equals(this)) {&#xD;
+                    compteur++;&#xD;
+                }&#xD;
+            } finally {&#xD;
+            }&#xD;
+        }&#xD;
+    }&#xD;
+    return (compteur);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_zmHlQDBxEeiwnsGBcKNAhw" name="getRateOfOccupation" specification="_zmBeoDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ku0UDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kwCcDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kwpgDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kwpgTBxEeiwnsGBcKNAhw" name="start" type="_zl90QDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4kyesDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4kyesTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4kzFwDBxEeiwnsGBcKNAhw" name="end" type="_zl90QDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4k0T4DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4k068DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    long diffInMillies = end.getTime() - start.getTime();&#xD;
+    float duration = TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);&#xD;
+    float rate = 0;&#xD;
+    if (duration > 0) {&#xD;
+        for (ParkingSlot s : parkingSlotList) {&#xD;
+            rate = rate + s.getTimeOccupied(start, end);&#xD;
+        }&#xD;
+        rate = rate / (parkingSlotList.size() * duration);&#xD;
+    }&#xD;
+    return (rate);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zjYaUDBxEeiwnsGBcKNAhw" name="Station" visibility="public" method="_zjw00DBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zjd54DBxEeiwnsGBcKNAhw" name="parkingSlotList" type="_ziebYDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zjeg8DBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zjfvEDBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zjg9MDBxEeiwnsGBcKNAhw" name="typeStation" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zjiyYDBxEeiwnsGBcKNAhw" name="state" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zjkAgDBxEeiwnsGBcKNAhw" name="position" type="_zi2O0DBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zjl1sDBxEeiwnsGBcKNAhw" name="name" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zjzREDBxEeiwnsGBcKNAhw" name="Station" visibility="public" method="_zkB6kDBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zj4JkDBxEeiwnsGBcKNAhw" name="typeStation" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zj5XsDBxEeiwnsGBcKNAhw" name="state" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zj7M4DBxEeiwnsGBcKNAhw" name="position" type="_zi2O0DBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zj8bADBxEeiwnsGBcKNAhw" name="name" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkDvwDBxEeiwnsGBcKNAhw" name="getTypeStation" visibility="public" method="_zkGMADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkE94DBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkIBMDBxEeiwnsGBcKNAhw" name="setTypeStation" visibility="public" method="_zkLEgDBxEeiwnsGBcKNAhw" raisedException="_zjsjYDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkJPUDBxEeiwnsGBcKNAhw" name="typeStation" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkM5sDBxEeiwnsGBcKNAhw" name="getParkingSlotList" visibility="public" method="_zkOu4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkOH0DBxEeiwnsGBcKNAhw" type="_ziebYDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_zkOH0TBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_zkOH0jBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkOu4TBxEeiwnsGBcKNAhw" name="getState" visibility="public" method="_zkRyMDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkQkEDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkWDoDBxEeiwnsGBcKNAhw" name="setState" visibility="public" method="_zkaVEDBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkX40DBxEeiwnsGBcKNAhw" name="state" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkd_cDBxEeiwnsGBcKNAhw" name="getPosition" visibility="public" method="_zkgbsDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkfNkDBxEeiwnsGBcKNAhw" type="_zi2O0DBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkiQ4DBxEeiwnsGBcKNAhw" name="getStationID" visibility="public" method="_zkkGEDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkjfADBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_NeU5EPaLEeW5KOK8aDMdgA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkmiUDBxEeiwnsGBcKNAhw" name="getName" visibility="public" method="_zko-kDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zknwcDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkra0DBxEeiwnsGBcKNAhw" name="getFreeSlots" visibility="public" method="_zktQADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zksB4DBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zkvFMDBxEeiwnsGBcKNAhw" name="getFreeBikes" visibility="public" method="_zkw6YDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zkwTUDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zk0kwDBxEeiwnsGBcKNAhw" name="calcul" visibility="public" method="_zk7ScDBxEeiwnsGBcKNAhw" raisedException="_zk3BADBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zk9usDBxEeiwnsGBcKNAhw" name="availableBike" visibility="public" method="_zlBZEDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zk-80DBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlAK8DBxEeiwnsGBcKNAhw" name="typeBike" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zlD1UDBxEeiwnsGBcKNAhw" name="NumberAvailableBike" visibility="public" method="_zlIGwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlEcYDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlGRkDBxEeiwnsGBcKNAhw" name="typeBike" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zlJU4DBxEeiwnsGBcKNAhw" name="availableParkingSlot" visibility="public" method="_zlLxIDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlKjADBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zlNmUDBxEeiwnsGBcKNAhw" name="addParkingSlot" visibility="public" method="_zlSe0DBxEeiwnsGBcKNAhw" raisedException="_zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlPbgDBxEeiwnsGBcKNAhw" name="pS" type="_ziebYDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zlUUADBxEeiwnsGBcKNAhw" name="removeParkingSlot" visibility="public" method="_zlXXUDBxEeiwnsGBcKNAhw" raisedException="_zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlWJMDBxEeiwnsGBcKNAhw" name="pS" type="_ziebYDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zlZzkDBxEeiwnsGBcKNAhw" name="registerEndRide" visibility="public" method="_zlcP0DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlbBsDBxEeiwnsGBcKNAhw" name="loc" type="_zjOCQDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zleFADBxEeiwnsGBcKNAhw" name="removeRide" visibility="public" method="_zlghQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlf6MDBxEeiwnsGBcKNAhw" name="loc" type="_zjOCQDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zlhvYDBxEeiwnsGBcKNAhw" name="notifyEndRide" visibility="public" method="_zlkysDBxEeiwnsGBcKNAhw" raisedException="_zk3BADBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zlqSQDBxEeiwnsGBcKNAhw" name="equals" visibility="public" method="_zlt8oDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlrgYDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlsugDBxEeiwnsGBcKNAhw" name="obj" type="_zlmn4DBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zlwY4DBxEeiwnsGBcKNAhw" name="toString" visibility="public" method="_zly1IDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zlyOEDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zl0qUDBxEeiwnsGBcKNAhw" name="numberOfRentsOperation" visibility="public" method="_zl2fgDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zl14cDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zl47wDBxEeiwnsGBcKNAhw" name="numberOfReturnOperation" visibility="public" method="_zl6w8DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zl6J4DBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_zmBeoDBxEeiwnsGBcKNAhw" name="getRateOfOccupation" visibility="public" method="_zmHlQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zmDT0DBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zmFJADBxEeiwnsGBcKNAhw" name="start" type="_zl90QDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_zmGXIDBxEeiwnsGBcKNAhw" name="end" type="_zl90QDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Qm-cDBxEeiwnsGBcKNAhw" name="registerEndRide"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Tt80DBxEeiwnsGBcKNAhw" name="registerEndRide">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4TvyADBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4TwZEDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4TxAIDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4VPm0DBxEeiwnsGBcKNAhw" name="registerEndRide">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4VQ08DBxEeiwnsGBcKNAhw" name="loc">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4VRcADBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4VSDEDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4YVXEDBxEeiwnsGBcKNAhw" name="removeRide"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4bagQDBxEeiwnsGBcKNAhw" name="removeRide">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4bcVcDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4bdjkDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4beKoDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4dSvkDBxEeiwnsGBcKNAhw" name="removeRide">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4dT9sDBxEeiwnsGBcKNAhw" name="loc">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4dUkwDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4dVL0DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_ziUDUDBxEeiwnsGBcKNAhw" name="Observable" visibility="public">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4QlwUDBxEeiwnsGBcKNAhw" name="registerEndRide" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4TtVwDBxEeiwnsGBcKNAhw" name="loc" type="_zjOCQDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4YTh4DBxEeiwnsGBcKNAhw" name="removeRide" visibility="public">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4bYrEDBxEeiwnsGBcKNAhw" name="loc" type="_zjOCQDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4gUOYDBxEeiwnsGBcKNAhw" name="notifyEndRide" visibility="public" raisedException="_zk3BADBxEeiwnsGBcKNAhw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_ziebYDBxEeiwnsGBcKNAhw" name="ParkingSlot" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4F6KUDBxEeiwnsGBcKNAhw" name="compteur" visibility="private" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_NeU5EPaLEeW5KOK8aDMdgA"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_4F8mkDBxEeiwnsGBcKNAhw" name="defaultValue">
+              <language>JAVA</language>
+              <body>(long) 0</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4F_C0DBxEeiwnsGBcKNAhw" name="slotID" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_NeU5EPaLEeW5KOK8aDMdgA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4GA4ADBxEeiwnsGBcKNAhw" name="state" visibility="private" type="_ziqooDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4GIMwDBxEeiwnsGBcKNAhw" name="bicycle" visibility="private" type="_4GEiYDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4GLQEDBxEeiwnsGBcKNAhw" name="history" visibility="private" type="_4GKpADBxEeiwnsGBcKNAhw" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4GNFQDBxEeiwnsGBcKNAhw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4GO6cDBxEeiwnsGBcKNAhw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4GRWsDBxEeiwnsGBcKNAhw" name="station" visibility="private" type="_ziS1MDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Gc84DBxEeiwnsGBcKNAhw" name="ParkingSlot" specification="_4GTy8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+    if (State == &quot;Occupied&quot; || State == &quot;Broken&quot;) {&#xD;
+        compteur = compteur + 1;&#xD;
+        slotID = compteur;&#xD;
+        // Possible de créer un parking slot avec l'état free et un vélo à l'intérieur&#xD;
+        this.bicycle = bicycle;&#xD;
+        this.state = State;&#xD;
+        this.station = station;&#xD;
+        this.history = new ArrayList&lt;TimeState>();&#xD;
+        history.add(new TimeState(true, Calendar.getInstance().getTime()));&#xD;
+        station.addParkingSlot(this);&#xD;
+    } else if (State == &quot;Free&quot; &amp;&amp; bicycle == null) {&#xD;
+        compteur = compteur + 1;&#xD;
+        slotID = compteur;&#xD;
+        this.state = State;&#xD;
+        this.station = station;&#xD;
+        this.history = new ArrayList&lt;TimeState>();&#xD;
+        history.add(new TimeState(false, Calendar.getInstance().getTime()));&#xD;
+        station.addParkingSlot(this);&#xD;
+    } else {&#xD;
+        throw new BadParkingSlotCreationException(State);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4GhOUDBxEeiwnsGBcKNAhw" name="getState" specification="_4GeyEDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return state;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4GpKIDBxEeiwnsGBcKNAhw" name="setState" specification="_4GlfwDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (state == &quot;Occupied&quot; || state == &quot;Free&quot; || state == &quot;Broken&quot;) {&#xD;
+        this.state = state;&#xD;
+        station.calcul();&#xD;
+        history.get(history.size() - 1).setEnd(Calendar.getInstance().getTime());&#xD;
+        if (state == &quot;Free&quot;) {&#xD;
+            history.add(new TimeState(false, Calendar.getInstance().getTime()));&#xD;
+        } else {&#xD;
+            history.add(new TimeState(true, Calendar.getInstance().getTime()));&#xD;
+        }&#xD;
+    } else {&#xD;
+        throw new BadParkingSlotCreationException(state);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4GvQwDBxEeiwnsGBcKNAhw" name="retrieveBike" specification="_4Gq_UDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (state == &quot;Occupied&quot;) {&#xD;
+        this.setState(&quot;Free&quot;);&#xD;
+        Bicycle bike = this.getBicycle();&#xD;
+        this.setBicycle(null);&#xD;
+        System.out.println(bike.getTypeBike() + &quot; bike &quot; + bike.getBikeID() + &quot; has been retrieved from parking slot &quot; + this.slotID);&#xD;
+        return bike;&#xD;
+    } else {&#xD;
+        return null;&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4G1XYDBxEeiwnsGBcKNAhw" name="storeBike" specification="_4GxF8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (state != &quot;Free&quot;) {&#xD;
+        return false;&#xD;
+    } else {&#xD;
+        this.setState(&quot;Occupied&quot;);&#xD;
+        this.bicycle = bike;&#xD;
+        System.out.println(bike.getTypeBike() + &quot; bike &quot; + bike.getBikeID() + &quot; has been parked in parking slot &quot; + this.slotID);&#xD;
+        return true;&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4G-hUDBxEeiwnsGBcKNAhw" name="getTimeOccupied" specification="_4G5o0DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    long timeOccupied = 0;&#xD;
+    int longueur = history.size();&#xD;
+    for (int i = 0; i &lt; longueur - 1; i++) {&#xD;
+        System.out.println(timeOccupied);&#xD;
+        // prends en compte les cas ou le timeState est inclus dans l'intervalle d'étude&#xD;
+        if (history.get(i).getStart().after(start) &amp;&amp; history.get(i).getEnd().before(end) &amp;&amp; history.get(i).isOccupied()) {&#xD;
+            long diffInMillies = history.get(i).getEnd().getTime() - history.get(i).getStart().getTime();&#xD;
+            timeOccupied = timeOccupied + TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);&#xD;
+            System.out.println(&quot;aaaa&quot;);&#xD;
+        }&#xD;
+        // prends en compte les cas ou le timestate possède une partie dans l'intervalle mais sa fin est hors de la fenetre d'étude&#xD;
+        if (history.get(i).getStart().after(start) &amp;&amp; history.get(i).getEnd().after(end) &amp;&amp; history.get(i).isOccupied() &amp;&amp; history.get(i).getStart().before(end)) {&#xD;
+            long diffInMillies = end.getTime() - history.get(i).getStart().getTime();&#xD;
+            timeOccupied = timeOccupied + TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);&#xD;
+        }&#xD;
+        // prends en compte les cas ou le timestate possède une partie dans l'intervalle mais son début est hors de la fenetre d'étude&#xD;
+        if (history.get(i).getEnd().before(end) &amp;&amp; history.get(i).getEnd().after(start) &amp;&amp; history.get(i).isOccupied() &amp;&amp; history.get(i).getStart().before(start)) {&#xD;
+            long diffInMillies = history.get(i).getEnd().getTime() - start.getTime();&#xD;
+            timeOccupied = timeOccupied + TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);&#xD;
+        }&#xD;
+        // prends en compte les cas ou le timestate inclu l'intervalle d'étude&#xD;
+        if (history.get(i).getEnd().after(end) &amp;&amp; history.get(i).isOccupied() &amp;&amp; history.get(i).getStart().before(start)) {&#xD;
+            long diffInMillies = end.getTime() - start.getTime();&#xD;
+            timeOccupied = timeOccupied + TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);&#xD;
+        }&#xD;
+    }&#xD;
+    // permet de considerer le dernier timestate qui n'a pas encore d'attribut end et avec un début dans l'intervalle&#xD;
+    if (history.get(longueur - 1).getStart().after(start) &amp;&amp; history.get(longueur - 1).isOccupied() &amp;&amp; history.get(longueur - 1).getStart().before(end)) {&#xD;
+        long diffInMillies = Calendar.getInstance().getTime().getTime() - history.get(longueur - 1).getStart().getTime();&#xD;
+        timeOccupied = timeOccupied + TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);&#xD;
+    }&#xD;
+    // permet de considerer le dernier timestate qui n'a pas encore d'attribut end et avec un début avant l'intervalle&#xD;
+    if (history.get(longueur - 1).getStart().before(start) &amp;&amp; history.get(longueur - 1).isOccupied()) {&#xD;
+        long diffInMillies = Calendar.getInstance().getTime().getTime() - start.getTime();&#xD;
+        timeOccupied = timeOccupied + TimeUnit.MINUTES.convert(diffInMillies, TimeUnit.MILLISECONDS);&#xD;
+    }&#xD;
+    return (timeOccupied);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4HDZ0DBxEeiwnsGBcKNAhw" name="getSlotID" specification="_4HA9kDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return slotID;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4HHrQDBxEeiwnsGBcKNAhw" name="getBicycle" specification="_4HFPADBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return bicycle;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4HQ1MDBxEeiwnsGBcKNAhw" name="getHistory" specification="_4HJgcDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return history;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4HVtsDBxEeiwnsGBcKNAhw" name="setBicycle" specification="_4HTRcDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.bicycle = bicycle;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4HZYEDBxEeiwnsGBcKNAhw" name="getStation" specification="_4HXi4DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return station;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4HZ_ITBxEeiwnsGBcKNAhw" name="setStation" specification="_4HZYETBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.station = station;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Hb0UDBxEeiwnsGBcKNAhw" name="toString" specification="_4HZ_IjBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return &quot;ParkingSlot &quot; + slotID + &quot;, state:&quot; + state + &quot;, &quot; + bicycle + &quot;&quot;;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4GTy8DBxEeiwnsGBcKNAhw" name="ParkingSlot" visibility="public" method="_4Gc84DBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4GYEYDBxEeiwnsGBcKNAhw" name="bicycle" type="_4GEiYDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4GZ5kDBxEeiwnsGBcKNAhw" name="State" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4GagoDBxEeiwnsGBcKNAhw" name="station" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4GeyEDBxEeiwnsGBcKNAhw" name="getState" visibility="public" method="_4GhOUDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4GgAMDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4GlfwDBxEeiwnsGBcKNAhw" name="setState" visibility="public" method="_4GpKIDBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Gmt4DBxEeiwnsGBcKNAhw" name="state" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Gq_UDBxEeiwnsGBcKNAhw" name="retrieveBike" visibility="public" method="_4GvQwDBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Gs0gDBxEeiwnsGBcKNAhw" type="_4GEiYDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4GxF8DBxEeiwnsGBcKNAhw" name="storeBike" visibility="public" method="_4G1XYDBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4GyUEDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4GziMDBxEeiwnsGBcKNAhw" name="bike" type="_4GEiYDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4G5o0DBxEeiwnsGBcKNAhw" name="getTimeOccupied" visibility="public" method="_4G-hUDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4G628DBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4G8FEDBxEeiwnsGBcKNAhw" name="start" type="_zl90QDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4G96QDBxEeiwnsGBcKNAhw" name="end" type="_zl90QDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HA9kDBxEeiwnsGBcKNAhw" name="getSlotID" visibility="public" method="_4HDZ0DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4HCLsDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_NeU5EPaLEeW5KOK8aDMdgA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HFPADBxEeiwnsGBcKNAhw" name="getBicycle" visibility="public" method="_4HHrQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4HGdIDBxEeiwnsGBcKNAhw" type="_4GEiYDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HJgcDBxEeiwnsGBcKNAhw" name="getHistory" visibility="public" method="_4HQ1MDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4HL8sDBxEeiwnsGBcKNAhw" type="_4GKpADBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4HPAADBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4HQOIDBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HTRcDBxEeiwnsGBcKNAhw" name="setBicycle" visibility="public" method="_4HVtsDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4HUfkDBxEeiwnsGBcKNAhw" name="bicycle" type="_4GEiYDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HXi4DBxEeiwnsGBcKNAhw" name="getStation" visibility="public" method="_4HZYEDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4HYJ8DBxEeiwnsGBcKNAhw" type="_ziS1MDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HZYETBxEeiwnsGBcKNAhw" name="setStation" visibility="public" method="_4HZ_ITBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4HZ_IDBxEeiwnsGBcKNAhw" name="station" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HZ_IjBxEeiwnsGBcKNAhw" name="toString" visibility="public" method="_4Hb0UDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4HamMDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_zi2O0DBxEeiwnsGBcKNAhw" name="GPScoord" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4QC9wDBxEeiwnsGBcKNAhw" name="latittude" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4QGBEDBxEeiwnsGBcKNAhw" name="longitude" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4QNV0DBxEeiwnsGBcKNAhw" name="GPScoord" specification="_4QH2QDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.latittude = lat;&#xD;
+    this.longitude = lon;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4QRnQDBxEeiwnsGBcKNAhw" name="getDistance" specification="_4QPLADBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return Math.sqrt((this.latittude - place.latittude) * (this.latittude - place.latittude) + (this.longitude - place.longitude) * (this.longitude - place.longitude));&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4QUqkDBxEeiwnsGBcKNAhw" name="getLatittude" specification="_4QS1YDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return latittude;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4QXt4DBxEeiwnsGBcKNAhw" name="setLatittude" specification="_4QV4sDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.latittude = latittude;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Qb_UDBxEeiwnsGBcKNAhw" name="getLongitude" specification="_4QY8ADBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return longitude;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4QfCoDBxEeiwnsGBcKNAhw" name="setLongitude" specification="_4QdNcDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.longitude = longitude;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4QitADBxEeiwnsGBcKNAhw" name="toString" specification="_4QgQwDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return latittude + &quot;,&quot; + longitude;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4QH2QDBxEeiwnsGBcKNAhw" name="GPScoord" visibility="public" method="_4QNV0DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4QLgoDBxEeiwnsGBcKNAhw" name="lat">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4QMuwDBxEeiwnsGBcKNAhw" name="lon">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4QPLADBxEeiwnsGBcKNAhw" name="getDistance" visibility="public" method="_4QRnQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4QPyEDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4QRAMDBxEeiwnsGBcKNAhw" name="place" type="_zi2O0DBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4QS1YDBxEeiwnsGBcKNAhw" name="getLatittude" visibility="public" method="_4QUqkDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4QTccDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4QV4sDBxEeiwnsGBcKNAhw" name="setLatittude" visibility="public" method="_4QXt4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4QXG0DBxEeiwnsGBcKNAhw" name="latittude">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4QY8ADBxEeiwnsGBcKNAhw" name="getLongitude" visibility="public" method="_4Qb_UDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4QaxMDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4QdNcDBxEeiwnsGBcKNAhw" name="setLongitude" visibility="public" method="_4QfCoDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4QebkDBxEeiwnsGBcKNAhw" name="longitude">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7W3wkBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4QgQwDBxEeiwnsGBcKNAhw" name="toString" visibility="public" method="_4QitADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Qhe4DBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_zjOCQDBxEeiwnsGBcKNAhw" name="Location" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4L3oYDBxEeiwnsGBcKNAhw" name="timeStart" visibility="private" type="_zl90QDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4L5dkDBxEeiwnsGBcKNAhw" name="timeEnd" visibility="private" type="_zl90QDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4L7SwDBxEeiwnsGBcKNAhw" name="departure" visibility="private" type="_ziS1MDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4L-WEDBxEeiwnsGBcKNAhw" name="arrival" visibility="private" type="_ziS1MDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4MALQDBxEeiwnsGBcKNAhw" name="bike" visibility="private" type="_4GEiYDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4MCAcDBxEeiwnsGBcKNAhw" name="start" visibility="private" type="_zi2O0DBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4MDOkDBxEeiwnsGBcKNAhw" name="end" visibility="private" type="_zi2O0DBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4MFDwDBxEeiwnsGBcKNAhw" name="hasStarted" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4MFq0DBxEeiwnsGBcKNAhw" name="hasEnded" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4MHgADBxEeiwnsGBcKNAhw" name="user" visibility="private" type="_4Jg38DBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4MLxcDBxEeiwnsGBcKNAhw" name="ridePolicy" visibility="private" type="_4MIuIDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_4L2aQDBxEeiwnsGBcKNAhw" name="Location implements Observer" client="_zjOCQDBxEeiwnsGBcKNAhw" supplier="_4L1zMDBxEeiwnsGBcKNAhw" contract="_4L1zMDBxEeiwnsGBcKNAhw"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4McQIDBxEeiwnsGBcKNAhw" name="Location" specification="_4MNmoDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tK-oDBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tMMwDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tMz0DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tNa4DBxEeiwnsGBcKNAhw" name="start" type="_zi2O0DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tOB8DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tOpADBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tPQEDBxEeiwnsGBcKNAhw" name="end" type="_zi2O0DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tRFQDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tRsUDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tSTYDBxEeiwnsGBcKNAhw" name="ridePolicy" type="_4MIuIDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tThgDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tUIkDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tUvoDBxEeiwnsGBcKNAhw" name="typeBike" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tV9wDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tV9wTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.user = user;&#xD;
+    this.start = start;&#xD;
+    this.end = end;&#xD;
+    this.hasStarted = false;&#xD;
+    this.hasEnded = false;&#xD;
+    this.user.setLocation(this);&#xD;
+    this.ridePolicy = ridePolicy;&#xD;
+    this.departure = ridePolicy.computeStart(start, end, typeBike);&#xD;
+    this.arrival = ridePolicy.computeEnd(start, end, typeBike);&#xD;
+    Reseau.getInstance().addLocation(this);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4MkzADBxEeiwnsGBcKNAhw" name="Location" specification="_4MeFUDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tXL4DBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tXy8DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tYaADBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tZBEDBxEeiwnsGBcKNAhw" name="departure" type="_ziS1MDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4ta2QDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tbdUDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.user = user;&#xD;
+    this.departure = departure;&#xD;
+    this.hasStarted = true;&#xD;
+    this.timeStart = Calendar.getInstance().getTime();&#xD;
+    this.user.setLocation(this);&#xD;
+    this.hasEnded = false;&#xD;
+    Reseau.getInstance().addLocation(this);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4My1cDBxEeiwnsGBcKNAhw" name="Location" specification="_4ModYDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tcrcDBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4td5kDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tegoDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tfHsDBxEeiwnsGBcKNAhw" name="departure" type="_ziS1MDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tgV0DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tg84DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4thj8DBxEeiwnsGBcKNAhw" name="typeBike" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tiyEDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tiyETBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tjZIDBxEeiwnsGBcKNAhw" name="policy" type="_4MIuIDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tlOUDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tl1YDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.user = user;&#xD;
+    this.departure = departure;&#xD;
+    this.hasStarted = true;&#xD;
+    this.timeStart = Calendar.getInstance().getTime();&#xD;
+    this.user.setLocation(this);&#xD;
+    this.hasEnded = false;&#xD;
+    this.ridePolicy = policy;&#xD;
+    this.takeBike(departure, typeBike);&#xD;
+    Reseau.getInstance().addLocation(this);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4M6KMDBxEeiwnsGBcKNAhw" name="takeBike" specification="_4M0qoDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tmccDBxEeiwnsGBcKNAhw" name="departure" type="_ziS1MDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tnqkDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4toRoDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4to4sDBxEeiwnsGBcKNAhw" name="type" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tqG0DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tqt4DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    while (bike == null) {&#xD;
+        for (ParkingSlot pS : departure.getParkingSlotList()) {&#xD;
+            if (pS.getBicycle().getTypeBike() == type) {&#xD;
+                bike = pS.retrieveBike();&#xD;
+                break;&#xD;
+            }&#xD;
+        }&#xD;
+        break;&#xD;
+    }&#xD;
+    if (bike != null) {&#xD;
+        this.departure = departure;&#xD;
+        this.timeStart = Calendar.getInstance().getTime();&#xD;
+        this.hasStarted = true;&#xD;
+        this.user.setRideNumber(user.getRideNumber() + 1);&#xD;
+    } else {&#xD;
+        System.out.println(&quot;No bike is available in this station&quot;);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4M-boDBxEeiwnsGBcKNAhw" name="toString" specification="_4M8mcDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4trU8DBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tsjEDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tsjETBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return &quot;Location [timeStart=&quot; + timeStart + &quot;, timeEnd=&quot; + timeEnd + &quot;, departure=&quot; + departure + &quot;, arrival=&quot; + arrival + &quot;, bike=&quot; + bike + &quot;, start=&quot; + start + &quot;, end=&quot; + end + &quot;, hasStarted=&quot; + hasStarted + &quot;, user=&quot; + user + &quot;, ridePolicy=&quot; + ridePolicy + &quot;]&quot;;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NCtEDBxEeiwnsGBcKNAhw" name="returnBike" specification="_4M_pwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ttxMDBxEeiwnsGBcKNAhw" name="arrival" type="_ziS1MDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4tu_UDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4twNcDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    boolean stored = false;&#xD;
+    while (stored == false) {&#xD;
+        for (ParkingSlot pS : arrival.getParkingSlotList()) {&#xD;
+            stored = pS.storeBike(this.bike);&#xD;
+            break;&#xD;
+        }&#xD;
+        break;&#xD;
+    }&#xD;
+    if (stored == true) {&#xD;
+        this.arrival = arrival;&#xD;
+        this.timeEnd = Calendar.getInstance().getTime();&#xD;
+        int duration = (int) Card.getDuration(timeStart, timeEnd, TimeUnit.MINUTES);&#xD;
+        int charge = this.user.getCard().getCharge(this, user);&#xD;
+        this.user.setTotalTime(user.getTotalTime() + (int) duration);&#xD;
+        this.user.setTotalCharges(user.getTotalCharges() + charge);&#xD;
+        this.bike = null;&#xD;
+        this.hasEnded = false;&#xD;
+        System.out.println(&quot;Bike location charged &quot; + charge + &quot;€&quot;);&#xD;
+        this.user.setLocation(null);&#xD;
+    } else {&#xD;
+        System.out.println(&quot;No parking slot is available in this station&quot;);&#xD;
+        this.ridePolicy.computeEnd(user.getPosition(), end, bike.getTypeBike());&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NGXcDBxEeiwnsGBcKNAhw" name="isHasEnded" specification="_4NEiQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4txbkDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4typsDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4tzQwDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return hasEnded;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NJawDBxEeiwnsGBcKNAhw" name="setHasEnded" specification="_4NHlkDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4tz30DBxEeiwnsGBcKNAhw" name="hasEnded">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4t1F8DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4t1F8TBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.hasEnded = hasEnded;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NNsMDBxEeiwnsGBcKNAhw" name="updateArrival" specification="_4NKo4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4t2UEDBxEeiwnsGBcKNAhw" name="arrival" type="_ziS1MDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4t27IDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4t3iMDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    System.out.println(&quot;The destination station isn't available anymore.&quot;);&#xD;
+    System.out.println(&quot;Please proceed to this new station&quot;);&#xD;
+    this.ridePolicy.computeEnd(user.getPosition(), end, bike.getTypeBike());&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NR9oDBxEeiwnsGBcKNAhw" name="getTimeStart" specification="_4NQIcDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4t4wUDBxEeiwnsGBcKNAhw" type="_zl90QDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4t5-cDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4t5-cTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return timeStart;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NVoADBxEeiwnsGBcKNAhw" name="setTimeStart" specification="_4NTy0DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4t7MkDBxEeiwnsGBcKNAhw" name="timeStart" type="_zl90QDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4t8asDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4t8asTBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.timeStart = timeStart;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NZSYDBxEeiwnsGBcKNAhw" name="getTimeEnd" specification="_4NXdMDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4t9o0DBxEeiwnsGBcKNAhw" type="_zl90QDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4t-P4DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4t-28DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return timeEnd;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Nc8wDBxEeiwnsGBcKNAhw" name="setTimeEnd" specification="_4NbHkDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uAFEDBxEeiwnsGBcKNAhw" name="timeEnd" type="_zl90QDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uAsIDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uBTMDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.timeEnd = timeEnd;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NgAEDBxEeiwnsGBcKNAhw" name="getArrival" specification="_4NeK4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uB6QDBxEeiwnsGBcKNAhw" type="_ziS1MDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uChUDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uDvcDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return arrival;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Nk4kDBxEeiwnsGBcKNAhw" name="setArrival" specification="_4Nh1QDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uFkoDBxEeiwnsGBcKNAhw" name="arrival" type="_ziS1MDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uGLsDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uHZ0DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.arrival = arrival;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Nn74DBxEeiwnsGBcKNAhw" name="getBike" specification="_4NmGsDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uIA4DBxEeiwnsGBcKNAhw" type="_4GEiYDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uJPADBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uJ2EDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return bike;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NrmQDBxEeiwnsGBcKNAhw" name="setBike" specification="_4NpxEDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uKdIDBxEeiwnsGBcKNAhw" name="bike" type="_4GEiYDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uLEMDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uLrQDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.bike = bike;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NupkDBxEeiwnsGBcKNAhw" name="getDeparture" specification="_4NtbcDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uM5YDBxEeiwnsGBcKNAhw" type="_ziS1MDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uOHgDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uOukDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return departure;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4NyT8DBxEeiwnsGBcKNAhw" name="setDeparture" specification="_4NwewDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uPVoDBxEeiwnsGBcKNAhw" name="departure" type="_ziS1MDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uQjwDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uRK0DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.departure = departure;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4N1-UDBxEeiwnsGBcKNAhw" name="getEnd" specification="_4NziEDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uRx4DBxEeiwnsGBcKNAhw" type="_zi2O0DBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uTAADBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uTnEDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return end;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4N6PwDBxEeiwnsGBcKNAhw" name="setEnd" specification="_4N4akDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uUOIDBxEeiwnsGBcKNAhw" name="end" type="_zi2O0DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uVcQDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uWDUDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.end = end;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4N96IDBxEeiwnsGBcKNAhw" name="isHasStarted" specification="_4N8E8DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uXRcDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uZtsDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uaUwDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return hasStarted;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OA9cDBxEeiwnsGBcKNAhw" name="setHasStarted" specification="_4N_IQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ua70DBxEeiwnsGBcKNAhw" name="hasStarted">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4ucJ8DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4ucxADBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.hasStarted = hasStarted;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OEAwDBxEeiwnsGBcKNAhw" name="setStart" specification="_4OCLkDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4udYEDBxEeiwnsGBcKNAhw" name="start" type="_zi2O0DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uemMDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4ufNQDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.start = start;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OHEEDBxEeiwnsGBcKNAhw" name="getStart" specification="_4OFO4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ugbYDBxEeiwnsGBcKNAhw" type="_zi2O0DBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uiQkDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4ui3oDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return start;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OLVgDBxEeiwnsGBcKNAhw" name="getUser" specification="_4OI5QDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ujesDBxEeiwnsGBcKNAhw" type="_4Jg38DBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uks0DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4ulT4DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return user;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OO_4DBxEeiwnsGBcKNAhw" name="setUser" specification="_4ONxwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4umiADBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4unwIDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uoXMDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.user = user;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OSqQDBxEeiwnsGBcKNAhw" name="getRidePolicy" specification="_4OQ1EDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4uplUDBxEeiwnsGBcKNAhw" type="_4MIuIDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uqMYDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uqzcDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    return ridePolicy;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OWUoDBxEeiwnsGBcKNAhw" name="setRidePolicy" specification="_4OUfcDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4usooDBxEeiwnsGBcKNAhw" name="ridePolicy" type="_4MIuIDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4uud0DBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4uvE4DBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+            <language>JAVA</language>
+            <body>&#xD;
+    this.ridePolicy = ridePolicy;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4MNmoDBxEeiwnsGBcKNAhw" name="Location" visibility="public" method="_4McQIDBxEeiwnsGBcKNAhw" raisedException="_zk3BADBxEeiwnsGBcKNAhw _4MYlwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4MTGMDBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4MTtQDBxEeiwnsGBcKNAhw" name="start" type="_zi2O0DBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4MU7YDBxEeiwnsGBcKNAhw" name="end" type="_zi2O0DBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4MWJgDBxEeiwnsGBcKNAhw" name="ridePolicy" type="_4MIuIDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4MXXoDBxEeiwnsGBcKNAhw" name="typeBike" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4MeFUDBxEeiwnsGBcKNAhw" name="Location" visibility="public" method="_4MkzADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4MhIoDBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4MiWwDBxEeiwnsGBcKNAhw" name="departure" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4ModYDBxEeiwnsGBcKNAhw" name="Location" visibility="public" method="_4My1cDBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Msu0DBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Mt88DBxEeiwnsGBcKNAhw" name="departure" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4MvyIDBxEeiwnsGBcKNAhw" name="typeBike" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4MxAQDBxEeiwnsGBcKNAhw" name="policy" type="_4MIuIDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4M0qoDBxEeiwnsGBcKNAhw" name="takeBike" visibility="public" method="_4M6KMDBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4M14wDBxEeiwnsGBcKNAhw" name="departure" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4M3G4DBxEeiwnsGBcKNAhw" name="type" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4M8mcDBxEeiwnsGBcKNAhw" name="toString" visibility="public" method="_4M-boDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4M90kDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4M_pwDBxEeiwnsGBcKNAhw" name="returnBike" visibility="public" method="_4NCtEDBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NA34DBxEeiwnsGBcKNAhw" name="arrival" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NEiQDBxEeiwnsGBcKNAhw" name="isHasEnded" visibility="public" method="_4NGXcDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NFJUDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NHlkDBxEeiwnsGBcKNAhw" name="setHasEnded" visibility="public" method="_4NJawDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NIzsDBxEeiwnsGBcKNAhw" name="hasEnded">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NKo4DBxEeiwnsGBcKNAhw" name="updateArrival" visibility="public" method="_4NNsMDBxEeiwnsGBcKNAhw" raisedException="_zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NL3ADBxEeiwnsGBcKNAhw" name="arrival" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NQIcDBxEeiwnsGBcKNAhw" name="getTimeStart" visibility="public" method="_4NR9oDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NRWkDBxEeiwnsGBcKNAhw" type="_zl90QDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NTy0DBxEeiwnsGBcKNAhw" name="setTimeStart" visibility="public" method="_4NVoADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NVA8DBxEeiwnsGBcKNAhw" name="timeStart" type="_zl90QDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NXdMDBxEeiwnsGBcKNAhw" name="getTimeEnd" visibility="public" method="_4NZSYDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NYrUDBxEeiwnsGBcKNAhw" type="_zl90QDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NbHkDBxEeiwnsGBcKNAhw" name="setTimeEnd" visibility="public" method="_4Nc8wDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NcVsDBxEeiwnsGBcKNAhw" name="timeEnd" type="_zl90QDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NeK4DBxEeiwnsGBcKNAhw" name="getArrival" visibility="public" method="_4NgAEDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Nex8DBxEeiwnsGBcKNAhw" type="_ziS1MDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Nh1QDBxEeiwnsGBcKNAhw" name="setArrival" visibility="public" method="_4Nk4kDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NjqcDBxEeiwnsGBcKNAhw" name="arrival" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NmGsDBxEeiwnsGBcKNAhw" name="getBike" visibility="public" method="_4Nn74DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NnU0DBxEeiwnsGBcKNAhw" type="_4GEiYDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NpxEDBxEeiwnsGBcKNAhw" name="setBike" visibility="public" method="_4NrmQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Nq_MDBxEeiwnsGBcKNAhw" name="bike" type="_4GEiYDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NtbcDBxEeiwnsGBcKNAhw" name="getDeparture" visibility="public" method="_4NupkDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NuCgDBxEeiwnsGBcKNAhw" type="_ziS1MDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NwewDBxEeiwnsGBcKNAhw" name="setDeparture" visibility="public" method="_4NyT8DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4NxF0DBxEeiwnsGBcKNAhw" name="departure" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4NziEDBxEeiwnsGBcKNAhw" name="getEnd" visibility="public" method="_4N1-UDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4N0JIDBxEeiwnsGBcKNAhw" type="_zi2O0DBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4N4akDBxEeiwnsGBcKNAhw" name="setEnd" visibility="public" method="_4N6PwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4N5osDBxEeiwnsGBcKNAhw" name="end" type="_zi2O0DBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4N8E8DBxEeiwnsGBcKNAhw" name="isHasStarted" visibility="public" method="_4N96IDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4N8sADBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4N_IQDBxEeiwnsGBcKNAhw" name="setHasStarted" visibility="public" method="_4OA9cDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4OAWYDBxEeiwnsGBcKNAhw" name="hasStarted">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4OCLkDBxEeiwnsGBcKNAhw" name="setStart" visibility="public" method="_4OEAwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4OCyoDBxEeiwnsGBcKNAhw" name="start" type="_zi2O0DBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4OFO4DBxEeiwnsGBcKNAhw" name="getStart" visibility="public" method="_4OHEEDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4OGdADBxEeiwnsGBcKNAhw" type="_zi2O0DBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4OI5QDBxEeiwnsGBcKNAhw" name="getUser" visibility="public" method="_4OLVgDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4OJgUDBxEeiwnsGBcKNAhw" type="_4Jg38DBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4ONxwDBxEeiwnsGBcKNAhw" name="setUser" visibility="public" method="_4OO_4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4OOY0DBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4OQ1EDBxEeiwnsGBcKNAhw" name="getRidePolicy" visibility="public" method="_4OSqQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4ORcIDBxEeiwnsGBcKNAhw" type="_4MIuIDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4OUfcDBxEeiwnsGBcKNAhw" name="setRidePolicy" visibility="public" method="_4OWUoDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4OVtkDBxEeiwnsGBcKNAhw" name="ridePolicy" type="_4MIuIDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4k6agDBxEeiwnsGBcKNAhw" name="updateArrival"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4n6EIDBxEeiwnsGBcKNAhw" name="updateArrival">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4n7SQDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4oXXIDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4oX-MDBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4p_u0DBxEeiwnsGBcKNAhw" name="updateArrival">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4qA88DBxEeiwnsGBcKNAhw" name="arrival">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4qCLEDBxEeiwnsGBcKNAhw" value="1"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4qCLETBxEeiwnsGBcKNAhw" value="1"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_zjnD0DBxEeiwnsGBcKNAhw" name="BadStateStationCreationException" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_4Pwp4DBxEeiwnsGBcKNAhw" general="_4FVikDBxEeiwnsGBcKNAhw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4PyfEDBxEeiwnsGBcKNAhw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_4P0UQDBxEeiwnsGBcKNAhw" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4P4lsDBxEeiwnsGBcKNAhw" name="BadStateStationCreationException" specification="_4P07UDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+// TODO Auto-generated constructor stub&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4P_TYDBxEeiwnsGBcKNAhw" name="BadStateStationCreationException" specification="_4P7B8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(&quot;Le type :&quot; + message + &quot;n'existe pas, veuillez inscrire soit on service soit offline&quot;);&#xD;
+// TODO Auto-generated constructor stub&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4P07UDBxEeiwnsGBcKNAhw" name="BadStateStationCreationException" visibility="public" method="_4P4lsDBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4P7B8DBxEeiwnsGBcKNAhw" name="BadStateStationCreationException" visibility="public" method="_4P_TYDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4P-sUDBxEeiwnsGBcKNAhw" name="message" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_zjsjYDBxEeiwnsGBcKNAhw" name="BadTypeStationCreationException" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_4OuIEDBxEeiwnsGBcKNAhw" general="_4FVikDBxEeiwnsGBcKNAhw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4OvWMDBxEeiwnsGBcKNAhw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_4OwkUDBxEeiwnsGBcKNAhw" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4O2D4DBxEeiwnsGBcKNAhw" name="BadTypeStationCreationException" specification="_4OxycDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+// TODO Auto-generated constructor stub&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4O8xkDBxEeiwnsGBcKNAhw" name="BadTypeStationCreationException" specification="_4O35EDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(&quot;Le type :&quot; + message + &quot;n'existe pas, veuillez inscrire soit standard soit plus&quot;);&#xD;
+// TODO Auto-generated constructor stub&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4OxycDBxEeiwnsGBcKNAhw" name="BadTypeStationCreationException" visibility="public" method="_4O2D4DBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4O35EDBxEeiwnsGBcKNAhw" name="BadTypeStationCreationException" visibility="public" method="_4O8xkDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4O8KgDBxEeiwnsGBcKNAhw" name="message" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4FLKgDBxEeiwnsGBcKNAhw" name="myVelibTest" visibility="public">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4FON0DBxEeiwnsGBcKNAhw" name="main" specification="_4FMYoDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    Reseau res = Reseau.getInstance();&#xD;
+    for (int i = 1; i &lt;= 3; i++) {&#xD;
+        res.addStation(new Station(new ArrayList&lt;ParkingSlot>(), &quot;Standard&quot;, &quot;on service&quot;, new GPScoord(i, i), null));&#xD;
+        for (int j = 1; j &lt;= 10; j++) {&#xD;
+            res.getStationList().get(i - 1).addParkingSlot(new ParkingSlot(new Electrical(), &quot;Occupied&quot;, res.getStationList().get(i - 1)));&#xD;
+        }&#xD;
+        res.getStationList().get(i - 1).addParkingSlot(new ParkingSlot(new Mechanical(), &quot;Occupied&quot;, res.getStationList().get(i - 1)));&#xD;
+    }&#xD;
+    System.out.println(res);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4FMYoDBxEeiwnsGBcKNAhw" name="main" visibility="public" isStatic="true" method="_4FON0DBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4FM_sDBxEeiwnsGBcKNAhw" name="args" type="_ziqooDBxEeiwnsGBcKNAhw">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4FM_sTBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4FNmwDBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4FNmwTBxEeiwnsGBcKNAhw" name="BadParkingSlotCreationException" visibility="public">
+          <generalization xmi:type="uml:Generalization" xmi:id="_4FabEDBxEeiwnsGBcKNAhw" general="_4FVikDBxEeiwnsGBcKNAhw"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4FdeYDBxEeiwnsGBcKNAhw" name="serialVersionUID" visibility="private" isLeaf="true" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_4FfTkDBxEeiwnsGBcKNAhw" name="defaultValue">
+              <language>JAVA</language>
+              <body>1L</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4FkMEDBxEeiwnsGBcKNAhw" name="BadParkingSlotCreationException" specification="_4FghsDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+// TODO Auto-generated constructor stub&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4FxAYDBxEeiwnsGBcKNAhw" name="BadParkingSlotCreationException" specification="_4FqSsDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    super(&quot;Le type :&quot; + message + &quot;n'existe pas, veuillez inscrire parmis Free, Occupied, Broken&quot;);&#xD;
+// TODO Auto-generated constructor stub&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4FghsDBxEeiwnsGBcKNAhw" name="BadParkingSlotCreationException" visibility="public" method="_4FkMEDBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4FqSsDBxEeiwnsGBcKNAhw" name="BadParkingSlotCreationException" visibility="public" method="_4FxAYDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4FvLMDBxEeiwnsGBcKNAhw" name="message" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4GKpADBxEeiwnsGBcKNAhw" name="TimeState" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4PI-0DBxEeiwnsGBcKNAhw" name="occupied" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4PK0ADBxEeiwnsGBcKNAhw" name="start" visibility="private" type="_zl90QDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4PMCIDBxEeiwnsGBcKNAhw" name="end" visibility="private" type="_zl90QDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4PPFcDBxEeiwnsGBcKNAhw" name="getEnd" specification="_4PNQQDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return end;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4PTW4DBxEeiwnsGBcKNAhw" name="setEnd" specification="_4PQ6oDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.end = end;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4ParoDBxEeiwnsGBcKNAhw" name="TimeState" specification="_4PVMEDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+    this.occupied = occupied;&#xD;
+    this.start = start;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4PfkIDBxEeiwnsGBcKNAhw" name="isOccupied" specification="_4Pdu8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return occupied;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4PincDBxEeiwnsGBcKNAhw" name="getStart" specification="_4PgyQDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return start;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4PlqwDBxEeiwnsGBcKNAhw" name="setOccupied" specification="_4PkcoDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.occupied = occupied;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Pp8MDBxEeiwnsGBcKNAhw" name="setStart" specification="_4Pnf8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.start = start;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Ps_gDBxEeiwnsGBcKNAhw" name="toString" specification="_4PrKUDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return &quot;TimeState [occupied=&quot; + occupied + &quot;, start=&quot; + start + &quot;, end=&quot; + end + &quot;]&quot;;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4PNQQDBxEeiwnsGBcKNAhw" name="getEnd" visibility="public" method="_4PPFcDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4POeYDBxEeiwnsGBcKNAhw" type="_zl90QDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4PQ6oDBxEeiwnsGBcKNAhw" name="setEnd" visibility="public" method="_4PTW4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PSIwDBxEeiwnsGBcKNAhw" name="end" type="_zl90QDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4PVMEDBxEeiwnsGBcKNAhw" name="TimeState" visibility="public" method="_4ParoDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PY2cDBxEeiwnsGBcKNAhw" name="occupied">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PaEkDBxEeiwnsGBcKNAhw" name="start" type="_zl90QDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Pdu8DBxEeiwnsGBcKNAhw" name="isOccupied" visibility="public" method="_4PfkIDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PeWADBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4PgyQDBxEeiwnsGBcKNAhw" name="getStart" visibility="public" method="_4PincDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PiAYDBxEeiwnsGBcKNAhw" type="_zl90QDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4PkcoDBxEeiwnsGBcKNAhw" name="setOccupied" visibility="public" method="_4PlqwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PlDsDBxEeiwnsGBcKNAhw" name="occupied">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Pnf8DBxEeiwnsGBcKNAhw" name="setStart" visibility="public" method="_4Pp8MDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PouEDBxEeiwnsGBcKNAhw" name="start" type="_zl90QDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4PrKUDBxEeiwnsGBcKNAhw" name="toString" visibility="public" method="_4Ps_gDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4PsYcDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4HiiADBxEeiwnsGBcKNAhw" name="StationTest" visibility="public">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4HmzcDBxEeiwnsGBcKNAhw" name="testCalcul" specification="_4HjwIDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    Reseau res = Reseau.getInstance();&#xD;
+    Station stat = new Station(new ArrayList&lt;ParkingSlot>(), &quot;Plus&quot;, &quot;on service&quot;, new GPScoord(1, 1), null);&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(null, &quot;Free&quot;, stat);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(new Electrical(), &quot;Occupied&quot;, stat);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(new Mechanical(), &quot;Occupied&quot;, stat);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(new Mechanical(), &quot;Broken&quot;, stat);&#xD;
+    }&#xD;
+    stat.calcul();&#xD;
+    assertEquals(20, stat.getFreeBikes());&#xD;
+    assertEquals(10, stat.getFreeSlots());&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Hrr8DBxEeiwnsGBcKNAhw" name="testAvailableBike" specification="_4HoooDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    Reseau res = Reseau.getInstance();&#xD;
+    Station stat = new Station(new ArrayList&lt;ParkingSlot>(), &quot;Plus&quot;, &quot;on service&quot;, new GPScoord(1, 1), null);&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(null, &quot;Free&quot;, stat);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(new Electrical(), &quot;Occupied&quot;, stat);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(new Mechanical(), &quot;Occupied&quot;, stat);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(new Mechanical(), &quot;Broken&quot;, stat);&#xD;
+    }&#xD;
+    assertTrue(stat.availableBike(&quot;Electrical&quot;));&#xD;
+    assertTrue(stat.availableBike(&quot;Mechanical&quot;));&#xD;
+    assertTrue(stat.availableBike(null));&#xD;
+    assertFalse(stat.availableBike(&quot;hjgfdebh&quot;));&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Hv9YDBxEeiwnsGBcKNAhw" name="testAvailableParkingSlot" specification="_4HthIDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    Reseau res = Reseau.getInstance();&#xD;
+    Station stat = new Station(new ArrayList&lt;ParkingSlot>(), &quot;Plus&quot;, &quot;on service&quot;, new GPScoord(1, 1), null);&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(null, &quot;Free&quot;, stat);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(new Electrical(), &quot;Occupied&quot;, stat);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(new Mechanical(), &quot;Occupied&quot;, stat);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new ParkingSlot(new Mechanical(), &quot;Broken&quot;, stat);&#xD;
+    }&#xD;
+    stat.calcul();&#xD;
+    assertEquals(10, stat.getFreeSlots());&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4H0O0DBxEeiwnsGBcKNAhw" name="testNumberOfRentsOperation" specification="_4HxykDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    Reseau res = Reseau.getInstance();&#xD;
+    User user = new User(&quot;Paul&quot;, &quot;Jacque&quot;);&#xD;
+    Location loc;&#xD;
+    Station stat = new Station(new ArrayList&lt;ParkingSlot>(), &quot;Plus&quot;, &quot;on service&quot;, new GPScoord(1, 1), null);&#xD;
+    Station stat1 = new Station(new ArrayList&lt;ParkingSlot>(), &quot;Plus&quot;, &quot;on service&quot;, new GPScoord(2, 2), null);&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new Location(user, stat);&#xD;
+        loc = new Location(user, stat1);&#xD;
+        loc.setHasStarted(false);&#xD;
+    }&#xD;
+    assertEquals(10, stat.numberOfRentsOperation());&#xD;
+    assertEquals(0, stat1.numberOfRentsOperation());&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4H5uYDBxEeiwnsGBcKNAhw" name="testNumberOfReturnOperation" specification="_4H3SIDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    Reseau res = Reseau.getInstance();&#xD;
+    User user = new User(&quot;Paul&quot;, &quot;Jacque&quot;);&#xD;
+    Location loc;&#xD;
+    Station stat = new Station(new ArrayList&lt;ParkingSlot>(), &quot;Plus&quot;, &quot;on service&quot;, new GPScoord(1, 1), null);&#xD;
+    Station stat1 = new Station(new ArrayList&lt;ParkingSlot>(), &quot;Plus&quot;, &quot;on service&quot;, new GPScoord(2, 2), null);&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new Location(user, stat);&#xD;
+        loc = new Location(user, stat1);&#xD;
+        loc.setArrival(stat);&#xD;
+        loc.setHasEnded(true);&#xD;
+    }&#xD;
+    for (int i = 0; i &lt; 10; i++) {&#xD;
+        new Location(user, stat);&#xD;
+        loc = new Location(user, stat1);&#xD;
+    }&#xD;
+    assertEquals(10, stat.numberOfReturnOperation());&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4H-m4DBxEeiwnsGBcKNAhw" name="testGetRateOfOccupation" specification="_4H8xsDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    fail(&quot;Not yet implemented&quot;);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HjwIDBxEeiwnsGBcKNAhw" name="testCalcul" visibility="public" method="_4HmzcDBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HoooDBxEeiwnsGBcKNAhw" name="testAvailableBike" visibility="public" method="_4Hrr8DBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HthIDBxEeiwnsGBcKNAhw" name="testAvailableParkingSlot" visibility="public" method="_4Hv9YDBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4HxykDBxEeiwnsGBcKNAhw" name="testNumberOfRentsOperation" visibility="public" method="_4H0O0DBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4H3SIDBxEeiwnsGBcKNAhw" name="testNumberOfReturnOperation" visibility="public" method="_4H5uYDBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4H8xsDBxEeiwnsGBcKNAhw" name="testGetRateOfOccupation" visibility="public" method="_4H-m4DBxEeiwnsGBcKNAhw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4IDfYDBxEeiwnsGBcKNAhw" name="LocationTest" visibility="public">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4IHJwDBxEeiwnsGBcKNAhw" name="testTakeBike" specification="_4IEtgDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    User user = new User(&quot;Jean&quot;, &quot;Paul&quot;);&#xD;
+    Reseau res = Reseau.getInstance();&#xD;
+    for (int i = 1; i &lt;= 3; i++) {&#xD;
+        res.addStation(new Station(new ArrayList&lt;ParkingSlot>(), &quot;Standard&quot;, &quot;on service&quot;, new GPScoord(i, i), null));&#xD;
+        for (int j = 1; j &lt;= 10; j++) {&#xD;
+            res.getStationList().get(i - 1).addParkingSlot(new ParkingSlot(new Electrical(), &quot;Occupied&quot;, res.getStationList().get(i - 1)));&#xD;
+        }&#xD;
+        res.getStationList().get(i - 1).addParkingSlot(new ParkingSlot(new Mechanical(), &quot;Occupied&quot;, res.getStationList().get(i - 1)));&#xD;
+    }&#xD;
+    Location loc1 = new Location(user, res.getStationList().get(0));&#xD;
+    loc1.takeBike(res.getStationList().get(0), &quot;Mechanical&quot;);&#xD;
+    assertNotEquals(null, loc1.getBike());&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4IQ6wDBxEeiwnsGBcKNAhw" name="testReturnBike" specification="_4IK0IDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    User user = new User(&quot;Jean&quot;, &quot;Paul&quot;);&#xD;
+    Reseau res = Reseau.getInstance();&#xD;
+    for (int i = 1; i &lt;= 3; i++) {&#xD;
+        res.addStation(new Station(new ArrayList&lt;ParkingSlot>(), &quot;Standard&quot;, &quot;on service&quot;, new GPScoord(i, i), null));&#xD;
+        for (int j = 1; j &lt;= 10; j++) {&#xD;
+            res.getStationList().get(i - 1).addParkingSlot(new ParkingSlot(new Electrical(), &quot;Occupied&quot;, res.getStationList().get(i - 1)));&#xD;
+        }&#xD;
+        res.getStationList().get(i - 1).addParkingSlot(new ParkingSlot(new Mechanical(), &quot;Occupied&quot;, res.getStationList().get(i - 1)));&#xD;
+    }&#xD;
+    Location loc1 = new Location(user, res.getStationList().get(0));&#xD;
+    loc1.takeBike(res.getStationList().get(0), &quot;Electrical&quot;);&#xD;
+    loc1.returnBike(res.getStationList().get(0));&#xD;
+    assertEquals(null, loc1.getBike());&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4IEtgDBxEeiwnsGBcKNAhw" name="testTakeBike" visibility="public" method="_4IHJwDBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4IK0IDBxEeiwnsGBcKNAhw" name="testReturnBike" visibility="public" method="_4IQ6wDBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _4IMCQDBxEeiwnsGBcKNAhw _zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4IMCQDBxEeiwnsGBcKNAhw" name="InterruptedException"/>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4IVMMDBxEeiwnsGBcKNAhw" name="setup" visibility="public">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Ib54DBxEeiwnsGBcKNAhw" name="startMyVelib" specification="_4IWaUDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    Reseau res = Reseau.getInstance();&#xD;
+    Station statTempo;&#xD;
+    if (n > 0 &amp;&amp; m > 0) {&#xD;
+        for (int i = 0; i &lt; n; i++) {&#xD;
+            statTempo = new Station(&quot;Standard&quot;, &quot;on service&quot;, new GPScoord(i, i), &quot;Station&quot; + i);&#xD;
+            for (int z = 0; z &lt; 0.3 * m; z++) {&#xD;
+                new ParkingSlot(null, &quot;Free&quot;, statTempo);&#xD;
+            }&#xD;
+            for (int z = 0; z &lt; m - ((int) (0.3 * m) + 1); z++) {&#xD;
+                if (z &lt; 0.3 * (m - ((int) (0.3 * m) + 1))) {&#xD;
+                    new ParkingSlot(new Electrical(), &quot;Occupied&quot;, statTempo);&#xD;
+                } else {&#xD;
+                    new ParkingSlot(new Mechanical(), &quot;Occupied&quot;, statTempo);&#xD;
+                }&#xD;
+            }&#xD;
+        }&#xD;
+    } else {&#xD;
+        System.out.println(&quot;Veulliez mettre des données valides&quot;);&#xD;
+    }&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4IWaUDBxEeiwnsGBcKNAhw" name="startMyVelib" visibility="public" isStatic="true" method="_4Ib54DBxEeiwnsGBcKNAhw" raisedException="_zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _4FNmwTBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4IXocDBxEeiwnsGBcKNAhw" name="n">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4IY2kDBxEeiwnsGBcKNAhw" name="m">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4Jg38DBxEeiwnsGBcKNAhw" name="User" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4JitIDBxEeiwnsGBcKNAhw" name="name" visibility="private" type="_ziqooDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4JkiUDBxEeiwnsGBcKNAhw" name="firstName" visibility="private" type="_ziqooDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4JmXgDBxEeiwnsGBcKNAhw" name="userID" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4JoMsDBxEeiwnsGBcKNAhw" name="rideNumber" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4Jpa0DBxEeiwnsGBcKNAhw" name="totalTime" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4Jr3EDBxEeiwnsGBcKNAhw" name="totalCharges" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4Ju6YDBxEeiwnsGBcKNAhw" name="earnedCredits" visibility="private" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4JxWoDBxEeiwnsGBcKNAhw" name="IDCount" visibility="private" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_4JzL0DBxEeiwnsGBcKNAhw" name="defaultValue">
+              <language>JAVA</language>
+              <body>444000000</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4J1BADBxEeiwnsGBcKNAhw" name="loc" visibility="private" type="_zjOCQDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4J7HoDBxEeiwnsGBcKNAhw" name="card" visibility="private" type="_4J3dQDBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4J880DBxEeiwnsGBcKNAhw" name="position" visibility="private" type="_zi2O0DBxEeiwnsGBcKNAhw" isUnique="false"/>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4J-yADBxEeiwnsGBcKNAhw" name="userSpeed" visibility="private" isStatic="true" isUnique="false">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_4KAAIDBxEeiwnsGBcKNAhw" name="defaultValue">
+              <language>JAVA</language>
+              <body>5</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4KMNYDBxEeiwnsGBcKNAhw" name="User" specification="_4KDqgDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.userID = IDCount;&#xD;
+    IDCount++;&#xD;
+    this.firstName = firstName;&#xD;
+    this.name = name;&#xD;
+    this.loc = null;&#xD;
+    this.card = new NoCard();&#xD;
+    Reseau.getInstance().addUser(this);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4KOpoDBxEeiwnsGBcKNAhw" name="getStatistics" specification="_4KOCkDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    System.out.println(&quot;User &quot; + userID + &quot;: &quot; + firstName + &quot; &quot; + name);&#xD;
+    System.out.println(&quot;Number of locations: &quot; + rideNumber);&#xD;
+    System.out.println(&quot;Total location time: &quot; + totalTime + &quot; minutes&quot;);&#xD;
+    System.out.println(&quot;Total charges payed: &quot; + totalCharges + &quot;€&quot;);&#xD;
+    System.out.println(&quot;Earned Credits: &quot; + earnedCredits + &quot; minutes&quot;);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4KRF4DBxEeiwnsGBcKNAhw" name="subscribeVlibre" specification="_4KQe0DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.card = new VlibreCard();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4KUJMDBxEeiwnsGBcKNAhw" name="subscribeVmax" specification="_4KS7EDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.card = new VmaxCard();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4KZowDBxEeiwnsGBcKNAhw" name="getName" specification="_4KVXUDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return name;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Kd6MDBxEeiwnsGBcKNAhw" name="setName" specification="_4Kbd8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.name = name;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4KhkkDBxEeiwnsGBcKNAhw" name="getFirstName" specification="_4KfvYDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return firstName;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4KkA0DBxEeiwnsGBcKNAhw" name="setFirstName" specification="_4KiLoDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.firstName = firstName;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4KnrMDBxEeiwnsGBcKNAhw" name="getUserID" specification="_4Kl2ADBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return userID;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4KtKwDBxEeiwnsGBcKNAhw" name="setUserID" specification="_4KpgYDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.userID = userID;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Kw1IDBxEeiwnsGBcKNAhw" name="getRideNumber" specification="_4Ku_8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return rideNumber;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4K0fgDBxEeiwnsGBcKNAhw" name="setRideNumber" specification="_4KyDQDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.rideNumber = rideNumber;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4K3i0DBxEeiwnsGBcKNAhw" name="getTotalTime" specification="_4K2UsDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return totalTime;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4K7NMDBxEeiwnsGBcKNAhw" name="setTotalTime" specification="_4K5YADBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.totalTime = totalTime;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4K-3kDBxEeiwnsGBcKNAhw" name="getTotalCharges" specification="_4K8bUDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return totalCharges;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LEXIDBxEeiwnsGBcKNAhw" name="setTotalCharges" specification="_4LCh8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.totalCharges = totalCharges;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LHacDBxEeiwnsGBcKNAhw" name="getEarnedCredits" specification="_4LFlQDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return earnedCredits;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LLr4DBxEeiwnsGBcKNAhw" name="setEarnedCredits" specification="_4LJ2sDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.earnedCredits = earnedCredits;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LPWQDBxEeiwnsGBcKNAhw" name="getLoc" specification="_4LNhEDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return loc;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LTnsDBxEeiwnsGBcKNAhw" name="setLocation" specification="_4LQkYDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.loc = loc;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LYgMDBxEeiwnsGBcKNAhw" name="getCard" specification="_4LWrADBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return card;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LcxoDBxEeiwnsGBcKNAhw" name="setCard" specification="_4LaVYDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.card = card;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LgcADBxEeiwnsGBcKNAhw" name="getPosition" specification="_4Lem0DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return position;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LjfUDBxEeiwnsGBcKNAhw" name="setPosition" specification="_4LhqIDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.position = position;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4Ll7kDBxEeiwnsGBcKNAhw" name="toString" specification="_4LktcDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return &quot;User &quot; + userID;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LspQDBxEeiwnsGBcKNAhw" name="equals" specification="_4Lo-4DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    User user;&#xD;
+    if (obj instanceof User) {&#xD;
+        user = (User) obj;&#xD;
+        return (user.getUserID() == this.userID);&#xD;
+    }&#xD;
+    return (false);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4LvskDBxEeiwnsGBcKNAhw" name="getUserSpeed" specification="_4Lt3YDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return userSpeed;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4KDqgDBxEeiwnsGBcKNAhw" name="User" visibility="public" method="_4KMNYDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KIjADBxEeiwnsGBcKNAhw" name="name" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KKYMDBxEeiwnsGBcKNAhw" name="firstName" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4KOCkDBxEeiwnsGBcKNAhw" name="getStatistics" visibility="public" method="_4KOpoDBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4KQe0DBxEeiwnsGBcKNAhw" name="subscribeVlibre" visibility="public" method="_4KRF4DBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4KS7EDBxEeiwnsGBcKNAhw" name="subscribeVmax" visibility="public" method="_4KUJMDBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4KVXUDBxEeiwnsGBcKNAhw" name="getName" visibility="public" method="_4KZowDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KYaoDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Kbd8DBxEeiwnsGBcKNAhw" name="setName" visibility="public" method="_4Kd6MDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KcsEDBxEeiwnsGBcKNAhw" name="name" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4KfvYDBxEeiwnsGBcKNAhw" name="getFirstName" visibility="public" method="_4KhkkDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Kg9gDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4KiLoDBxEeiwnsGBcKNAhw" name="setFirstName" visibility="public" method="_4KkA0DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KjZwDBxEeiwnsGBcKNAhw" name="firstName" type="_ziqooDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Kl2ADBxEeiwnsGBcKNAhw" name="getUserID" visibility="public" method="_4KnrMDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KmdEDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4KpgYDBxEeiwnsGBcKNAhw" name="setUserID" visibility="public" method="_4KtKwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KrVkDBxEeiwnsGBcKNAhw" name="userID">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_8heigBydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Ku_8DBxEeiwnsGBcKNAhw" name="getRideNumber" visibility="public" method="_4Kw1IDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KvnADBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4KyDQDBxEeiwnsGBcKNAhw" name="setRideNumber" visibility="public" method="_4K0fgDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4KzRYDBxEeiwnsGBcKNAhw" name="rideNumber">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4K2UsDBxEeiwnsGBcKNAhw" name="getTotalTime" visibility="public" method="_4K3i0DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4K27wDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4K5YADBxEeiwnsGBcKNAhw" name="setTotalTime" visibility="public" method="_4K7NMDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4K5_EDBxEeiwnsGBcKNAhw" name="totalTime">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4K8bUDBxEeiwnsGBcKNAhw" name="getTotalCharges" visibility="public" method="_4K-3kDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4K9pcDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4LCh8DBxEeiwnsGBcKNAhw" name="setTotalCharges" visibility="public" method="_4LEXIDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LDJADBxEeiwnsGBcKNAhw" name="totalCharges">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4LFlQDBxEeiwnsGBcKNAhw" name="getEarnedCredits" visibility="public" method="_4LHacDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LGzYDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4LJ2sDBxEeiwnsGBcKNAhw" name="setEarnedCredits" visibility="public" method="_4LLr4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LLE0DBxEeiwnsGBcKNAhw" name="earnedCredits">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_7wRIABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4LNhEDBxEeiwnsGBcKNAhw" name="getLoc" visibility="public" method="_4LPWQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LOIIDBxEeiwnsGBcKNAhw" type="_zjOCQDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4LQkYDBxEeiwnsGBcKNAhw" name="setLocation" visibility="public" method="_4LTnsDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LSZkDBxEeiwnsGBcKNAhw" name="loc" type="_zjOCQDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4LWrADBxEeiwnsGBcKNAhw" name="getCard" visibility="public" method="_4LYgMDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LX5IDBxEeiwnsGBcKNAhw" type="_4J3dQDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4LaVYDBxEeiwnsGBcKNAhw" name="setCard" visibility="public" method="_4LcxoDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LbjgDBxEeiwnsGBcKNAhw" name="card" type="_4J3dQDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Lem0DBxEeiwnsGBcKNAhw" name="getPosition" visibility="public" method="_4LgcADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LfN4DBxEeiwnsGBcKNAhw" type="_zi2O0DBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4LhqIDBxEeiwnsGBcKNAhw" name="setPosition" visibility="public" method="_4LjfUDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4Li4QDBxEeiwnsGBcKNAhw" name="position" type="_zi2O0DBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4LktcDBxEeiwnsGBcKNAhw" name="toString" visibility="public" method="_4Ll7kDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LlUgDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Lo-4DBxEeiwnsGBcKNAhw" name="equals" visibility="public" method="_4LspQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LqNADBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_vAIV4I7PEdySGvm5GN66HA"/>
+            </ownedParameter>
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LrbIDBxEeiwnsGBcKNAhw" name="obj" type="_zlmn4DBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Lt3YDBxEeiwnsGBcKNAhw" name="getUserSpeed" visibility="public" isStatic="true" method="_4LvskDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4LvFgDBxEeiwnsGBcKNAhw" direction="return">
+              <type xmi:type="uml:PrimitiveType" href="pathmap://PapyrusJava_LIBRARIES/JavaLibrary.uml#_6j0jABydEduyofBvg4RL2w"/>
+            </ownedParameter>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Interface" xmi:id="_4L1zMDBxEeiwnsGBcKNAhw" name="Observer" visibility="public">
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4k5MYDBxEeiwnsGBcKNAhw" name="updateArrival" visibility="public" raisedException="_zk3BADBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4n42ADBxEeiwnsGBcKNAhw" name="arrival" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4OamEDBxEeiwnsGBcKNAhw" name="ParkingSlotTest" visibility="public">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OdpYDBxEeiwnsGBcKNAhw" name="testGetBike" specification="_4Ob0MDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    @SuppressWarnings(&quot;unused&quot;) Bicycle b1 = BicycleFactory.bike(&quot;MEchanical&quot;);&#xD;
+    @SuppressWarnings(&quot;unused&quot;) Bicycle b2 = BicycleFactory.bike(&quot;Electrical&quot;);&#xD;
+    ParkingSlot pS = new ParkingSlot(BicycleFactory.bike(&quot;Mechanical&quot;), &quot;Occupied&quot;, new Station(&quot;Standard&quot;, &quot;on service&quot;, new GPScoord(0, 0), null));&#xD;
+    Bicycle b3 = pS.retrieveBike();&#xD;
+    assertEquals(b3.getBikeID(), 4);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OjI8DBxEeiwnsGBcKNAhw" name="testStoreBike" specification="_4OgssDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    Bicycle b5 = BicycleFactory.bike(&quot;Electrical&quot;);&#xD;
+    ParkingSlot pS = new ParkingSlot(null, &quot;Free&quot;, new Station(&quot;Standard&quot;, &quot;on service&quot;, new GPScoord(0, 0), null));&#xD;
+    pS.storeBike(b5);&#xD;
+    assertEquals(pS.getBicycle().getBikeID(), 1);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4OrEwDBxEeiwnsGBcKNAhw" name="testGetTimeOccupied" specification="_4OkXEDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    ParkingSlot pS = new ParkingSlot(null, &quot;Occupied&quot;, new Station(&quot;Standard&quot;, &quot;on service&quot;, new GPScoord(0, 0), null));&#xD;
+    String string = &quot;2018.03.25 AD at 12:08:56 PDT&quot;;&#xD;
+    String string2 = &quot;2018.03.25 AD at 12:38:56 PDT&quot;;&#xD;
+    String string3 = &quot;2018.03.25 AD at 15:38:56 PDT&quot;;&#xD;
+    String string4 = &quot;2018.03.25 AD at 16:39:56 PDT&quot;;&#xD;
+    DateFormat format = new SimpleDateFormat(&quot;yyyy.MM.dd G 'at' HH:mm:ss z&quot;, Locale.ENGLISH);&#xD;
+    Date datestart = format.parse(string);&#xD;
+    Date dateend = format.parse(string2);&#xD;
+    //Date dateend2 = format.parse(string3);&#xD;
+    Date dateend3 = format.parse(string4);&#xD;
+    pS.getHistory().add(new TimeState(true, datestart));&#xD;
+    pS.getHistory().get(0).setEnd(dateend);&#xD;
+    //pS.getHistory().add(new TimeState(true,dateend));&#xD;
+    //pS.getHistory().get(1).setEnd(dateend2);&#xD;
+    //pS.getHistory().add(new TimeState(true,dateend2));&#xD;
+    //pS.getHistory().get(2).setEnd(dateend3);&#xD;
+    assertEquals(pS.getTimeOccupied(datestart, dateend3), 30);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4Ob0MDBxEeiwnsGBcKNAhw" name="testGetBike" visibility="public" method="_4OdpYDBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4OgssDBxEeiwnsGBcKNAhw" name="testStoreBike" visibility="public" method="_4OjI8DBxEeiwnsGBcKNAhw" raisedException="_4FNmwTBxEeiwnsGBcKNAhw _zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4OkXEDBxEeiwnsGBcKNAhw" name="testGetTimeOccupied" visibility="public" method="_4OrEwDBxEeiwnsGBcKNAhw" raisedException="_4OmMQDBxEeiwnsGBcKNAhw _4FNmwTBxEeiwnsGBcKNAhw _zjnD0DBxEeiwnsGBcKNAhw _zjsjYDBxEeiwnsGBcKNAhw _zk3BADBxEeiwnsGBcKNAhw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4O_04DBxEeiwnsGBcKNAhw" name="GPScoordTest" visibility="public">
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4PBqEDBxEeiwnsGBcKNAhw" name="testGetDistance" specification="_4PBDADBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    GPScoord pointA = new GPScoord(1, 1);&#xD;
+    GPScoord pointB = new GPScoord(2, 2);&#xD;
+    assertEquals(Math.sqrt(2), pointA.getDistance(pointB), 0.0001);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4PEGUDBxEeiwnsGBcKNAhw" name="testGetDistance2" specification="_4PDfQDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    GPScoord pointA = new GPScoord(1, 1);&#xD;
+    GPScoord pointB = new GPScoord(1, 1);&#xD;
+    assertEquals(0, pointA.getDistance(pointB), 0.0001);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4PBDADBxEeiwnsGBcKNAhw" name="testGetDistance" visibility="public" method="_4PBqEDBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4PDfQDBxEeiwnsGBcKNAhw" name="testGetDistance2" visibility="public" method="_4PEGUDBxEeiwnsGBcKNAhw"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Class" xmi:id="_4uyvQDBxEeiwnsGBcKNAhw" name="Reseau" visibility="public">
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4uz9YDBxEeiwnsGBcKNAhw" name="stationList" visibility="protected" type="_ziS1MDBxEeiwnsGBcKNAhw" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4u0kcDBxEeiwnsGBcKNAhw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4u1LgDBxEeiwnsGBcKNAhw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4u2ZoDBxEeiwnsGBcKNAhw" name="userList" visibility="protected" type="_4Jg38DBxEeiwnsGBcKNAhw" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4u3nwDBxEeiwnsGBcKNAhw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4u3nwTBxEeiwnsGBcKNAhw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4u414DBxEeiwnsGBcKNAhw" name="locationList" visibility="protected" type="_zjOCQDBxEeiwnsGBcKNAhw" isUnique="false">
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4u6EADBxEeiwnsGBcKNAhw"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4u6rEDBxEeiwnsGBcKNAhw" value="*"/>
+          </ownedAttribute>
+          <ownedAttribute xmi:type="uml:Property" xmi:id="_4u7SIDBxEeiwnsGBcKNAhw" name="instance" visibility="private" isStatic="true" type="_4uyvQDBxEeiwnsGBcKNAhw" isUnique="false">
+            <defaultValue xmi:type="uml:OpaqueExpression" xmi:id="_4u8gQDBxEeiwnsGBcKNAhw" name="defaultValue">
+              <language>JAVA</language>
+              <body>null</body>
+            </defaultValue>
+          </ownedAttribute>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vBYwDBxEeiwnsGBcKNAhw" name="Reseau" specification="_4u9HUDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    super();&#xD;
+    this.stationList = new ArrayList&lt;Station>();&#xD;
+    this.userList = new ArrayList&lt;User>();&#xD;
+    this.locationList = new ArrayList&lt;Location>();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vFDIDBxEeiwnsGBcKNAhw" name="getInstance" specification="_4vDN8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    if (instance == null) {&#xD;
+        instance = new Reseau();&#xD;
+    }&#xD;
+    return instance;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vHfYDBxEeiwnsGBcKNAhw" name="resetReseau" specification="_4vGRQDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    this.stationList = new ArrayList&lt;Station>();&#xD;
+    this.userList = new ArrayList&lt;User>();&#xD;
+    this.locationList = new ArrayList&lt;Location>();&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vMX4DBxEeiwnsGBcKNAhw" name="getStationList" specification="_4vItgDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return stationList;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vQCQTBxEeiwnsGBcKNAhw" name="getUserList" specification="_4vONEDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return userList;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vUTsDBxEeiwnsGBcKNAhw" name="getLocationList" specification="_4vR3cDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return locationList;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vYlIDBxEeiwnsGBcKNAhw" name="addStation" specification="_4vWv8DBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    stationList.add(station);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vbocDBxEeiwnsGBcKNAhw" name="addUser" specification="_4vZzQDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    userList.add(user);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vfS0DBxEeiwnsGBcKNAhw" name="addLocation" specification="_4vddoDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    locationList.add(loc);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4viWIDBxEeiwnsGBcKNAhw" name="removeStation" specification="_4vhIADBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    stationList.remove(station);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vlZcDBxEeiwnsGBcKNAhw" name="removeUser" specification="_4vjkQDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    userList.remove(user);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vocwDBxEeiwnsGBcKNAhw" name="removeLocation" specification="_4vmnkDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    locationList.remove(loc);&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vsuMDBxEeiwnsGBcKNAhw" name="toString" specification="_4vq5ADBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    return &quot;Reseau [stationList=&quot; + stationList + &quot;, userList=&quot; + userList + &quot;, locationList=&quot; + locationList + &quot;]&quot;;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4vwYkDBxEeiwnsGBcKNAhw" name="getPlusStationList" specification="_4vt8UDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    ArrayList&lt;Station> plusList = new ArrayList&lt;Station>();&#xD;
+    for (Station s : stationList) {&#xD;
+        if (s.getTypeStation().equalsIgnoreCase(&quot;Plus&quot;)) {&#xD;
+            plusList.add(s);&#xD;
+        }&#xD;
+    }&#xD;
+    return plusList;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4v1REDBxEeiwnsGBcKNAhw" name="getStandardStationList" specification="_4vyNwDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    ArrayList&lt;Station> standardList = new ArrayList&lt;Station>();&#xD;
+    for (Station s : stationList) {&#xD;
+        if (s.getTypeStation().equalsIgnoreCase(&quot;Standard&quot;)) {&#xD;
+            standardList.add(s);&#xD;
+        }&#xD;
+    }&#xD;
+    return standardList;&#xD;
+</body>
+          </ownedBehavior>
+          <ownedBehavior xmi:type="uml:OpaqueBehavior" xmi:id="_4v9z8DBxEeiwnsGBcKNAhw" name="SortStation" specification="_4v6woDBxEeiwnsGBcKNAhw">
+            <language>JAVA</language>
+            <body>&#xD;
+    Sm.sortStation(getStationList());&#xD;
+</body>
+          </ownedBehavior>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4u9HUDBxEeiwnsGBcKNAhw" name="Reseau" visibility="private" method="_4vBYwDBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vDN8DBxEeiwnsGBcKNAhw" name="getInstance" visibility="public" isStatic="true" method="_4vFDIDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vEcEDBxEeiwnsGBcKNAhw" type="_4uyvQDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vGRQDBxEeiwnsGBcKNAhw" name="resetReseau" visibility="public" method="_4vHfYDBxEeiwnsGBcKNAhw"/>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vItgDBxEeiwnsGBcKNAhw" name="getStationList" visibility="public" method="_4vMX4DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vJ7oDBxEeiwnsGBcKNAhw" type="_ziS1MDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4vLJwDBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4vLw0DBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vONEDBxEeiwnsGBcKNAhw" name="getUserList" visibility="public" method="_4vQCQTBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vO0IDBxEeiwnsGBcKNAhw" type="_4Jg38DBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4vPbMDBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4vQCQDBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vR3cDBxEeiwnsGBcKNAhw" name="getLocationList" visibility="public" method="_4vUTsDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vSegDBxEeiwnsGBcKNAhw" type="_zjOCQDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4vTFkDBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4vTsoDBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vWv8DBxEeiwnsGBcKNAhw" name="addStation" visibility="public" method="_4vYlIDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vX-EDBxEeiwnsGBcKNAhw" name="station" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vZzQDBxEeiwnsGBcKNAhw" name="addUser" visibility="public" method="_4vbocDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vbBYDBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vddoDBxEeiwnsGBcKNAhw" name="addLocation" visibility="public" method="_4vfS0DBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4verwDBxEeiwnsGBcKNAhw" name="loc" type="_zjOCQDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vhIADBxEeiwnsGBcKNAhw" name="removeStation" visibility="public" method="_4viWIDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vhvEDBxEeiwnsGBcKNAhw" name="station" type="_ziS1MDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vjkQDBxEeiwnsGBcKNAhw" name="removeUser" visibility="public" method="_4vlZcDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vkyYDBxEeiwnsGBcKNAhw" name="user" type="_4Jg38DBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vmnkDBxEeiwnsGBcKNAhw" name="removeLocation" visibility="public" method="_4vocwDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vn1sDBxEeiwnsGBcKNAhw" name="loc" type="_zjOCQDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vq5ADBxEeiwnsGBcKNAhw" name="toString" visibility="public" method="_4vsuMDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vrgEDBxEeiwnsGBcKNAhw" type="_ziqooDBxEeiwnsGBcKNAhw" direction="return"/>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vt8UDBxEeiwnsGBcKNAhw" name="getPlusStationList" visibility="public" method="_4vwYkDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vujYDBxEeiwnsGBcKNAhw" type="_ziS1MDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4vvKcDBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4vvxgDBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4vyNwDBxEeiwnsGBcKNAhw" name="getStandardStationList" visibility="public" method="_4v1REDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4vzb4DBxEeiwnsGBcKNAhw" type="_ziS1MDBxEeiwnsGBcKNAhw" direction="return">
+              <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4v0qADBxEeiwnsGBcKNAhw"/>
+              <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4v0qATBxEeiwnsGBcKNAhw" value="*"/>
+            </ownedParameter>
+          </ownedOperation>
+          <ownedOperation xmi:type="uml:Operation" xmi:id="_4v6woDBxEeiwnsGBcKNAhw" name="SortStation" visibility="public" method="_4v9z8DBxEeiwnsGBcKNAhw" raisedException="_4OmMQDBxEeiwnsGBcKNAhw">
+            <ownedParameter xmi:type="uml:Parameter" xmi:id="_4v7-wDBxEeiwnsGBcKNAhw" name="Sm" type="_4v3tUDBxEeiwnsGBcKNAhw"/>
+          </ownedOperation>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_zioMYDBxEeiwnsGBcKNAhw" name="java">
+      <packagedElement xmi:type="uml:Package" xmi:id="_ziozcDBxEeiwnsGBcKNAhw" name="java">
+        <packagedElement xmi:type="uml:Package" xmi:id="_ziqBkDBxEeiwnsGBcKNAhw" name="lang">
+          <packagedElement xmi:type="uml:Class" xmi:id="_ziqooDBxEeiwnsGBcKNAhw" name="String"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_zlmn4DBxEeiwnsGBcKNAhw" name="Object"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4FVikDBxEeiwnsGBcKNAhw" name="Exception"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_zl8mIDBxEeiwnsGBcKNAhw" name="util">
+          <packagedElement xmi:type="uml:Class" xmi:id="_zl90QDBxEeiwnsGBcKNAhw" name="Date"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_4OllMDBxEeiwnsGBcKNAhw" name="text">
+          <packagedElement xmi:type="uml:Class" xmi:id="_4OmMQDBxEeiwnsGBcKNAhw" name="ParseException"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_zk1L0DBxEeiwnsGBcKNAhw" name="importedTypes">
+      <packagedElement xmi:type="uml:Package" xmi:id="_zk1y4DBxEeiwnsGBcKNAhw" name="myVelib">
+        <packagedElement xmi:type="uml:Package" xmi:id="_zk2Z8DBxEeiwnsGBcKNAhw" name="ridePolicies">
+          <packagedElement xmi:type="uml:Class" xmi:id="_zk3BADBxEeiwnsGBcKNAhw" name="NoEndStationAvailableException"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4MIuIDBxEeiwnsGBcKNAhw" name="RidePolicy"/>
+          <packagedElement xmi:type="uml:Class" xmi:id="_4MYlwDBxEeiwnsGBcKNAhw" name="NoStartStationAvailableException"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_4GCtMDBxEeiwnsGBcKNAhw" name="Bicycle">
+          <packagedElement xmi:type="uml:Class" xmi:id="_4GEiYDBxEeiwnsGBcKNAhw" name="Bicycle"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_4J2PIDBxEeiwnsGBcKNAhw" name="Card">
+          <packagedElement xmi:type="uml:Class" xmi:id="_4J3dQDBxEeiwnsGBcKNAhw" name="Card"/>
+        </packagedElement>
+        <packagedElement xmi:type="uml:Package" xmi:id="_4v3GQDBxEeiwnsGBcKNAhw" name="SortingStations">
+          <packagedElement xmi:type="uml:Class" xmi:id="_4v3tUDBxEeiwnsGBcKNAhw" name="SortingMethods"/>
+        </packagedElement>
+      </packagedElement>
+    </packagedElement>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_wr6TYDBwEeiwnsGBcKNAhw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wr8voDBwEeiwnsGBcKNAhw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/PapyrusJava/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://PapyrusJava_PROFILES/PapyrusJava.profile.uml#_j9REUByGEduN1bTiWJ0lyw"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_wsbQwDBwEeiwnsGBcKNAhw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wsb30DBwEeiwnsGBcKNAhw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/papyrus/Codegen/1#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://Codegen_PROFILES/Codegen.profile.uml#_fPDsIBa-EearhdjjJ6cVzQ"/>
+    </profileApplication>
+    <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_wsm28DBwEeiwnsGBcKNAhw">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_wsoFEDBwEeiwnsGBcKNAhw" source="http://www.eclipse.org/uml2/2.0.0/UML">
+        <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard#/"/>
+      </eAnnotations>
+      <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/Standard.profile.uml#_0"/>
+    </profileApplication>
+  </uml:Model>
+  <PapyrusJava:External xmi:id="_ziXtsDBxEeiwnsGBcKNAhw" name="Observable" base_Classifier="_ziUDUDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_zihesDBxEeiwnsGBcKNAhw" name="ParkingSlot" base_Classifier="_ziebYDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_ziu6EDBxEeiwnsGBcKNAhw" name="java.lang.String" base_Classifier="_ziqooDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_zi6gQDBxEeiwnsGBcKNAhw" name="GPScoord" base_Classifier="_zi2O0DBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_zjRFkDBxEeiwnsGBcKNAhw" name="Location" base_Classifier="_zjOCQDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_zjbdoDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_zjYaUDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_zjpgEDBxEeiwnsGBcKNAhw" name="BadStateStationCreationException" base_Classifier="_zjnD0DBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_zju_oDBxEeiwnsGBcKNAhw" name="BadTypeStationCreationException" base_Classifier="_zjsjYDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_zj1tUDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_zjzREDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_zk5dQDBxEeiwnsGBcKNAhw" name="myVelib.ridePolicies.NoEndStationAvailableException" base_Classifier="_zk3BADBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_zlpEIDBxEeiwnsGBcKNAhw" name="java.lang.Object" base_Classifier="_zlmn4DBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_zl_pcDBxEeiwnsGBcKNAhw" name="java.util.Date" base_Classifier="_zl90QDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_4FZM8DBxEeiwnsGBcKNAhw" name="java.lang.Exception" base_Classifier="_4FVikDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4Fi98DBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4FghsDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4Fsu8DBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4FqSsDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_4GG-oDBxEeiwnsGBcKNAhw" name="myVelib.Bicycle.Bicycle" base_Classifier="_4GEiYDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4GWPMDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4GTy8DBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_4IOegDBxEeiwnsGBcKNAhw" name="InterruptedException" base_Classifier="_4IMCQDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_4J55gDBxEeiwnsGBcKNAhw" name="myVelib.Card.Card" base_Classifier="_4J3dQDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4KGGwDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4KDqgDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_4MLKYDBxEeiwnsGBcKNAhw" name="myVelib.ridePolicies.RidePolicy" base_Classifier="_4MIuIDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4MQC4DBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4MNmoDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_4MbCADBxEeiwnsGBcKNAhw" name="myVelib.ridePolicies.NoStartStationAvailableException" base_Classifier="_4MYlwDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4Mf6gDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4MeFUDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4MqSkDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4ModYDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_4OoBcDBxEeiwnsGBcKNAhw" name="java.text.ParseException" base_Classifier="_4OmMQDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4O01wDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4OxycDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4O6VUDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4O35EDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4PXBQDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4PVMEDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4P3XkDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4P07UDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4P83IDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4P7B8DBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4QKSgDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4QH2QDBxEeiwnsGBcKNAhw"/>
+  <standard:Create xmi:id="_4u_jkDBxEeiwnsGBcKNAhw" base_BehavioralFeature="_4u9HUDBxEeiwnsGBcKNAhw"/>
+  <PapyrusJava:External xmi:id="_4v6JkDBxEeiwnsGBcKNAhw" name="myVelib.SortingStations.SortingMethods" base_Classifier="_4v3tUDBxEeiwnsGBcKNAhw"/>
+</xmi:XMI>

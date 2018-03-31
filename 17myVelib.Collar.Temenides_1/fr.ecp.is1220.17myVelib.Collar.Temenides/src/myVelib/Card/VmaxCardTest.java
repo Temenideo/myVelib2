@@ -40,15 +40,15 @@ public class VmaxCardTest {
 		Date dateend2 = format.parse(string3);
 		loc1.setTimeStart(datestart);
 		loc1.setTimeEnd(dateend);
-		loc1.setArrival(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
+		loc1.setArrivalForTest(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
 		Card card = new VmaxCard();
-		int num=card.getCharge(loc1, user);
-		assertEquals(0, num);
-		assertEquals(5, card.getTimeCredit(), 0.0001);
+		float num=card.getCharge(loc1, user);
+		assertEquals(0, num, 0.01);
+		assertEquals(5, card.getTimeCredit(), 0.01);
 		loc1.setTimeEnd(dateend2);
 		num=card.getCharge(loc1, user);
-		assertEquals(3, num);
-		assertEquals(10, card.getTimeCredit(), 0.0001);
+		assertEquals(2.33, num, 0.01);
+		assertEquals(0, card.getTimeCredit(), 0.0001);
 	}
 	@Test
 	public void testGetChargeElectrical() throws BadStateStationCreationException, BadTypeStationCreationException, ParseException {
@@ -66,15 +66,15 @@ public class VmaxCardTest {
 		Date dateend2 = format.parse(string3);
 		loc1.setTimeStart(datestart);
 		loc1.setTimeEnd(dateend);
-		loc1.setArrival(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
+		loc1.setArrivalForTest(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
 		Card card = new VmaxCard();
-		int num=card.getCharge(loc1, user);
-		assertEquals(0, num);
+		float num=card.getCharge(loc1, user);
+		assertEquals(0, num, 0.01);
 		assertEquals(5, card.getTimeCredit(), 0.0001);
 		loc1.setTimeEnd(dateend2);
 		num=card.getCharge(loc1, user);
-		assertEquals(3, num);
-		assertEquals(10, card.getTimeCredit(), 0.0001);
+		assertEquals(2.33, num, 0.01);
+		assertEquals(0, card.getTimeCredit(), 0.0001);
 	}
 
 }

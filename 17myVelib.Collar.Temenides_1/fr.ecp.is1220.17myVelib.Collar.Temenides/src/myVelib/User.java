@@ -183,13 +183,16 @@ public class User {
 		this.card = card;
 	}
 /**
- * 
- * @return
+ * Fonction  qui permet d'acceder aux coordonnées GPS de l'utilisateurs
+ * @return Des coordonnées GPS sous le format GPScoord
  */
 	public GPScoord getPosition() {
 		return position;
 	}
-
+/**
+ * Fonction qui permet de changer les coordonnées GPS de l'utilisateurs
+ * @param position nouvelle coordonnées GPS de l'utilisateur sous le format GPScoord
+ */
 	public void setPosition(GPScoord position) {
 		this.position = position;
 	}
@@ -207,7 +210,10 @@ public class User {
 		}
 		return(false);
 	}
-
+/**
+ * Fonction afin de connaitre la vitesse de marche de l'utilisateur
+ * @return un nombre renvoyant la vitesse de l'utilisateur
+ */
 	public static double getUserSpeed() {
 		return userSpeed;
 	}	

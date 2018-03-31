@@ -152,7 +152,7 @@ public class Location implements Observer{
 			this.arrival=arrival;
 			this.timeEnd=Calendar.getInstance().getTime();
 			int duration = (int)Card.getDuration(timeStart, timeEnd, TimeUnit.MINUTES);
-			int charge = this.user.getCard().getCharge(this, user);
+			int charge = (int) this.user.getCard().getCharge(this, user);
 			this.user.setTotalTime(user.getTotalTime()+(int)duration);
 			this.user.setTotalCharges(user.getTotalCharges()+charge);
 			this.bike=null;
@@ -236,6 +236,13 @@ public class Location implements Observer{
 		this.arrival.removeRide(this);
 		this.arrival = arrival;
 		this.arrival.registerEndRide(this);
+	}
+	/**
+	 * Fonction servant uniquement pour les test, limitant le nombre de ligne de code dans certains test
+	 * @param arrival nouvelle station d'arrivée
+	 */
+	public void setArrivalForTest(Station arrival) {
+		this.arrival = arrival;
 	}
 /**
  * Fonction qui permet de voir le velo de la location

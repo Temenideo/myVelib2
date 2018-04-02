@@ -4,16 +4,16 @@ import java.text.ParseException;
 import java.util.ArrayList;
 
 import myVelib.Station;
-
+/**
+ * Classe contenant la méthode pour trier les stations selon leur utilisation
+ * @author xavier
+ *
+ */
 public class MostUsed implements SortingMethods {
 	
 	public MostUsed() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
-	/**
-	 * Description a faire
-	 */
 	@Override
 	public void sortStation(ArrayList<Station> stationList) throws ParseException {
 		ArrayList<Integer> usedNumber=new ArrayList<Integer>();
@@ -27,19 +27,20 @@ public class MostUsed implements SortingMethods {
 			memo=stationList.get(k).numberOfRentsOperation()+stationList.get(k).numberOfReturnOperation();
 			pos=0;
 			for(int a:usedNumber){
-				if(a<memo){
+				if(a>memo){
 					pos=pos+1;
 				}
 			}
 			usedNumber.add(pos, memo);
 			stationSort.add(pos, stationList.get(k));
 		}
-		System.out.printf("%15d","Station Name");
-		System.out.printf("%15d","Number of operation");
+		System.out.print("Number of operation"+"        "+"Station Name");
 		for(int k=0;k<length;k++){
-			System.out.printf("%15d",stationSort.get(k).getName());
-			System.out.printf("%15d",usedNumber.get(k));
+			System.out.println();
+			System.out.printf("%13d",usedNumber.get(k));
+			System.out.print("              "+stationSort.get(k).getName());
+			
+
 		}
-		System.out.println();
 	}
 }

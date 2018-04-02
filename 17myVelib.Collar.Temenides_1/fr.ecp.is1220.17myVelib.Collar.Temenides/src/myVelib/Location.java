@@ -156,7 +156,7 @@ public class Location implements Observer{
 			this.user.setTotalTime(user.getTotalTime()+(int)duration);
 			this.user.setTotalCharges(user.getTotalCharges()+charge);
 			this.bike=null;
-			this.hasEnded=false;
+			this.hasEnded=true;
 			System.out.println("Bike location charged "+charge+"€");
 			this.user.setLocation(null);
 			

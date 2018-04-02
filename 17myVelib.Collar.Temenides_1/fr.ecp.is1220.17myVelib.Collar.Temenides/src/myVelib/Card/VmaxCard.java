@@ -4,7 +4,11 @@ import java.util.concurrent.TimeUnit;
 
 import myVelib.Location;
 import myVelib.User;
-
+/**
+ * Classe permettant de representer les cartes Vmax
+ * @author xavier
+ *
+ */
 public class VmaxCard extends Card{
 	public double costMH1=0;
 	public double costMH2=1;

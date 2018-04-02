@@ -21,17 +21,20 @@ public class ParkingSlotTest {
 		Bicycle b1 = BicycleFactory.bike("MEchanical");
 		@SuppressWarnings("unused")
 		Bicycle b2 = BicycleFactory.bike("Electrical");
-		ParkingSlot pS = new ParkingSlot(BicycleFactory.bike("Mechanical"), "Occupied",new Station("Standard", "on service", new GPScoord(0,0), null));
+		Bicycle b4=BicycleFactory.bike("Mechanical");
+		ParkingSlot pS = new ParkingSlot(b4, "Occupied",new Station("Standard", "on service", new GPScoord(0,0), null));
 		Bicycle b3 = pS.retrieveBike();
-		assertEquals(b3.getBikeID(),4);
+		assertTrue(b3.equals(b4));
 	}
 
 	@Test
 	public void testStoreBike() throws BadParkingSlotCreationException, BadStateStationCreationException, BadTypeStationCreationException, NoEndStationAvailableException {
+		Reseau res=Reseau.getInstance();
+		res.resetReseau();
 		Bicycle b5 = BicycleFactory.bike("Electrical");
 		ParkingSlot pS = new ParkingSlot(null, "Free",new Station("Standard", "on service", new GPScoord(0,0), null));
 		pS.storeBike(b5);
-		assertEquals(pS.getBicycle().getBikeID(),1);
+		assertTrue(pS.getBicycle().equals(b5));
 		
 	}
 

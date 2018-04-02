@@ -3,7 +3,11 @@ package myVelib.ridePolicies;
 import myVelib.GPScoord;
 import myVelib.Reseau;
 import myVelib.Station;
-
+/**
+ * Cette classe possède les méthodes pour trouver les stations de départ et d'arrivée selon le critère Uniformity
+ * @author xavier
+ *
+ */
 public class Uniformity implements RidePolicy{
 	public Station computeStart(GPScoord start, GPScoord end, String typeBike)
 			throws NoStartStationAvailableException {

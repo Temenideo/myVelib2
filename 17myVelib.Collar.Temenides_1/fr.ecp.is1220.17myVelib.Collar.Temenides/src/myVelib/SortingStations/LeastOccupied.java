@@ -9,11 +9,12 @@ import java.util.Date;
 import java.util.Locale;
 
 import myVelib.Station;
-
+/**
+ * Classe contenant la méthode pour trier les stations selon leur utilisation
+ * @author xavier
+ *
+ */
 public class LeastOccupied implements SortingMethods {
-	/**
-	 * Description a faire
-	 */
 	@Override
 	public void sortStation(ArrayList<Station> stationList) throws ParseException {
 		ArrayList<Float> rateNumber=new ArrayList<Float>();

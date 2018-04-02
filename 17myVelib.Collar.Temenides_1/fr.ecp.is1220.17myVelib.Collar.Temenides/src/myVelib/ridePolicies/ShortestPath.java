@@ -3,7 +3,11 @@ package myVelib.ridePolicies;
 import myVelib.GPScoord;
 import myVelib.Reseau;
 import myVelib.Station;
-
+/**
+ * Cette classe possède les méthodes pour trouver les stations de départ et d'arrivée selon le critère ShortestPath
+ * @author xavier
+ *
+ */
 public class ShortestPath implements RidePolicy{
 
 	@Override

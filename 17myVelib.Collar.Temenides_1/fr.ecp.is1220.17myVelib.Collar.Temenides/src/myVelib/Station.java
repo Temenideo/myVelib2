@@ -163,6 +163,13 @@ public class Station implements Observable {
 		return name;
 	}
 	/**
+	 * Permet de changer le nom de la station
+	 * @param name nouveau nom de la station
+	 */
+	public void setName(String name) {
+		this.name = name;
+	}
+	/**
 	 * Fonction qui permet d'acceder au nombre de ParkingSlot disponible rendre un vélo
 	 * @return un entier correspondant au nombre de parking slot disponible
 	 */
@@ -314,7 +321,7 @@ public class Station implements Observable {
 		for (Location loc :locationList){
 			if(loc.isHasEnded()){
 				try {
-					if(loc.getEnd().equals(this)){
+					if(loc.getArrival().equals(this)){
 						compteur++;
 					}
 				}

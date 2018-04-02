@@ -11,6 +11,7 @@ import java.util.Locale;
 
 import org.junit.Test;
 
+import myVelib.BadParkingSlotCreationException;
 import myVelib.BadStateStationCreationException;
 import myVelib.BadTypeStationCreationException;
 import myVelib.GPScoord;
@@ -23,11 +24,19 @@ import myVelib.Bicycle.Electrical;
 import myVelib.Bicycle.Mechanical;
 
 public class VmaxCardTest {
-
+	/**
+	 * Test la cas d'une location mecanique arrivant sur une station plus
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws InterruptedException
+	 * @throws ParseException
+	 */
 	@Test
 	public void testGetChargeMecanical() throws BadStateStationCreationException, BadTypeStationCreationException, ParseException {
 		User user=new User("Jean","Paul");
 		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		res.addStation(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
 		Location loc1=new Location(user,res.getStationList().get(0));
 		loc1.setBike(new Mechanical());
@@ -50,10 +59,19 @@ public class VmaxCardTest {
 		assertEquals(2.33, num, 0.01);
 		assertEquals(0, card.getTimeCredit(), 0.0001);
 	}
+	/**
+	 * Test le cas d'une location electrique
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws InterruptedException
+	 * @throws ParseException
+	 */
 	@Test
 	public void testGetChargeElectrical() throws BadStateStationCreationException, BadTypeStationCreationException, ParseException {
 		User user=new User("Jean","Paul");
 		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		res.addStation(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
 		Location loc1=new Location(user,res.getStationList().get(0));
 		loc1.setBike(new Electrical());

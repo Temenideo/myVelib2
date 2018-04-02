@@ -14,7 +14,13 @@ import myVelib.Bicycle.BicycleFactory;
 import myVelib.ridePolicies.NoEndStationAvailableException;
 
 public class ParkingSlotTest {
-	
+	/**
+	 * Test permettant de voir si le vélo a bien étais retire et le parking slot pret à accueillir un nouveau vélo
+	 * @throws BadParkingSlotCreationException
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws NoEndStationAvailableException
+	 */
 	@Test
 	public void testGetBike() throws BadParkingSlotCreationException, BadStateStationCreationException, BadTypeStationCreationException, NoEndStationAvailableException {
 		@SuppressWarnings("unused")
@@ -25,8 +31,33 @@ public class ParkingSlotTest {
 		ParkingSlot pS = new ParkingSlot(b4, "Occupied",new Station("Standard", "on service", new GPScoord(0,0), null));
 		Bicycle b3 = pS.retrieveBike();
 		assertTrue(b3.equals(b4));
+		assertEquals(null, pS.getBicycle());
+		assertEquals("Free", pS.getState());
 	}
-
+	/**
+	 * Test permettant de voir la réaction lorsqu'on veux retirer un vélo d'un parkingSlot vide
+	 * @throws BadParkingSlotCreationException
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws NoEndStationAvailableException
+	 */
+	@Test
+	public void testGetBike2() throws BadParkingSlotCreationException, BadStateStationCreationException, BadTypeStationCreationException, NoEndStationAvailableException {
+		@SuppressWarnings("unused")
+		Bicycle b1 = BicycleFactory.bike("Mechanical");
+		@SuppressWarnings("unused")
+		Bicycle b2 = BicycleFactory.bike("Electrical");
+		ParkingSlot pS = new ParkingSlot(null, "Free",new Station("Standard", "on service", new GPScoord(0,0), null));
+		Bicycle b3 = pS.retrieveBike();
+		assertEquals(null, b3);
+	}
+/**
+ * Test permettant de voir s'il est bien possible de stocker le vélo
+ * @throws BadParkingSlotCreationException
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws NoEndStationAvailableException
+ */
 	@Test
 	public void testStoreBike() throws BadParkingSlotCreationException, BadStateStationCreationException, BadTypeStationCreationException, NoEndStationAvailableException {
 		Reseau res=Reseau.getInstance();
@@ -35,9 +66,37 @@ public class ParkingSlotTest {
 		ParkingSlot pS = new ParkingSlot(null, "Free",new Station("Standard", "on service", new GPScoord(0,0), null));
 		pS.storeBike(b5);
 		assertTrue(pS.getBicycle().equals(b5));
+		assertEquals("Occupied", pS.getState());
 		
 	}
+	/**
+	 * Test permettant de voir la réaction quand veux stocker un vélo dans un parkingSlot déjà occupé ou cassé
+	 * @throws BadParkingSlotCreationException
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws NoEndStationAvailableException
+	 */
+		@Test
+		public void testStoreBike2() throws BadParkingSlotCreationException, BadStateStationCreationException, BadTypeStationCreationException, NoEndStationAvailableException {
+			Reseau res=Reseau.getInstance();
+			res.resetReseau();
+			Bicycle b1 = BicycleFactory.bike("Mechanical");
+			Bicycle b5 = BicycleFactory.bike("Electrical");
+			ParkingSlot pS = new ParkingSlot(b1, "Occupied",new Station("Standard", "on service", new GPScoord(0,0), null));
+			assertFalse(pS.storeBike(b5));
+			pS.setState("Broken");
+			assertFalse(pS.storeBike(b5));
 
+			
+		}
+/**
+ * Permet de tester la fonction qui donne le temps d'occupation
+ * @throws ParseException
+ * @throws BadParkingSlotCreationException
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws NoEndStationAvailableException
+ */
 	@Test
 	public void testGetTimeOccupied() throws ParseException, BadParkingSlotCreationException, BadStateStationCreationException, BadTypeStationCreationException, NoEndStationAvailableException {
 		ParkingSlot pS = new ParkingSlot(null, "Occupied",new Station("Standard", "on service", new GPScoord(0,0), null));
@@ -53,11 +112,11 @@ public class ParkingSlotTest {
 		pS.getHistory().remove(0);
 		pS.getHistory().add(new TimeState(true,datestart));
 		pS.getHistory().get(0).setEnd(dateend);
-		pS.getHistory().add(new TimeState(true,dateend));
+		pS.getHistory().add(new TimeState(false,dateend));
 		pS.getHistory().get(1).setEnd(dateend2);
 		pS.getHistory().add(new TimeState(true,dateend2));
 		pS.getHistory().get(2).setEnd(dateend3);
-		assertEquals(pS.getTimeOccupied(datestart, dateend3),271);
+		assertEquals(pS.getTimeOccupied(datestart, dateend3),91);
 		
 		
 }

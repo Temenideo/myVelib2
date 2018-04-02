@@ -23,7 +23,7 @@ public class LeastOccupied implements SortingMethods {
 		int pos=0;
 		int length=stationList.size();
 		stationSort.add(stationList.get(0));
-		String string = "1500.07.04 AD at 12:08:56 PDT";
+		String string = "2000.07.04 AD at 12:08:56 PDT";
 		DateFormat format = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z", Locale.ENGLISH);
 		Date start = format.parse(string);
 		Date end=Calendar.getInstance().getTime();
@@ -39,14 +39,15 @@ public class LeastOccupied implements SortingMethods {
 			rateNumber.add(pos, memo);
 			stationSort.add(pos, stationList.get(k));
 		}
-		System.out.printf("%15d","Station Name");
-		System.out.printf("%15d","Number of operation");
+		System.out.print("Rate of occupation"+"        "+"Station Name");
 		for(int k=0;k<length;k++){
-			System.out.printf("%15d",stationSort.get(k).getName());
-			System.out.printf("%15d",rateNumber.get(k));
-		}
-		System.out.println();
-	}
+			System.out.println();
+			System.out.printf("%13f",rateNumber.get(k));
+			System.out.print("              "+stationSort.get(k).getName());
 
+
+		}
+	}
 }
+
 

@@ -25,11 +25,19 @@ import myVelib.Bicycle.Mechanical;
 
 
 public class NoCardTest {
-
+/**
+ * Test la cas d'une location mecanique arrivant sur une station plus
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws BadParkingSlotCreationException
+ * @throws InterruptedException
+ * @throws ParseException
+ */
 	@Test
 	public void testGetChargeMechanicalPlus() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, InterruptedException, ParseException {
 		User user=new User("Jean","Paul");
 		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		res.addStation(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
 		Location loc1=new Location(user,res.getStationList().get(0));
 		loc1.setBike(new Mechanical());
@@ -46,11 +54,19 @@ public class NoCardTest {
 		assertEquals(2.5, num, 0.01);
 		assertEquals(5, card.getTimeCredit(), 0.01);
 	}
-
+/**
+ * Test le cas d'une location electrique
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws BadParkingSlotCreationException
+ * @throws InterruptedException
+ * @throws ParseException
+ */
 	@Test
 	public void testGetChargeElectrical() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, InterruptedException, ParseException {
 		User user=new User("Jean","Paul");
 		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		res.addStation(new Station(new ArrayList<ParkingSlot>(), "Standard", "on service", new GPScoord(1,1), null));
 		Location loc1=new Location(user,res.getStationList().get(0));
 		loc1.setBike(new Electrical());

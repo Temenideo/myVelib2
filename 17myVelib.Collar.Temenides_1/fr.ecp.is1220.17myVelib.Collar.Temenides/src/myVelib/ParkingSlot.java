@@ -51,14 +51,18 @@ public class ParkingSlot {
 		else{
 			throw new BadParkingSlotCreationException(State);}
 	}
-
+	/**
+	 * Permet de connaitre l'état du ParkingSlot
+	 * @return Une chaine de caractère donnant l'état du ParkingSlot
+	 */
 	public String getState() {
 		return state;
 	}
 	/**
 	 * Le changement d'état est aussi contrôlé afin que seuls les états possibles soit mis
-	 * @param state
-	 * @throws BadParkingSlotCreationException 
+	 * Cette fonction créer aussi un nouveau TimeState à chaque changement
+	 * @param state le nouvelle état à mettre
+	 * @throws BadParkingSlotCreationException Erreur en cas d'un état non possible
 	 * @throws NoEndStationAvailableException 
 	 */
 	public void setState(String state) throws BadParkingSlotCreationException, NoEndStationAvailableException {
@@ -76,7 +80,12 @@ public class ParkingSlot {
 		else{
 			throw new BadParkingSlotCreationException(state);}
 	}
-
+	/**
+	 * Fonction permettant d'enlever le vélo du ParkingSlot
+	 * @return le vélo stocké dans ce ParkingSlot
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoEndStationAvailableException
+	 */
 	public Bicycle retrieveBike() throws BadParkingSlotCreationException, NoEndStationAvailableException {
 		if (state=="Occupied") {
 			this.setState("Free");
@@ -89,7 +98,13 @@ public class ParkingSlot {
 			return null;
 		}
 	}
-
+	/**
+	 * Permet de stocker un velo dans ce ParkingSlot
+	 * @param bike le vélo à stocker
+	 * @return Un booleen pour confirmer que le vélo à bien été stocké
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoEndStationAvailableException
+	 */
 	public boolean storeBike(Bicycle bike) throws BadParkingSlotCreationException, NoEndStationAvailableException {
 		if (state!="Free") {
 			return false;
@@ -102,10 +117,10 @@ public class ParkingSlot {
 		}
 	}
 	/**
-	 * 	
-	 * @param start
-	 * @param end
-	 * @return
+	 * 	Permet de connaitre le temps d'occupation de ce parking slot entre deux dates
+	 * @param start Date de départ
+	 * @param end Date de fin
+	 * @return un temps d'occupation en minute
 	 */
 	public long getTimeOccupied(Date start,Date end){
 		long timeOccupied=0;
@@ -149,37 +164,71 @@ public class ParkingSlot {
 		}
 		return(timeOccupied);
 	}
+	/**
+	 * Fonction intermedaire permettant de calculer une durée entre deux dates
+	 * @param date1 Date de départ
+	 * @param date2 Date de fin
+	 * @param timeUnit Unité pour le temps final
+	 * @return durée entre les deux dates dans l'unité voulu
+	 */
 	public static long getDuration(Date date1, Date date2, TimeUnit timeUnit) {
 		long diffInMillies = date2.getTime()-date1.getTime();
 		return timeUnit.convert(diffInMillies, TimeUnit.MILLISECONDS);
-}
-
+	}
+	/**
+	 * Permet de connaitre l'identifiant du ParkingSlot
+	 * @return un nombre representant l'identifiant du ParkingSlot
+	 */
 	public Long getSlotID() {
 		return slotID;
 	}
+	/**
+	 * Permet d'acceder au vélo stocker dans le ParkingSlot
+	 * @return Velo stocker dans le parkingSlot
+	 */
 	public Bicycle getBicycle() {
 		return bicycle;
 	}
-
+	/**
+	 * Permet d'avoir la liste des TimeState de cette station
+	 * @return une ArrayList des TimeState
+	 */
 	public ArrayList<TimeState> getHistory() {
 		return history;
 	}
+	/**
+	 * Permet de changer le vélo stocker dans le parkingSlot
+	 * @param bicycle le nouveau vélo a stocker
+	 */
 	public void setBicycle(Bicycle bicycle) {
 		this.bicycle = bicycle;
 	}
-
+	/**
+	 * Permet de connaitre la station où se trouve se ParkingSlot
+	 * @return Une station
+	 */
 	public Station getStation() {
 		return station;
 	}
-
+/**
+ * Permet de modifier la station d'acceuil du ParkingSlot
+ * @param station Nouvelle station
+ */
 	public void setStation(Station station) {
 		this.station = station;
 	}
-
 	@Override
 	public String toString() {
 		return "ParkingSlot " + slotID + ", state:" + state + ", " + bicycle + "";
 	}
-
+	@Override
+	public boolean equals(Object obj){
+		ParkingSlot pS;
+		if (obj instanceof ParkingSlot){
+			pS=(ParkingSlot) obj;
+			return (pS.getSlotID()==this.slotID);
+		}
+		return(false);
+	}
 
 }

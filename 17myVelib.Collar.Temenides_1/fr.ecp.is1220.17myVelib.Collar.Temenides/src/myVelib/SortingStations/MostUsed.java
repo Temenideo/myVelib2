@@ -42,5 +42,6 @@ public class MostUsed implements SortingMethods {
 			
 
 		}
+		System.out.println();
 	}
 }

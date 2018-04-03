@@ -16,7 +16,14 @@ import myVelib.Station;
 import myVelib.Bicycle.Electrical;
 
 public class UniformityTest {
-
+/**
+ * Test qui vérfie le bon fonctionnement dans le cas de deux stations et lorsqu'il y en a 3 avec une dont le nombre de vélo disponible est plus élévé
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws BadParkingSlotCreationException
+ * @throws NoStartStationAvailableException
+ * @throws NoEndStationAvailableException
+ */
 	@Test
 	public void testComputeStart() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
 		Reseau res=Reseau.getInstance();
@@ -35,7 +42,14 @@ public class UniformityTest {
 		start=uN.computeStart(new GPScoord(0, 0),new GPScoord(0,100), "Electrical");
 		assertEquals(stat3, start);
 	}
-	
+	/**
+	 * Test qui vérfie le bon fonctionnement dans le cas de deux stations et lorsqu'il y en a 3 avec une dont le nombre de ParkingSlot disponible est plus élévé
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoStartStationAvailableException
+	 * @throws NoEndStationAvailableException
+	 */
 	@Test
 	public void testComputeEnd() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
 		Reseau res=Reseau.getInstance();

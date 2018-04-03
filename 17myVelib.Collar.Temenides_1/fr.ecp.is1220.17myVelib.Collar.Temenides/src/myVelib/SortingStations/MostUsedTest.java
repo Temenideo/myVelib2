@@ -33,6 +33,7 @@ public class MostUsedTest {
 	@Test
 	public void testSortStation() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException, NoStartStationAvailableException, ParseException {
 		Reseau res=Reseau.getInstance();
+		res.resetReseau();
 		Station departure = new Station(new ArrayList<ParkingSlot>(), "Standard", "on service", new GPScoord(0,0), null);
 		new ParkingSlot(new Mechanical(),"Occupied",departure);
 		User user1 = new User("Jean","Paul");

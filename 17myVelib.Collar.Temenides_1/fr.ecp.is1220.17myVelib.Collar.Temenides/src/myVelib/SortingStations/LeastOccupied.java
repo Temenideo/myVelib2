@@ -47,6 +47,7 @@ public class LeastOccupied implements SortingMethods {
 
 
 		}
+		System.out.println();
 	}
 }
 

@@ -25,7 +25,14 @@ import myVelib.Bicycle.Mechanical;
 import myVelib.ridePolicies.NoEndStationAvailableException;
 
 public class LeastOccupiedTest {
-
+/**
+ *  Ce test est automiquement validé car la fonction ne renvoi rien,mais nous pouvons voir que les deux stations sont triées dans l'ordre
+ * @throws ParseException
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws BadParkingSlotCreationException
+ * @throws NoEndStationAvailableException
+ */
 	@Test
 	public void testSortStation() throws ParseException, BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException {
 		Reseau res=Reseau.getInstance();

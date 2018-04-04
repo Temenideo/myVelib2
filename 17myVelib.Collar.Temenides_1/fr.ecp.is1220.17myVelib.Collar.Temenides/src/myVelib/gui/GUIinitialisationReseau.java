@@ -50,7 +50,7 @@ public class GUIinitialisationReseau extends JFrame{
 			}
 				private void display() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException {
 					setup.startMyVelib(10, 10);
-					GUImainFrame2 mainFrame= new GUImainFrame2();
+					GUImainFrame mainFrame= new GUImainFrame();
 					mainFrame.setVisible(true);
 					dispose();
 			}

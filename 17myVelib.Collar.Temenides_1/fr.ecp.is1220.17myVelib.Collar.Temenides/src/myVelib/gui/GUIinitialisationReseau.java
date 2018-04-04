@@ -45,14 +45,14 @@ public class GUIinitialisationReseau extends JFrame{
 					display();
 				} catch (BadStateStationCreationException | BadTypeStationCreationException
 						| BadParkingSlotCreationException | NoEndStationAvailableException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 				private void display() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException {
 					setup.startMyVelib(10, 10);
-					GUImainFrame mainFrame= new GUImainFrame();
+					GUImainFrame2 mainFrame= new GUImainFrame2();
 					mainFrame.setVisible(true);
+					dispose();
 			}
 			
 		};

@@ -40,8 +40,8 @@ public class Station implements Observable {
 	public Station(ArrayList<ParkingSlot> parkingSlotList, String typeStation, String state, GPScoord position,
 			String name) throws BadStateStationCreationException,BadTypeStationCreationException {
 		super();
-		if (typeStation=="Standard" || typeStation=="Plus"){
-			if ( state=="on service" || state=="offline"){
+		if (typeStation.equalsIgnoreCase("Standard") || typeStation.equalsIgnoreCase("Plus")){
+			if ( state.equalsIgnoreCase("on service") || state.equalsIgnoreCase("offline")){
 				compteur=compteur+1;
 				stationID=compteur;
 				this.parkingSlotList = parkingSlotList;
@@ -74,8 +74,8 @@ public class Station implements Observable {
 	public Station(String typeStation, String state, GPScoord position,
 			String name) throws BadStateStationCreationException,BadTypeStationCreationException {
 		super();
-		if (typeStation=="Standard" || typeStation=="Plus"){
-			if ( state=="on service" || state=="offline"){
+		if (typeStation.equalsIgnoreCase("Standard") || typeStation.equalsIgnoreCase("Plus")){
+			if ( state.equalsIgnoreCase("on service") || state.equalsIgnoreCase("offline")){
 				compteur=compteur+1;
 				stationID=compteur;
 				this.parkingSlotList = new ArrayList<ParkingSlot>();
@@ -109,7 +109,7 @@ public class Station implements Observable {
 	 * @throws BadTypeStationCreationException
 	 */
 	public void setTypeStation(String typeStation) throws BadTypeStationCreationException {
-		if (typeStation=="Standard" || typeStation=="Plus"){
+		if (typeStation.equalsIgnoreCase("Standard") || typeStation.equalsIgnoreCase("Plus")){
 			this.typeStation = typeStation;}
 		else{
 			throw new BadTypeStationCreationException(typeStation);
@@ -135,7 +135,7 @@ public class Station implements Observable {
 	 * @throws BadStateStationCreationException
 	 */
 	public void setState(String state) throws BadStateStationCreationException {
-		if ( state=="on service" || state=="offline"){
+		if ( state.equalsIgnoreCase("on service") || state.equalsIgnoreCase("offline")){
 			this.state = state;}
 		else{
 			throw new BadStateStationCreationException(state);

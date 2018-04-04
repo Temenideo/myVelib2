@@ -12,6 +12,12 @@ import myVelib.User;
  */
 public abstract class Card {
 	private int timeCredit;
+	private String typeCard;
+	
+	public String getTypeCard() {
+		return typeCard;
+	}
+
 	/**
 	 * Fonction renvoyant le cout de la location
 	 * @param loc La location a facturé

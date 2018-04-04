@@ -10,6 +10,7 @@ import myVelib.User;
  *
  */
 public class VmaxCard extends Card{
+	private String typeCard="VMax";
 	public double costMH1=0;
 	public double costMH2=1;
 	public double costEH1=0;
@@ -57,5 +58,10 @@ public class VmaxCard extends Card{
 		}
 		return cost;
 	}
+
+	public String getTypeCard() {
+		return typeCard;
+	}
+	
 	
 }

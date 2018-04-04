@@ -7,13 +7,17 @@ import myVelib.User;
 
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
+import javax.swing.JTextPane;
 import javax.swing.table.DefaultTableModel;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
 import javax.swing.JButton;
+import javax.swing.JPanel;
+import javax.swing.JDesktopPane;
+import javax.swing.JToolBar;
 import javax.swing.SwingConstants;
+import java.awt.Color;
 
 public class GUImainFrame extends JFrame{
 	/**
@@ -29,7 +33,7 @@ public class GUImainFrame extends JFrame{
 		setSize(800,600);
 		getContentPane().setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.LEFT);
 		getContentPane().add(tabbedPane);
 		
 		stationList = new JTable();
@@ -39,8 +43,14 @@ public class GUImainFrame extends JFrame{
 		userList = new JTable();
 		tabbedPane.addTab("User List", null, userList, null);
 		
+		
+		
+		
+		
 		btnRefresh = new JButton("Refresh");
-		getContentPane().add(btnRefresh);
+		tabbedPane.addTab("New tab", null, btnRefresh, null);
+		btnRefresh.setForeground(new Color(0, 0, 0));
+		
 		
 		ActionListener refresh = new ActionListener() {
 			public void actionPerformed(final ActionEvent e) {
@@ -73,9 +83,5 @@ public class GUImainFrame extends JFrame{
 			
 		};
 		btnRefresh.addActionListener(refresh);
-		
 	}
-	
-		
-
 }

@@ -10,6 +10,7 @@ import myVelib.User;
  *
  */
 public class NoCard extends Card{
+	private String typeCard="No Card";
 	public double costMH1=1;
 	public double costMH2=1;
 	public double costEH1=2;
@@ -34,4 +35,12 @@ public class NoCard extends Card{
 			}		
 		return cost;
 	}
+
+
+
+	public String getTypeCard() {
+		return typeCard;
+	}
+	
+	
 }

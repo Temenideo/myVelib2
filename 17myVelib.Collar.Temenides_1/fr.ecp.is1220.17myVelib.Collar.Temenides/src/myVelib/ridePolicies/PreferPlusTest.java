@@ -11,13 +11,23 @@ import myVelib.BadStateStationCreationException;
 import myVelib.BadTypeStationCreationException;
 import myVelib.GPScoord;
 import myVelib.ParkingSlot;
+import myVelib.Reseau;
 import myVelib.Station;
 import myVelib.Bicycle.Electrical;
 
 public class PreferPlusTest {
-
+/**
+ * Test afin de voir si la bonne station est prise en fonction du caractère plus ou standard
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws BadParkingSlotCreationException
+ * @throws NoStartStationAvailableException
+ * @throws NoEndStationAvailableException
+ */
 	@Test
 	public void testPreferPlus() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
+		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		Station stat1 =new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(0,10), null);
 		Station stat2= new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(0,111), null);
 		Station stat3= new Station(new ArrayList<ParkingSlot>(), "Standard", "on service", new GPScoord(0,100), null);

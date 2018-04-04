@@ -11,6 +11,7 @@ import java.util.Locale;
 
 import org.junit.Test;
 
+import myVelib.BadParkingSlotCreationException;
 import myVelib.BadStateStationCreationException;
 import myVelib.BadTypeStationCreationException;
 import myVelib.GPScoord;
@@ -23,11 +24,19 @@ import myVelib.Bicycle.Electrical;
 import myVelib.Bicycle.Mechanical;
 
 public class VmaxCardTest {
-
+	/**
+	 * Test la cas d'une location mecanique arrivant sur une station plus
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws InterruptedException
+	 * @throws ParseException
+	 */
 	@Test
 	public void testGetChargeMecanical() throws BadStateStationCreationException, BadTypeStationCreationException, ParseException {
 		User user=new User("Jean","Paul");
 		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		res.addStation(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
 		Location loc1=new Location(user,res.getStationList().get(0));
 		loc1.setBike(new Mechanical());
@@ -40,20 +49,29 @@ public class VmaxCardTest {
 		Date dateend2 = format.parse(string3);
 		loc1.setTimeStart(datestart);
 		loc1.setTimeEnd(dateend);
-		loc1.setArrival(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
+		loc1.setArrivalForTest(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
 		Card card = new VmaxCard();
-		int num=card.getCharge(loc1, user);
-		assertEquals(0, num);
-		assertEquals(5, card.getTimeCredit(), 0.0001);
+		float num=card.getCharge(loc1, user);
+		assertEquals(0, num, 0.01);
+		assertEquals(5, card.getTimeCredit(), 0.01);
 		loc1.setTimeEnd(dateend2);
 		num=card.getCharge(loc1, user);
-		assertEquals(3, num);
-		assertEquals(10, card.getTimeCredit(), 0.0001);
+		assertEquals(2.33, num, 0.01);
+		assertEquals(0, card.getTimeCredit(), 0.0001);
 	}
+	/**
+	 * Test le cas d'une location electrique
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws InterruptedException
+	 * @throws ParseException
+	 */
 	@Test
 	public void testGetChargeElectrical() throws BadStateStationCreationException, BadTypeStationCreationException, ParseException {
 		User user=new User("Jean","Paul");
 		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		res.addStation(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
 		Location loc1=new Location(user,res.getStationList().get(0));
 		loc1.setBike(new Electrical());
@@ -66,15 +84,15 @@ public class VmaxCardTest {
 		Date dateend2 = format.parse(string3);
 		loc1.setTimeStart(datestart);
 		loc1.setTimeEnd(dateend);
-		loc1.setArrival(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
+		loc1.setArrivalForTest(new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null));
 		Card card = new VmaxCard();
-		int num=card.getCharge(loc1, user);
-		assertEquals(0, num);
+		float num=card.getCharge(loc1, user);
+		assertEquals(0, num, 0.01);
 		assertEquals(5, card.getTimeCredit(), 0.0001);
 		loc1.setTimeEnd(dateend2);
 		num=card.getCharge(loc1, user);
-		assertEquals(3, num);
-		assertEquals(10, card.getTimeCredit(), 0.0001);
+		assertEquals(2.33, num, 0.01);
+		assertEquals(0, card.getTimeCredit(), 0.0001);
 	}
 
 }

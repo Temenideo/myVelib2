@@ -5,13 +5,18 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 public class GPScoordTest {
-
+	/**
+	 * Fonction testant que la distance est calculé correctement
+	 */
 	@Test
 	public void testGetDistance() {
 		GPScoord pointA=new GPScoord(1,1);
 		GPScoord pointB=new GPScoord(2,2);
 		assertEquals(Math.sqrt(2), pointA.getDistance(pointB),0.0001 );
 	}
+	/**
+	 * Fonction testant que la distance est calculé correctement
+	 */
 	@Test
 	public void testGetDistance2() {
 		GPScoord pointA=new GPScoord(1,1);

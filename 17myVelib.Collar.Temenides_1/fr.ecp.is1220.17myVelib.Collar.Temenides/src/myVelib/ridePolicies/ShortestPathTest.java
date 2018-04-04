@@ -16,9 +16,18 @@ import myVelib.Station;
 import myVelib.Bicycle.Electrical;
 
 public class ShortestPathTest {
-
+/**
+ * Test afin de tester le bon fonctionnement à deux stations
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws BadParkingSlotCreationException
+ * @throws NoStartStationAvailableException
+ * @throws NoEndStationAvailableException
+ */
 	@Test
 	public void testComputeSimpleCase() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
+		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		Station stat =new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(0,5), null);
 		Station stat2= new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(0,105), null);
 		new ParkingSlot(new Electrical(),"Occupied",stat);
@@ -29,7 +38,14 @@ public class ShortestPathTest {
 		assertEquals(stat, departure);
 		assertEquals(stat2, arrival);
 	}
-
+/**
+ * Test avec deux stations possibles au départ et à l'arrivée afin de vérfier que le chemin le plus court est prix
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws NoStartStationAvailableException
+ * @throws NoEndStationAvailableException
+ * @throws BadParkingSlotCreationException
+ */
 	@Test
 	public void testComputeThreeStation() throws BadStateStationCreationException, BadTypeStationCreationException, NoStartStationAvailableException, NoEndStationAvailableException, BadParkingSlotCreationException {
 		Reseau res = Reseau.getInstance();
@@ -49,8 +65,18 @@ public class ShortestPathTest {
 		assertEquals(stat3, arrival);
 		
 	}
+	/**
+	 * Test avec une station hors service
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoStartStationAvailableException
+	 * @throws NoEndStationAvailableException
+	 */
 	@Test 
 	public void testComputeThreeStationBis() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
+		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		Station stat1 =new Station(new ArrayList<ParkingSlot>(), "Plus", "offline", new GPScoord(200,200), null);
 		Station stat2= new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(200,205), null);
 		Station stat3= new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(200,203), null);
@@ -65,8 +91,18 @@ public class ShortestPathTest {
 		assertEquals(stat2, arrival);
 		
 	}
+	/**
+	 * Pour vérifier la difference de logique entre ShortestPath et FastethPath 
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoStartStationAvailableException
+	 * @throws NoEndStationAvailableException
+	 */
 	@Test
 	public void testComputeThreeStationBiss() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
+		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		Station stat1 =new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(301,300), null);
 		Station stat2= new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(300,309), null);
 		Station stat3= new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(300,302), null);	
@@ -83,6 +119,14 @@ public class ShortestPathTest {
 		assertNotEquals(fdeparture, departure);
 		
 	}
+	/**
+	 * Test afin de vérifier que lorqu'une station de départ n'est disponible l'erreur est bien créer
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoStartStationAvailableException
+	 * @throws NoEndStationAvailableException
+	 */
 	@Test(expected=NoStartStationAvailableException.class)
 	public void testComputeError() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
 		Reseau res = Reseau.getInstance();

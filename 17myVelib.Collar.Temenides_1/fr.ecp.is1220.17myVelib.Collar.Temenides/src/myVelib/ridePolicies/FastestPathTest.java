@@ -16,9 +16,18 @@ import myVelib.Station;
 import myVelib.Bicycle.Electrical;
 
 public class FastestPathTest {
-
+/**
+ * Test simple où il y a seulement deux stations dans le reseau, test le bon fonctionnement
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws BadParkingSlotCreationException
+ * @throws NoStartStationAvailableException
+ * @throws NoEndStationAvailableException
+ */
 	@Test
 	public void testComputeSimpleCase() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
+		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		Station stat =new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(100,100), null);
 		Station stat2= new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(100,105), null);
 		new ParkingSlot(new Electrical(),"Occupied",stat);
@@ -29,9 +38,18 @@ public class FastestPathTest {
 		assertEquals(stat, stat1);
 		assertEquals(stat2, stat3);
 	}
-
+/**
+ * Test avec trois stations dont deux disponibles à donner un vélo
+ * @throws BadStateStationCreationException
+ * @throws BadTypeStationCreationException
+ * @throws NoStartStationAvailableException
+ * @throws NoEndStationAvailableException
+ * @throws BadParkingSlotCreationException
+ */
 	@Test
 	public void testComputeThreeStation() throws BadStateStationCreationException, BadTypeStationCreationException, NoStartStationAvailableException, NoEndStationAvailableException, BadParkingSlotCreationException {
+		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		Station stat =new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null);
 		Station stat2= new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(0,(float) 5.5), null);
 		Station stat4= new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(0,(float) 3), null);
@@ -46,6 +64,14 @@ public class FastestPathTest {
 		assertEquals(stat2, stat3);
 		
 	}
+	/**
+	 * Test à trois stations dont une hors service
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoStartStationAvailableException
+	 * @throws NoEndStationAvailableException
+	 */
 	@Test 
 	public void testComputeThreeStationBis() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
 		Reseau res = Reseau.getInstance();
@@ -64,6 +90,14 @@ public class FastestPathTest {
 		assertEquals(stat2, stat3);
 		
 	}
+	/**
+	 * Test à trois stations dont une avec un parkingSlot cassé et ne pouvant pas donner de velo
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoStartStationAvailableException
+	 * @throws NoEndStationAvailableException
+	 */
 	@Test
 	public void testComputeThreeStationBiss() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
 		Reseau res = Reseau.getInstance();

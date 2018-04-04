@@ -4,7 +4,11 @@ import java.util.concurrent.TimeUnit;
 
 import myVelib.Location;
 import myVelib.User;
-
+/**
+ * Classe permettant de representer les cartes Vmax
+ * @author xavier
+ *
+ */
 public class VmaxCard extends Card{
 	public double costMH1=0;
 	public double costMH2=1;
@@ -12,40 +16,45 @@ public class VmaxCard extends Card{
 	public double costEH2=1;
 	
 	@Override
-	public int getCharge(Location loc, User user) {
+	public float getCharge(Location loc, User user) {
 		if(loc.getArrival().getTypeStation().equals("Plus")) {
 			this.setTimeCredit(getTimeCredit()+5);
 			user.setEarnedCredits(user.getEarnedCredits()+5);
 		}
 		long duration = Card.getDuration(loc.getTimeStart(), loc.getTimeEnd(), TimeUnit.MINUTES);
-		long hours = duration/60;
+		float hours = (float) duration/60;
 		long min = duration%60;
-		int cost = 0;
+		float timeMoreThanOneHour=duration-60;
+		float cost = 0;
 		if(loc.getBike().getTypeBike().equalsIgnoreCase("Mechanical")) {
 			if(hours<1) {
 				cost+=costMH1;
 			}
-			// il manque l'autre cas du coup ou la durée est plus longue qu'une heure et qu'il peux pas tout payer
-			else if (min<this.getTimeCredit()) {
-				this.setTimeCredit(getTimeCredit()-(int)min);
-				hours--;
+			else if(timeMoreThanOneHour<this.getTimeCredit()){
+				this.setTimeCredit(getTimeCredit()-(int)timeMoreThanOneHour);
+				cost+=costMH1;
 			}
-			else cost+=costEH1+costEH2*hours;
+			else{
+				hours=(hours-1)- (float) this.getTimeCredit()/60;
+				this.setTimeCredit(0);
+				cost+=costMH1+costMH2*hours;
+			}
 			
 		}
 		if(loc.getBike().getTypeBike().equalsIgnoreCase("Electrical")) {
 			if(hours<1) {
 				cost+=costEH1;
 			}
-			// il manque l'autre cas du coup ou la durée est plus longue qu'une heure et qu'il peux pas tout payer
-			else if (min<this.getTimeCredit()) {
-				this.setTimeCredit(getTimeCredit()-(int)min);
-				hours--;
+			else if(timeMoreThanOneHour<this.getTimeCredit()){
+				this.setTimeCredit(getTimeCredit()-(int)timeMoreThanOneHour);
+				cost+=costEH1;
+			}
+			else{
+				hours=(hours-1)- (float) this.getTimeCredit()/60;
+				this.setTimeCredit(0);
 				cost+=costEH1+costEH2*hours;
 			}
-			else cost+=costEH1+costEH2*hours;
 		}
-		
 		return cost;
 	}
 	

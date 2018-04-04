@@ -4,7 +4,11 @@ import myVelib.GPScoord;
 import myVelib.Reseau;
 import myVelib.Station;
 import myVelib.User;
-
+/**
+ * Cette classe possède les méthodes pour trouver les stations de départ et d'arrivée selon le critère FastestPath
+ * @author xavier
+ *
+ */
 public class FastestPath implements RidePolicy{
 
 	@Override

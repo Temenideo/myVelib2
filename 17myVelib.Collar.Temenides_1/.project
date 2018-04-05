@@ -14,21 +14,4 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>testScenario1.txt</name>
-			<type>1</type>
-			<location>C:/Users/xavier/Downloads/Java/testScenario1.txt</location>
-		</link>
-		<link>
-			<name>FichierTexte/testScenario1.txt</name>
-			<type>1</type>
-			<location>C:/Users/xavier/Downloads/Java/testScenario1.txt</location>
-		</link>
-		<link>
-			<name>FichierTexte/testScenario2.txt</name>
-			<type>1</type>
-			<location>C:/Users/xavier/Downloads/Java/testScenario2.txt</location>
-		</link>
-	</linkedResources>
 </projectDescription>

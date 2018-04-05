@@ -43,10 +43,11 @@ public class Location implements Observer{
 		this.end=end;
 		this.hasStarted=false;
 		this.hasEnded=false;
-		this.user.setLocation(this);
+		//this.user.setLocation(this);
 		this.ridePolicy=ridePolicy;
 		this.departure=ridePolicy.computeStart(start, end, typeBike);
 		this.arrival=ridePolicy.computeEnd(start, end, typeBike);
+		this.arrival.registerEndRide(this);
 		Reseau.getInstance().addLocation(this);
 	}
 /**
@@ -59,7 +60,7 @@ public class Location implements Observer{
 		this.departure=departure;
 		this.hasStarted=true;
 		this.timeStart=Calendar.getInstance().getTime();
-		this.user.setLocation(this);
+		//this.user.setLocation(this);
 		this.hasEnded=false;
 		Reseau.getInstance().addLocation(this);
 	}
@@ -77,7 +78,7 @@ public class Location implements Observer{
 		this.departure=departure;
 		this.hasStarted=true;
 		this.timeStart=Calendar.getInstance().getTime();
-		this.user.setLocation(this);
+		//this.user.setLocation(this);
 		this.hasEnded=false;
 		this.ridePolicy=policy;
 		this.takeBike(departure, typeBike);

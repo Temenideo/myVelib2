@@ -65,6 +65,7 @@ public class LocationTest {
 		new ParkingSlot(new Electrical(),"Occupied",stat1);
 		new ParkingSlot(new Electrical(),"Occupied",stat1);
 		Location loc1=new Location(user,stat1);
+		user.setLocation(loc1);
 		loc1.takeBike(stat1,"Electrical");
 		assertEquals(null, loc1.getBike());
 	}

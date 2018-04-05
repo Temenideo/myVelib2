@@ -33,6 +33,6 @@ public class ScenarioTester {
 		}
 	}
 	public static void main(String[] args) {
-		executeScenario("testScenario1.txt");
+		executeScenario("testScenario2.txt");
 	}
 }

@@ -52,6 +52,7 @@ public class GUIinitialisationReseau extends JFrame{
 					setup.startMyVelib(10, 10);
 					GUImainFrame mainFrame= new GUImainFrame();
 					mainFrame.setVisible(true);
+					GUImainFrame.refresh();
 					dispose();
 			}
 			

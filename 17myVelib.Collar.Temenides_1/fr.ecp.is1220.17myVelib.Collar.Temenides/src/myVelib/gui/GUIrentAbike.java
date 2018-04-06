@@ -19,16 +19,24 @@ import javax.swing.JComboBox;
 import java.awt.Rectangle;
 import java.awt.Component;
 import java.awt.Dimension;
+import javax.swing.JPanel;
+import javax.swing.border.TitledBorder;
 
 public class GUIrentAbike extends JFrame {
 	private JTextField textField;
 	public GUIrentAbike() {
+		getContentPane().setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new TitledBorder(null, "JPanel title", TitledBorder.LEADING, TitledBorder.TOP, null, null));
+		panel.setBounds(164, 69, 128, 70);
+		getContentPane().add(panel);
+		panel.setLayout(null);
 		
 		textField = new JTextField();
-		textField.setSize(new Dimension(10, 10));
+		textField.setBounds(6, 18, 116, 45);
+		panel.add(textField);
 		textField.setAlignmentX(50.0f);
-		textField.setBounds(new Rectangle(200, 0, 0, 0));
-		getContentPane().add(textField, BorderLayout.WEST);
 		textField.setColumns(10);
 	}
 public static void main(String[] args) {

@@ -5,7 +5,7 @@ station;10;10;Plus;10;5;4;
 station;11;10;Standard;10;5;4;
 station;13;10;Plus;10;4;5;
 user;Paul;Dupont;
-user;Jacque;Dupont;
+user;Jacques;Dupont;
 location;444000001;1;Mechanical;
 rentabike;444000001;1;Mechanical;
 planningride;444000002;0;0;10;10;ShortestPath;Mechanical;

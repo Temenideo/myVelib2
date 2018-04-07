@@ -160,6 +160,7 @@ public class StationTest {
 	@Test
 	public void testGetRateOfOccupation() throws ParseException, BadParkingSlotCreationException, NoEndStationAvailableException, BadStateStationCreationException, BadTypeStationCreationException {
 		Reseau res = Reseau.getInstance();
+		res.resetReseau();
 		Station stat=new Station(new ArrayList<ParkingSlot>(), "Plus", "on service", new GPScoord(1,1), null);
 		ParkingSlot pS = new ParkingSlot(null, "Occupied",stat);
 		ParkingSlot pS1 = new ParkingSlot(null, "Free",stat);
@@ -167,7 +168,7 @@ public class StationTest {
 		String string2 = "2018.03.25 AD at 12:38:56 PDT";
 		DateFormat format = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z", Locale.ENGLISH);
 		Date datestart = format.parse(string);
-		Date dateend = format.parse(string2); 
+		Date dateend = format.parse(string2);
 		pS.getHistory().remove(0);
 		pS.getHistory().add(new TimeState(true,datestart));
 		pS.getHistory().get(0).setEnd(dateend);

@@ -133,10 +133,12 @@ public class Station implements Observable {
 	 * Le changement d'état est aussi contrôlé afin que aucun état autre que on service ou offline ne soit mis
 	 * @param state Le nouvelle état de la station à mettre
 	 * @throws BadStateStationCreationException
+	 * @throws NoEndStationAvailableException 
 	 */
-	public void setState(String state) throws BadStateStationCreationException {
+	public void setState(String state) throws BadStateStationCreationException, NoEndStationAvailableException {
 		if ( state.equalsIgnoreCase("on service") || state.equalsIgnoreCase("offline")){
-			this.state = state;}
+			this.state = state;
+			this.notifyEndRide();}
 		else{
 			throw new BadStateStationCreationException(state);
 		}
@@ -272,10 +274,11 @@ public class Station implements Observable {
 
 	@Override
 	public void notifyEndRide() throws NoEndStationAvailableException {
-		if(this.freeSlots==0) {
+		if(this.freeSlots==0 || this.state.equalsIgnoreCase("Offline")) {
 			for(Location loc:incomingRideList) {
 				loc.updateArrival(this);
 			}
+			this.incomingRideList.clear();
 		}
 
 	}

@@ -3,13 +3,19 @@ package scenarioTest;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 import myVelib.GPScoord;
 import myVelib.Location;
 import myVelib.ParkingSlot;
 import myVelib.Reseau;
 import myVelib.Station;
+import myVelib.TimeState;
 import myVelib.User;
 import myVelib.Bicycle.Electrical;
 import myVelib.Bicycle.Mechanical;
@@ -39,9 +45,12 @@ public class ScenarioTester {
 				switch(array.get(0)){
 				case "reseau": {
 					Reseau.getInstance();
+					break;
 				}
+				
 				case "rest":{
 					Reseau.getInstance().resetReseau();
+					break;
 				}
 				case "station" : {
 					Station stat=new Station(array.get(3),"on service",new GPScoord(Float.parseFloat(array.get(1)), Float.parseFloat(array.get(2))),"station");
@@ -54,9 +63,12 @@ public class ScenarioTester {
 					for(int i=0;i<=Integer.parseInt(array.get(4))-Integer.parseInt(array.get(6))-Integer.parseInt(array.get(5));i++){
 						new ParkingSlot(null,"Free",stat);
 					}
+					break;
 				}
+				
 				case "user" :{
 					new User(array.get(1),array.get(2));
+					break;
 				}
 				case "rentabike":{
 					Reseau res=Reseau.getInstance();
@@ -69,26 +81,12 @@ public class ScenarioTester {
 					}
 					for(User user:res.getUserList()){
 						if(user.getUserID()==Long.parseLong(array.get(1))){
-							user.getLoc().takeBike(stat1, array.get(3));
+							Location loc=new Location(user,stat1);
+							loc.takeBike(stat1,array.get(3));
 							break;
 						}
 					}
-				}
-				case "location" :{
-					Reseau res=Reseau.getInstance();
-					Station stat1 = null;
-					for(Station stat:res.getStationList()){
-						if(stat.getStationID()==Long.parseLong(array.get(2))){
-							stat1=stat;
-							break;
-						}
-					}
-					for(User user:res.getUserList()){
-						if(user.getUserID()==Long.parseLong(array.get(1))){
-							new Location(user,stat1);
-							break;
-						}
-					}
+					break;
 				}
 				case "planningride" :{
 					Reseau res=Reseau.getInstance();
@@ -109,6 +107,7 @@ public class ScenarioTester {
 						}
 					}
 					loc.takeBike(loc.getDeparture(),array.get(7));
+					break;
 				}
 				case "returnbike" :{
 					Reseau res=Reseau.getInstance();
@@ -125,25 +124,81 @@ public class ScenarioTester {
 							break;
 						}
 					}
+					break;
 				}
-				case "offline"
+				case "offline":{
+					Reseau res=Reseau.getInstance();
+					Station stat1 = null;
+					for(Station stat:res.getStationList()){
+						if(stat.getStationID()==Long.parseLong(array.get(1))){
+							stat.setState("Offline");
+							break;
+						}
+					}
+					break;
 				}
-			}
-			catch (Exception e){
-				throw new RuntimeException(e);
-			}
-			finally {
-				if(reader!=null){
-					try{reader.close();}
-					catch(IOException e){}
+				case "simulationlocation" :{
+					Reseau res=Reseau.getInstance();
+					Station statdepart = null;
+					Station statarrivée = null;
+					ParkingSlot ps=null;
+					User user1=null;
+					for(Station stat:res.getStationList()){
+						if(stat.getStationID()==Long.parseLong(array.get(2))){
+							statdepart=stat;
+							break;
+						}
+					}
+					for(Station stat:res.getStationList()){
+						if(stat.getStationID()==Long.parseLong(array.get(3))){
+							statarrivée=stat;
+							break;
+						}
+					}
+					for(User user:res.getUserList()){
+						if(user.getUserID()==Long.parseLong(array.get(1))){
+							user1=user;
+							break;
+						}
+					}
+					Location loc=new Location(user1,statdepart);
+					loc.takeBike(statdepart, array.get(5));
+					Date datetempo=Calendar.getInstance().getTime();
+					datetempo.setMinutes(datetempo.getMinutes()-Integer.parseInt(array.get(4)));
+					loc.setTimeStart(datetempo);
+					if(array.get(5)=="Mechanical"){
+						ps=statdepart.getParkingSlotList().get(5);
+						ps.getHistory().remove(ps.getHistory().size());
+						ps.getHistory().add(new TimeState(false,datetempo));
+					}
+					else {
+						ps=statdepart.getParkingSlotList().get(0);
+						ps.getHistory().remove(ps.getHistory().size());
+						ps.getHistory().add(new TimeState(false,datetempo));
+					}
+					loc.returnBike(statarrivée);
+				break;
 				}
-				if(file!=null){
-					try{file.close();}
-					catch(IOException e){}
 				}
 			}
 		}
-		public static void main(String[] args) {
-			executeScenario("testScenario1.txt");
+
+
+		catch (Exception e){
+			throw new RuntimeException(e);
+		}
+		finally {
+			if(reader!=null){
+				try{reader.close();}
+				catch(IOException e){}
+			}
+			if(file!=null){
+				try{file.close();}
+				catch(IOException e){}
+			}
 		}
 	}
+	public static void main(String[] args) {
+		executeScenario("testScenario1.txt");
+	}
+}

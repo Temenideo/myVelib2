@@ -52,6 +52,7 @@ public class GUIinitialisationReseau extends JFrame{
 					setup.startMyVelib(10, 10);
 					GUImainFrame mainFrame= new GUImainFrame();
 					mainFrame.setVisible(true);
+					GUImainFrame.refresh();
 					dispose();
 			}
 			
@@ -61,11 +62,9 @@ public class GUIinitialisationReseau extends JFrame{
 				display();
 			}
 				private void display() {
-					JTextField text = new JTextField("Custom");
-					JPanel panel3 = new JPanel();
-					panel3.add(text);
-					getContentPane().add(panel3);
-					setVisible(true);
+					GUICustomNetwork customNet = new GUICustomNetwork();
+					customNet.setVisible(true);
+					dispose();
 			}
 			
 		};

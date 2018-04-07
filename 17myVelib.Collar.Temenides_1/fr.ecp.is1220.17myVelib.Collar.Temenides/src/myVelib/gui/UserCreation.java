@@ -36,6 +36,7 @@ public class UserCreation extends JFrame{
 		firstNamePanel.setLayout(null);
 		
 		txtFirstName = new JTextField();
+		txtFirstName.setText("John");
 		txtFirstName.setBounds(10, 18, 160, 25);
 		firstNamePanel.add(txtFirstName);
 		txtFirstName.setColumns(10);
@@ -47,6 +48,7 @@ public class UserCreation extends JFrame{
 		lastNamePanel.setLayout(null);
 		
 		txtLastName = new JTextField();
+		txtLastName.setText("Doe");
 		txtLastName.setBounds(10, 18, 160, 25);
 		lastNamePanel.add(txtLastName);
 		txtLastName.setColumns(10);
@@ -80,10 +82,12 @@ public class UserCreation extends JFrame{
 	
 	ActionListener confirm = new ActionListener() {
 		public void actionPerformed(final ActionEvent e) {
-			createUser();
+			User user = createUser();
+			System.out.println("User "+user.getUserID()+": "+user.getFirstName()+" "+user.getName()+" successfully added to myVelib with "+user.getCard().getTypeCard()+" subscription.");
+			GUImainFrame.refreshUsers();
 			dispose();
 			}
-		public void createUser(){
+		public User createUser(){
 			String name= txtLastName.getText();
 			String firstName = txtFirstName.getText();
 			User user = new User(name,firstName);
@@ -93,6 +97,7 @@ public class UserCreation extends JFrame{
 			if(rdbtnVmaxCard.isSelected()) {
 				user.subscribeVmax();
 			}
+			return user;
 	}
 		
 	};

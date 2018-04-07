@@ -123,14 +123,16 @@ public class StationCreation extends JFrame{
 	ActionListener confirm = new ActionListener() {
 		public void actionPerformed(final ActionEvent e) {
 			try {
-				createStation();
+				Station stat =createStation();
+				System.out.println("Added Station "+stat.getStationID()+" : "+stat.getName()+" to MyVelib Network");
 			} catch (BadStateStationCreationException | BadTypeStationCreationException
 					| BadParkingSlotCreationException | NoEndStationAvailableException e1) {
 				e1.printStackTrace();
 			}
+			GUImainFrame.refreshStations();
 			dispose();
 			}
-		public void createStation() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException {
+		public Station createStation() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException {
 			String name = txtStationName.getText();
 			GPScoord position = new GPScoord((float)XCoordinate.getValue(),(float)YCoordinate.getValue());
 			String stationType = "Standard";
@@ -162,6 +164,7 @@ public class StationCreation extends JFrame{
 				else {new ParkingSlot(null, "Free", stat);
 			}
 		}
+	return stat;
 	}
 		
 	};

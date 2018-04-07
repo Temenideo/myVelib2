@@ -10,6 +10,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
+<<<<<<< HEAD
 import myVelib.GPScoord;
 import myVelib.Location;
 import myVelib.ParkingSlot;
@@ -26,6 +27,8 @@ import myVelib.ridePolicies.RidePolicy;
 import myVelib.ridePolicies.ShortestPath;
 import myVelib.ridePolicies.Uniformity;
 
+=======
+>>>>>>> branch 'master' of https://github.com/Temenideo/myVelib2
 public class ScenarioTester {
 	public static void executeScenario(String fileName){
 		String[] returnValue;
@@ -44,9 +47,14 @@ public class ScenarioTester {
 				}
 				switch(array.get(0)){
 				case "reseau": {
+<<<<<<< HEAD
 					Reseau.getInstance();
 					break;
+=======
+					
+>>>>>>> branch 'master' of https://github.com/Temenideo/myVelib2
 				}
+<<<<<<< HEAD
 				
 				case "rest":{
 					Reseau.getInstance().resetReseau();
@@ -179,11 +187,17 @@ public class ScenarioTester {
 					loc.returnBike(statarrivée);
 				break;
 				}
+=======
+					
+>>>>>>> branch 'master' of https://github.com/Temenideo/myVelib2
 				}
 			}
 		}
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> branch 'master' of https://github.com/Temenideo/myVelib2
 		catch (Exception e){
 			throw new RuntimeException(e);
 		}

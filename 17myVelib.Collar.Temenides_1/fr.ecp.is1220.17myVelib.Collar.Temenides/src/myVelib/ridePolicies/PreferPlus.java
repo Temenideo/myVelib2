@@ -86,7 +86,7 @@ public class PreferPlus implements RidePolicy{
 		}
 	}
 	@Override
-	public String getRidePolicy() {
+	public String getName() {
 		return policyType;
 	}
 

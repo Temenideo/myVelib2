@@ -8,6 +8,8 @@ import myVelib.Location;
 import myVelib.Reseau;
 import myVelib.Station;
 import myVelib.User;
+import myVelib.SortingStations.LeastOccupied;
+import myVelib.SortingStations.MostUsed;
 import myVelib.ridePolicies.NoEndStationAvailableException;
 
 import javax.swing.JTabbedPane;
@@ -23,13 +25,11 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
+import java.text.ParseException;
 
 import javax.swing.JButton;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JPanel;
 import javax.swing.LayoutStyle.ComponentPlacement;
@@ -59,6 +59,7 @@ public class GUImainFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private static UserTable usersList;
 	private static StationTable stationsList;
+	private static LocationTable locationsList;
 	public static double xBoundary;
 	public static double yBoundary;
 	
@@ -86,11 +87,13 @@ public class GUImainFrame extends JFrame{
 	private final ButtonGroup StatusButtonGroup = new ButtonGroup();
 	private final ButtonGroup typeButtonGroup = new ButtonGroup();
 	private JTextField lUser;
-	private JTextField lStart;
-	private JTextField lEnd;
-	private JTextField textField_3;
-	private JTextField textField_4;
-	private JTextField textField_5;
+	private JTextField lDeparture;
+	private JTextField lArrival;
+	private JTextField lPolicy;
+	private JTextField lStartStation;
+	private JTextField lEndStation;
+	private JTextField lStartTime;
+	private JTextField lEndTime;
 
 	public GUImainFrame() {
 		super();
@@ -134,17 +137,6 @@ public class GUImainFrame extends JFrame{
 					.addComponent(consolePanel, GroupLayout.PREFERRED_SIZE, 431, GroupLayout.PREFERRED_SIZE)
 					.addContainerGap())
 		);
-		JButton btnTest = new JButton("Test");
-		toolBar.add(btnTest);
-		
-		btnTest.addActionListener(new ActionListener() {
-			public void actionPerformed(final ActionEvent e) {
-				for(Station stat:Reseau.getInstance().getStationList()) {
-					System.out.println(stat.getName());
-				}
-			}
-
-		});
 		
 		ActionListener addStation = new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -162,9 +154,18 @@ public class GUImainFrame extends JFrame{
 			}
 		};
 		
+		ActionListener endLocation = new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				GUILocationEnd locationEnd = new GUILocationEnd();
+				locationEnd.setVisible(true);
+				refresh();
+			}
+		};
+		
 		
 		usersList = new UserTable();
 		stationsList = new StationTable();
+		locationsList = new LocationTable();
 		getContentPane().setLayout(groupLayout);
 		
 		JPanel stationPanel = new JPanel();
@@ -261,17 +262,16 @@ public class GUImainFrame extends JFrame{
 		JButton btnNewStation = new JButton("New Station");
 		btnNewStation.setBounds(25, 310, 130, 25);
 		btnNewStation.addActionListener(addStation);
-		stationInfoPanel.add(btnNewStation);
 		
-		JPanel panel = new JPanel();
-		panel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Edition ", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel.setBounds(579, 20, 287, 305);
-		stationInfoPanel.add(panel);
-		panel.setLayout(null);
+		JPanel editionPanel = new JPanel();
+		editionPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Edition ", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		editionPanel.setBounds(493, 85, 313, 278);
+		stationInfoPanel.add(editionPanel);
+		editionPanel.setLayout(null);
 		
 		JPanel sStatusChangePanel = new JPanel();
 		sStatusChangePanel.setBounds(6, 83, 275, 50);
-		panel.add(sStatusChangePanel);
+		editionPanel.add(sStatusChangePanel);
 		sStatusChangePanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Status", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		sStatusChangePanel.setLayout(null);
 		
@@ -288,7 +288,7 @@ public class GUImainFrame extends JFrame{
 		
 		JPanel sTypeChangePanel = new JPanel();
 		sTypeChangePanel.setBounds(6, 18, 275, 50);
-		panel.add(sTypeChangePanel);
+		editionPanel.add(sTypeChangePanel);
 		sTypeChangePanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Type", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
 		sTypeChangePanel.setLayout(null);
 		typeButtonGroup.add(rdbtnPlusType);
@@ -301,6 +301,40 @@ public class GUImainFrame extends JFrame{
 		
 		rdbtnStandardType.setBounds(170, 18, 100, 25);
 		sTypeChangePanel.add(rdbtnStandardType);
+		
+		JPanel sortPanel = new JPanel();
+		sortPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Sort Stations by...", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		sortPanel.setBounds(25, 277, 148, 86);
+		stationInfoPanel.add(sortPanel);
+		sortPanel.setLayout(null);
+		
+		JButton btnLeast = new JButton("Least Occupied\r\n");
+		btnLeast.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				LeastOccupied sort = new LeastOccupied();
+				try {
+					sort.sortStation(Reseau.getInstance().getStationList());
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		btnLeast.setBounds(6, 18, 136, 25);
+		sortPanel.add(btnLeast);
+		
+		JButton btnMost = new JButton("Most Used");
+		btnMost.setBounds(6, 54, 136, 25);
+		btnMost.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				MostUsed sort = new MostUsed();
+				try {
+					sort.sortStation(Reseau.getInstance().getStationList());
+				} catch (ParseException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		sortPanel.add(btnMost);
 		
 		
 		JPanel userPanel = new JPanel();
@@ -377,7 +411,6 @@ public class GUImainFrame extends JFrame{
 		JButton btnNewUser = new JButton("New User");
 		btnNewUser.setBounds(25, 310, 130, 25);
 		btnNewUser.addActionListener(addUser);
-		userInfoPanel.add(btnNewUser);
 		
 		JPanel locationPanel = new JPanel();
 		tabbedPane.addTab("Locations", null, locationPanel, null);
@@ -390,12 +423,13 @@ public class GUImainFrame extends JFrame{
 		locationPanel.setLayout(gbl_locationPanel);
 		
 		JScrollPane locationScroll = new JScrollPane();
+		locationScroll.setViewportView(locationsList);
 		GridBagConstraints gbc_locationScroll = new GridBagConstraints();
 		gbc_locationScroll.fill = GridBagConstraints.BOTH;
 		gbc_locationScroll.insets = new Insets(0, 0, 0, 5);
 		gbc_locationScroll.gridx = 0;
 		gbc_locationScroll.gridy = 0;
-		locationPanel.add(locationScroll, gbc_locationScroll);
+		locationPanel.add(locationScroll,gbc_locationScroll);
 		
 		JPanel locationInfoPanel = new JPanel();
 		locationInfoPanel.setLayout(null);
@@ -409,75 +443,89 @@ public class GUImainFrame extends JFrame{
 		JPanel lUserPanel = new JPanel();
 		lUserPanel.setLayout(null);
 		lUserPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "User", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		lUserPanel.setBounds(15, 20, 128, 47);
+		lUserPanel.setBounds(15, 20, 140, 47);
 		locationInfoPanel.add(lUserPanel);
 		
 		lUser = new JTextField(10);
-		lUser.setBounds(10, 15, 110, 25);
+		lUser.setBounds(10, 18, 120, 22);
 		lUserPanel.add(lUser);
 		
 		JPanel lStartPanel = new JPanel();
 		lStartPanel.setLayout(null);
-		lStartPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Name", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		lStartPanel.setBounds(155, 20, 348, 47);
+		lStartPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Departure", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		lStartPanel.setBounds(165, 20, 140, 47);
 		locationInfoPanel.add(lStartPanel);
 		
-		lStart = new JTextField(30);
-		lStart.setBounds(6, 18, 336, 22);
-		lStartPanel.add(lStart);
+		lDeparture = new JTextField(30);
+		lDeparture.setBounds(10, 18, 120, 22);
+		lStartPanel.add(lDeparture);
 		
 		JPanel lEndPanel = new JPanel();
 		lEndPanel.setLayout(null);
-		lEndPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Subscription", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		lEndPanel.setBounds(15, 85, 128, 47);
+		lEndPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Arrival", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		lEndPanel.setBounds(165, 85, 140, 47);
 		locationInfoPanel.add(lEndPanel);
 		
-		lEnd = new JTextField(10);
-		lEnd.setBounds(6, 18, 116, 22);
-		lEndPanel.add(lEnd);
+		lArrival = new JTextField(10);
+		lArrival.setBounds(10, 18, 116, 22);
+		lEndPanel.add(lArrival);
 		
-		JPanel panel_6 = new JPanel();
-		panel_6.setLayout(null);
-		panel_6.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Total Charge", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_6.setBounds(275, 85, 106, 47);
-		locationInfoPanel.add(panel_6);
+		JPanel lPolicyPanel = new JPanel();
+		lPolicyPanel.setLayout(null);
+		lPolicyPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Ride Policy", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		lPolicyPanel.setBounds(15, 85, 140, 47);
+		locationInfoPanel.add(lPolicyPanel);
 		
-		textField_3 = new JTextField(8);
-		textField_3.setBounds(8, 18, 90, 22);
-		panel_6.add(textField_3);
+		lPolicy = new JTextField(8);
+		lPolicy.setBounds(8, 18, 120, 22);
+		lPolicyPanel.add(lPolicy);
 		
-		JPanel panel_7 = new JPanel();
-		panel_7.setLayout(null);
-		panel_7.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Total Time", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_7.setBounds(155, 85, 106, 47);
-		locationInfoPanel.add(panel_7);
+		JPanel lsStationPanel = new JPanel();
+		lsStationPanel.setLayout(null);
+		lsStationPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Departure Station", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		lsStationPanel.setBounds(320, 20, 130, 47);
+		locationInfoPanel.add(lsStationPanel);
 		
-		textField_4 = new JTextField(8);
-		textField_4.setBounds(8, 18, 90, 22);
-		panel_7.add(textField_4);
+		lStartStation = new JTextField(8);
+		lStartStation.setBounds(10, 18, 110, 22);
+		lsStationPanel.add(lStartStation);
 		
-		JPanel panel_8 = new JPanel();
-		panel_8.setLayout(null);
-		panel_8.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Earned Credits", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
-		panel_8.setBounds(395, 85, 106, 47);
-		locationInfoPanel.add(panel_8);
+		JPanel leStationPanel = new JPanel();
+		leStationPanel.setLayout(null);
+		leStationPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Arrival Station", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		leStationPanel.setBounds(320, 85, 130, 47);
+		locationInfoPanel.add(leStationPanel);
 		
-		textField_5 = new JTextField(8);
-		textField_5.setBounds(8, 18, 90, 22);
-		panel_8.add(textField_5);
+		lEndStation = new JTextField(8);
+		lEndStation.setBounds(10, 18, 110, 22);
+		leStationPanel.add(lEndStation);
 		
-		JButton button = new JButton("New User");
-		button.setBounds(25, 310, 130, 25);
-		locationInfoPanel.add(button);
+		JButton btnNewLocation = new JButton("New Location\r\n");
+		btnNewLocation.setBounds(25, 310, 130, 25);
 		
+		JPanel lsTimePanel = new JPanel();
+		lsTimePanel.setLayout(null);
+		lsTimePanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Departure Time", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		lsTimePanel.setBounds(460, 20, 250, 47);
+		locationInfoPanel.add(lsTimePanel);
 		
-		JMenuBar menuBar_1 = new JMenuBar();
-		setJMenuBar(menuBar_1);
+		lStartTime = new JTextField(8);
+		lStartTime.setBounds(8, 18, 230, 22);
+		lsTimePanel.add(lStartTime);
 		
-		JMenu mnLocation = new JMenu("Location");
-		JMenuItem mntmNewLocation = new JMenuItem("New Location");
-		mnLocation.add(mntmNewLocation);
-		menuBar_1.add(mnLocation);
+		JPanel leTimePanel = new JPanel();
+		leTimePanel.setLayout(null);
+		leTimePanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Arrival Time", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		leTimePanel.setBounds(460, 85, 250, 47);
+		locationInfoPanel.add(leTimePanel);
+		
+		lEndTime = new JTextField(8);
+		lEndTime.setBounds(8, 18, 230, 22);
+		leTimePanel.add(lEndTime);
+		
+		JButton btnEndLocation = new JButton("End Location");
+		btnEndLocation.setBounds(580, 310, 130, 25);
+		btnEndLocation.addActionListener(endLocation);
 		
 		
 		ActionListener locationListener = new ActionListener() {
@@ -486,8 +534,7 @@ public class GUImainFrame extends JFrame{
 				loc.setVisible(true);
 			}
 		};
-		
-		mntmNewLocation.addActionListener(locationListener);
+		btnNewLocation.addActionListener(locationListener);
 		
 		
 		ActionListener sStatusListener= new ActionListener() {
@@ -537,6 +584,12 @@ public class GUImainFrame extends JFrame{
 		rdbtnOffline.addActionListener(sStatusListener);
 		rdbtnOnService.addActionListener(sStatusListener);
 		
+		
+		toolBar.add(btnNewStation);
+		toolBar.add(btnNewUser);
+		toolBar.add(btnNewLocation);
+		toolBar.add(btnEndLocation);
+		
 	}
 	
 	public class CapturePane extends JPanel implements Consumer {
@@ -549,9 +602,9 @@ public class GUImainFrame extends JFrame{
 
         public CapturePane() {
             setLayout(new BorderLayout());
-            output = new JTextArea(10,90);
+            output = new JTextArea(10,80);
             JScrollPane sp = new JScrollPane(output);
-            sp.setPreferredSize(new Dimension(1850,350));
+            sp.setPreferredSize(new Dimension(1650,350));
             add(sp,BorderLayout.CENTER);
         }
 
@@ -852,12 +905,14 @@ public class GUImainFrame extends JFrame{
         private final ListSelectionModel listSelectionModel;
 
     private void setFields(int index) {
-        uId.setText(table.getValueAt(index, 0).toString());
-        uName.setText(table.getValueAt(index, 2).toString()+" "+table.getValueAt(index, 1).toString());
-        uCard.setText(table.getValueAt(index, 3).toString());
-        uCharge.setText(table.getValueAt(index, 4).toString());
-        uTime.setText(table.getValueAt(index, 5).toString());
-        uCredits.setText(table.getValueAt(index, 6).toString());
+        lUser.setText(table.getValueAt(index, 0).toString());
+        lPolicy.setText(table.getValueAt(index, 1).toString());
+        lDeparture.setText(table.getValueAt(index, 2).toString());
+        lStartStation.setText(table.getValueAt(index, 3).toString());
+        lStartTime.setText(table.getValueAt(index, 4).toString());
+        lArrival.setText(table.getValueAt(index, 5).toString());
+        lEndStation.setText(table.getValueAt(index, 6).toString());
+        lEndTime.setText(table.getValueAt(index, 7).toString());
         }
 
     private void clearFields() {
@@ -901,7 +956,7 @@ public class GUImainFrame extends JFrame{
 
     private TableModel createTableModel() {
         DefaultTableModel model = new DefaultTableModel(
-            new Object[] {"User ID", "Last Name", "First Name","Card Type", "Total Use Time", "Total Charges", "Earned Credits"
+            new Object[] {"User ","Bicycle Type","Ride Policy","Departure Position","Departure Station","Departure Time","Arrival Position","Arrival Station","Arrival Time"
     				}, 0
         ){
             /**
@@ -983,16 +1038,26 @@ public class GUImainFrame extends JFrame{
 		DefaultTableModel locationsModel=new DefaultTableModel(new Object[][] {
 			},
 				new String[] {
-						"User ","Bicycle Type","Ride Policy","Departure Position","Departure Station","Arrival Position","Arrival Station","Departure Time",
+						"User ","Ride Policy","Departure Position","Departure Station","Departure Time","Arrival Position","Arrival Station","Arrival Time"
 				});
 		for(Location loc : Reseau.getInstance().getLocationList()) {
-			locationsModel.addRow(new Object[] {loc.getUser().getUserID()+". "+loc.getUser().getFirstName()+" "+loc.getUser().getName(),loc.getBike().getTypeBike(),loc.getRidePolicy().getRidePolicy(),loc.getStart(),loc.getDeparture().getName(),loc.getEnd(),loc.getArrival().getName(),loc.getTimeStart().toString()});
+			locationsModel.addRow(new Object[] {loc.getUser().getUserID(),
+					loc.getRidePolicy().getName(),
+					loc.getStart(),
+					loc.getDeparture().getName(),
+					loc.getTimeStart(),
+					loc.getEnd(),
+					loc.getArrival().getName(),
+					loc.getTimeEnd()
+					});
 		}
+		locationsList.getTable().setModel(locationsModel);
 	}
 	
 	public static void refresh() {
 		refreshStations();
 		refreshUsers();
+		refreshLocations();
 	}
 
 	public static double getxBoundary() {
@@ -1010,6 +1075,4 @@ public class GUImainFrame extends JFrame{
 	public static void setyBoundary(double yBoundary) {
 		GUImainFrame.yBoundary = yBoundary;
 	}
-	
-	
 }

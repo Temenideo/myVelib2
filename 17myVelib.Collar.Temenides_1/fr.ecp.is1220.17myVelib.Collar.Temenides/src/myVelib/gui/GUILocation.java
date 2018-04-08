@@ -9,17 +9,25 @@ import javax.swing.JSlider;
 import javax.swing.JPanel;
 import javax.swing.border.TitledBorder;
 
+import myVelib.BadParkingSlotCreationException;
+import myVelib.GPScoord;
+import myVelib.Location;
 import myVelib.Reseau;
 import myVelib.User;
+import myVelib.ridePolicies.AvoidPlus;
+import myVelib.ridePolicies.FastestPath;
+import myVelib.ridePolicies.NoEndStationAvailableException;
+import myVelib.ridePolicies.NoStartStationAvailableException;
+import myVelib.ridePolicies.PreferPlus;
+import myVelib.ridePolicies.RidePolicy;
+import myVelib.ridePolicies.ShortestPath;
+import myVelib.ridePolicies.Uniformity;
 
 import javax.swing.UIManager;
 import java.awt.Color;
-import javax.swing.JCheckBox;
 import java.awt.Choice;
 import javax.swing.ButtonGroup;
 import javax.swing.JRadioButton;
-import javax.swing.JToggleButton;
-import javax.swing.SwingConstants;
 
 public class GUILocation extends JFrame{
 	public GUILocation() {
@@ -65,7 +73,7 @@ public class GUILocation extends JFrame{
 		endYpanel.add(endYslider);
 		
 		JButton btnConfirm = new JButton("Confirm");
-		btnConfirm.setBounds(570, 265, 100, 25);
+		btnConfirm.setBounds(400, 265, 100, 25);
 		getContentPane().add(btnConfirm);
 		
 		JButton btnCancel = new JButton("Cancel");
@@ -169,9 +177,77 @@ public class GUILocation extends JFrame{
 		startYslider.setMaximum((int) (GUImainFrame.yBoundary/2));
 		startYslider.setBounds(8, 20, 130, 25);
 		startYpanel.add(startYslider);
+		
+		JButton btnStart = new JButton("Confirm and Start");
+		btnStart.setBounds(520, 265, 150, 25);
+		getContentPane().add(btnStart);
 	
 	ActionListener confirm = new ActionListener() {
 		public void actionPerformed(final ActionEvent e) {
+			GPScoord start = new GPScoord (startXslider.getValue(),startYslider.getValue());
+			GPScoord end = new GPScoord (endXslider.getValue(),endYslider.getValue());
+			User user = Reseau.getInstance().getUserList().get(userChoice.getSelectedIndex());
+			String bikeType = "Mechanical";
+			if(rdbtnElectrical.isSelected()) {
+				bikeType="Electrical";
+			}
+			RidePolicy policy = new FastestPath();
+			if(chckbxShortestPath.isSelected()) {
+				policy = new ShortestPath();
+			}
+			else if(chckbxStationUniformity.isSelected()) {
+				policy = new Uniformity();
+			}
+			else if(chckbxAvoidPlusStations.isSelected()) {
+				policy = new AvoidPlus();
+			}
+			else if(chckbxPreferPlusStations.isSelected()) {
+				policy = new PreferPlus();
+			}
+			try {
+				@SuppressWarnings("unused")
+				Location loc = new Location(user,start,end,policy,bikeType);
+			} catch (NoEndStationAvailableException | NoStartStationAvailableException e1) {
+				
+				e1.printStackTrace();
+			}
+			System.out.println("Location has been successfully planned");
+			GUImainFrame.refresh();
+			dispose();
+		}
+	};
+	
+	ActionListener confirmStart = new ActionListener() {
+		public void actionPerformed(final ActionEvent e) {
+			GPScoord start = new GPScoord (startXslider.getValue(),startYslider.getValue());
+			GPScoord end = new GPScoord (endXslider.getValue(),endYslider.getValue());
+			User user = Reseau.getInstance().getUserList().get(userChoice.getSelectedIndex());
+			String bikeType = "Mechanical";
+			if(rdbtnElectrical.isSelected()) {
+				bikeType="Electrical";
+			}
+			RidePolicy policy = new FastestPath();
+			if(chckbxShortestPath.isSelected()) {
+				policy = new ShortestPath();
+			}
+			else if(chckbxStationUniformity.isSelected()) {
+				policy = new Uniformity();
+			}
+			else if(chckbxAvoidPlusStations.isSelected()) {
+				policy = new AvoidPlus();
+			}
+			else if(chckbxPreferPlusStations.isSelected()) {
+				policy = new PreferPlus();
+			}
+			try {
+				Location loc = new Location(user,start,end,policy,bikeType);
+				System.out.println("Location has been successfully planned");
+				loc.takeBike(loc.getDeparture(), bikeType);
+			} catch (NoEndStationAvailableException | NoStartStationAvailableException | BadParkingSlotCreationException e1) {
+				
+				e1.printStackTrace();
+			}
+			GUImainFrame.refresh();
 			dispose();
 		}
 	};
@@ -185,6 +261,7 @@ public class GUILocation extends JFrame{
 	
 	btnConfirm.addActionListener(confirm);	
 	btnCancel.addActionListener(cancel);
+	btnStart.addActionListener(confirmStart);
 	
 	
 	setSize(700,350);

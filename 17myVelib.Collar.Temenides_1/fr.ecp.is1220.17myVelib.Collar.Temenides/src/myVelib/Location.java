@@ -78,7 +78,6 @@ public class Location implements Observer{
 		this.departure=departure;
 		this.hasStarted=true;
 		this.timeStart=Calendar.getInstance().getTime();
-		//this.user.setLocation(this);
 		this.hasEnded=false;
 		this.ridePolicy=policy;
 		this.takeBike(departure, typeBike);
@@ -158,7 +157,7 @@ public class Location implements Observer{
 			this.user.setTotalCharges(user.getTotalCharges()+charge);
 			this.bike=null;
 			this.hasEnded=true;
-			System.out.println("Bike location charged "+charge+"€");
+			System.out.println("Bike location charged "+charge+" euro(s)");
 			this.user.setLocation(null);
 
 

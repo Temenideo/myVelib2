@@ -76,7 +76,7 @@ public class Uniformity implements RidePolicy{
 			throw new NoEndStationAvailableException();
 	}
 	@Override
-	public String getRidePolicy() {
+	public String getName() {
 		return policyType;
 	}
 

@@ -58,7 +58,7 @@ public class FastestPath implements RidePolicy{
 	}
 
 	@Override
-	public String getRidePolicy() {
+	public String getName() {
 		return policyType;
 	}
 

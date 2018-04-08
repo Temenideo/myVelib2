@@ -24,6 +24,6 @@ public interface RidePolicy {
 	 * @throws NoEndStationAvailableException Erreur lorsqu'aucune station d'arrivée n'est possible
 	 */
 	public Station computeEnd(GPScoord start,GPScoord end,String typeBike) throws NoEndStationAvailableException;
-	public String getRidePolicy();
+	public String getName();
 	
 }

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.2" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
+  associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="scenarioTest.strategy.ReseauCreation" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/ReseauCreation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="86" width="181" x="191" y="400"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="scenarioTest.strategy.Statistiqueuser" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/Statistiqueuser.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="181" x="2" y="398"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="scenarioTest.strategy.Planningride" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/Planningride.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="181" x="6" y="308"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="scenarioTest.strategy.Initialisationsimulation" 
+    project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/Initialisationsimulation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="82" width="181" x="647" y="58"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="scenarioTest.strategy.UserCreation" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/UserCreation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="181" x="9" y="223"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="scenarioTest.strategy.StationCreation" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/StationCreation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="181" x="9" y="53"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="scenarioTest.strategy.Offline" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/Offline.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="181" x="385" y="403"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="scenarioTest.strategy.Statistique" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/Statistique.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="83" width="181" x="646" y="323"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="scenarioTest.strategy.Returnbike" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/Returnbike.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="84" width="181" x="644" y="231"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="10" language="java" name="scenarioTest.strategy.Reset" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/Reset.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="80" width="181" x="648" y="144"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="11" language="java" name="scenarioTest.strategy.SimulationLocation" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/SimulationLocation.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="79" width="181" x="10" y="139"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="scenarioTest.strategy.Rentabike" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/Rentabike.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="81" width="181" x="574" y="411"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="13" language="java" name="scenarioTest.strategy.StrategyMethode" project="17myVelib.Collar.Temenides_1" 
+    
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/StrategyMethode.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="433" y="259"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="14" language="java" name="scenarioTest.ScenarioTester" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/ScenarioTester.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="431" y="96"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="15">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="16">    
+    <end type="SOURCE" refId="2"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="17">    
+    <end type="SOURCE" refId="3"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="18">    
+    <end type="SOURCE" refId="6"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="19">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <dependency id="20">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
+  <realization id="21">    
+    <end type="SOURCE" refId="7"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="22">    
+    <end type="SOURCE" refId="10"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="23">    
+    <end type="SOURCE" refId="5"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="24">    
+    <end type="SOURCE" refId="12"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="25">    
+    <end type="SOURCE" refId="11"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="26">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="27">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

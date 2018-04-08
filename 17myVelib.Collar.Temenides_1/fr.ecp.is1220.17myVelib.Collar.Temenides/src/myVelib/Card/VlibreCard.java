@@ -24,7 +24,6 @@ public class VlibreCard extends Card{
 		}
 		long duration = Card.getDuration(loc.getTimeStart(), loc.getTimeEnd(), TimeUnit.MINUTES);
 		float hours = (float) duration/60;
-		long min = duration%60;
 		float timeMoreThanOneHour=duration-60;
 		float cost = 0;
 		if(loc.getBike().getTypeBike().equalsIgnoreCase("Mechanical")) {

@@ -40,7 +40,7 @@ public abstract class Card {
 		return timeUnit.convert(diffInMillies, TimeUnit.MILLISECONDS);
 	}
 	/**
-	 * Fonction permettant d'acceder au Timecredit enregistrée sur la carte
+	 * Fonction permettant d'accéder au Timecredit enregistrée sur la carte
 	 * @return le TimeCredit present sur la carte en minute
 	 */
 	public int getTimeCredit() {

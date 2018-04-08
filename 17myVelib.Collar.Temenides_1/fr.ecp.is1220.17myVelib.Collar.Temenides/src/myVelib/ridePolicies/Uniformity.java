@@ -9,6 +9,7 @@ import myVelib.Station;
  *
  */
 public class Uniformity implements RidePolicy{
+	public static String policyType="Station Uniformity";
 	public Station computeStart(GPScoord start, GPScoord end, String typeBike)
 			throws NoStartStationAvailableException {
 		Reseau reseau = Reseau.getInstance();
@@ -74,4 +75,9 @@ public class Uniformity implements RidePolicy{
 		else
 			throw new NoEndStationAvailableException();
 	}
+	@Override
+	public String getRidePolicy() {
+		return policyType;
+	}
+
 }

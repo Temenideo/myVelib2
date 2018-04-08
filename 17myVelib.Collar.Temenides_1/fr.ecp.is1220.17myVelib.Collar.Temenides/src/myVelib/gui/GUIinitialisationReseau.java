@@ -42,18 +42,17 @@ public class GUIinitialisationReseau extends JFrame{
 		ActionListener defaultSet = new ActionListener() {
 			public void actionPerformed(final ActionEvent ae) {
 				try {
-					display();
+					setup.startMyVelib(10,10,4000,4000,0.7,0.3);
 				} catch (BadStateStationCreationException | BadTypeStationCreationException
 						| BadParkingSlotCreationException | NoEndStationAvailableException e) {
 					e.printStackTrace();
 				}
-			}
-				private void display() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException {
-					setup.startMyVelib(10, 10);
-					GUImainFrame mainFrame= new GUImainFrame();
-					mainFrame.setVisible(true);
-					GUImainFrame.refresh();
-					dispose();
+				GUImainFrame mainFrame= new GUImainFrame();
+				GUImainFrame.setxBoundary(4000);
+				GUImainFrame.setyBoundary(4000);
+				mainFrame.setVisible(true);
+				GUImainFrame.refresh();
+				dispose();
 			}
 			
 		};

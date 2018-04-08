@@ -9,6 +9,7 @@ import myVelib.Station;
  *
  */
 public class PreferPlus implements RidePolicy{
+	public static String policyType="Prefer Plus";
 	@Override
 	public Station computeStart(GPScoord start, GPScoord end, String typeBike)
 			throws NoStartStationAvailableException {
@@ -84,4 +85,9 @@ public class PreferPlus implements RidePolicy{
 			throw new NoEndStationAvailableException();
 		}
 	}
+	@Override
+	public String getRidePolicy() {
+		return policyType;
+	}
+
 }

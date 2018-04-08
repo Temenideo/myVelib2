@@ -4,9 +4,12 @@ import javax.swing.JFrame;
 
 import myVelib.BadStateStationCreationException;
 import myVelib.BadTypeStationCreationException;
+import myVelib.Location;
 import myVelib.Reseau;
 import myVelib.Station;
 import myVelib.User;
+import myVelib.ridePolicies.NoEndStationAvailableException;
+
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
@@ -25,6 +28,7 @@ import javax.swing.JButton;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import javax.swing.JScrollPane;
 import javax.swing.JPanel;
@@ -55,6 +59,8 @@ public class GUImainFrame extends JFrame{
 	private static final long serialVersionUID = 1L;
 	private static UserTable usersList;
 	private static StationTable stationsList;
+	public static double xBoundary;
+	public static double yBoundary;
 	
 
 	JTextField uId = new JTextField(10);
@@ -79,6 +85,12 @@ public class GUImainFrame extends JFrame{
 	
 	private final ButtonGroup StatusButtonGroup = new ButtonGroup();
 	private final ButtonGroup typeButtonGroup = new ButtonGroup();
+	private JTextField lUser;
+	private JTextField lStart;
+	private JTextField lEnd;
+	private JTextField textField_3;
+	private JTextField textField_4;
+	private JTextField textField_5;
 
 	public GUImainFrame() {
 		super();
@@ -367,12 +379,116 @@ public class GUImainFrame extends JFrame{
 		btnNewUser.addActionListener(addUser);
 		userInfoPanel.add(btnNewUser);
 		
+		JPanel locationPanel = new JPanel();
+		tabbedPane.addTab("Locations", null, locationPanel, null);
+		tabbedPane.setEnabledAt(2, true);
+		GridBagLayout gbl_locationPanel = new GridBagLayout();
+		gbl_locationPanel.columnWidths = new int[]{939, 939, 0};
+		gbl_locationPanel.rowHeights = new int[]{402, 0};
+		gbl_locationPanel.columnWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
+		gbl_locationPanel.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		locationPanel.setLayout(gbl_locationPanel);
+		
+		JScrollPane locationScroll = new JScrollPane();
+		GridBagConstraints gbc_locationScroll = new GridBagConstraints();
+		gbc_locationScroll.fill = GridBagConstraints.BOTH;
+		gbc_locationScroll.insets = new Insets(0, 0, 0, 5);
+		gbc_locationScroll.gridx = 0;
+		gbc_locationScroll.gridy = 0;
+		locationPanel.add(locationScroll, gbc_locationScroll);
+		
+		JPanel locationInfoPanel = new JPanel();
+		locationInfoPanel.setLayout(null);
+		locationInfoPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Locations", TitledBorder.LEADING, TitledBorder.ABOVE_TOP, null, new Color(0, 0, 0)));
+		GridBagConstraints gbc_locationInfoPanel = new GridBagConstraints();
+		gbc_locationInfoPanel.fill = GridBagConstraints.BOTH;
+		gbc_locationInfoPanel.gridx = 1;
+		gbc_locationInfoPanel.gridy = 0;
+		locationPanel.add(locationInfoPanel, gbc_locationInfoPanel);
+		
+		JPanel lUserPanel = new JPanel();
+		lUserPanel.setLayout(null);
+		lUserPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "User", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		lUserPanel.setBounds(15, 20, 128, 47);
+		locationInfoPanel.add(lUserPanel);
+		
+		lUser = new JTextField(10);
+		lUser.setBounds(10, 15, 110, 25);
+		lUserPanel.add(lUser);
+		
+		JPanel lStartPanel = new JPanel();
+		lStartPanel.setLayout(null);
+		lStartPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Name", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		lStartPanel.setBounds(155, 20, 348, 47);
+		locationInfoPanel.add(lStartPanel);
+		
+		lStart = new JTextField(30);
+		lStart.setBounds(6, 18, 336, 22);
+		lStartPanel.add(lStart);
+		
+		JPanel lEndPanel = new JPanel();
+		lEndPanel.setLayout(null);
+		lEndPanel.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Subscription", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		lEndPanel.setBounds(15, 85, 128, 47);
+		locationInfoPanel.add(lEndPanel);
+		
+		lEnd = new JTextField(10);
+		lEnd.setBounds(6, 18, 116, 22);
+		lEndPanel.add(lEnd);
+		
+		JPanel panel_6 = new JPanel();
+		panel_6.setLayout(null);
+		panel_6.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Total Charge", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_6.setBounds(275, 85, 106, 47);
+		locationInfoPanel.add(panel_6);
+		
+		textField_3 = new JTextField(8);
+		textField_3.setBounds(8, 18, 90, 22);
+		panel_6.add(textField_3);
+		
+		JPanel panel_7 = new JPanel();
+		panel_7.setLayout(null);
+		panel_7.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Total Time", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_7.setBounds(155, 85, 106, 47);
+		locationInfoPanel.add(panel_7);
+		
+		textField_4 = new JTextField(8);
+		textField_4.setBounds(8, 18, 90, 22);
+		panel_7.add(textField_4);
+		
+		JPanel panel_8 = new JPanel();
+		panel_8.setLayout(null);
+		panel_8.setBorder(new TitledBorder(UIManager.getBorder("TitledBorder.border"), "Earned Credits", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		panel_8.setBounds(395, 85, 106, 47);
+		locationInfoPanel.add(panel_8);
+		
+		textField_5 = new JTextField(8);
+		textField_5.setBounds(8, 18, 90, 22);
+		panel_8.add(textField_5);
+		
+		JButton button = new JButton("New User");
+		button.setBounds(25, 310, 130, 25);
+		locationInfoPanel.add(button);
+		
 		
 		JMenuBar menuBar_1 = new JMenuBar();
 		setJMenuBar(menuBar_1);
 		
 		JMenu mnLocation = new JMenu("Location");
+		JMenuItem mntmNewLocation = new JMenuItem("New Location");
+		mnLocation.add(mntmNewLocation);
 		menuBar_1.add(mnLocation);
+		
+		
+		ActionListener locationListener = new ActionListener() {
+			public void actionPerformed (final ActionEvent ae) {
+				GUILocation loc = new GUILocation();
+				loc.setVisible(true);
+			}
+		};
+		
+		mntmNewLocation.addActionListener(locationListener);
+		
 		
 		ActionListener sStatusListener= new ActionListener() {
 			public void actionPerformed (final ActionEvent ae) {
@@ -380,16 +496,15 @@ public class GUImainFrame extends JFrame{
 				if(rdbtnOnService.isSelected()) {
 					try {
 						Reseau.getInstance().getStationList().get(i).setState("On Service");
-					} catch (BadStateStationCreationException e) {
+					} catch (BadStateStationCreationException | NoEndStationAvailableException e) {
 						e.printStackTrace();
 					}
 				}else if (rdbtnOffline.isSelected()) {
-						try {
-							Reseau.getInstance().getStationList().get(i).setState("Offline");
-						} catch (BadStateStationCreationException e) {
-							// TODO Auto-generated catch block
-							e.printStackTrace();
-						}
+					try {
+						Reseau.getInstance().getStationList().get(i).setState("Offline");
+					} catch (BadStateStationCreationException | NoEndStationAvailableException e) {
+						e.printStackTrace();
+					}
 					}
 				refresh();
 					
@@ -619,7 +734,7 @@ public class GUImainFrame extends JFrame{
         sMBikes.setText(table.getValueAt(index, 4).toString());
         sEBikes.setText(table.getValueAt(index, 5).toString());
         sParking.setText(table.getValueAt(index, 6).toString());
-        sPosition.setText(table.getValueAt(index, 7).toString());
+        sPosition.setText(table.getValueAt(index, 7).toString()+","+table.getValueAt(index, 8).toString());
         rdbtnOnService.setSelected(table.getValueAt(index, 3).toString().equalsIgnoreCase("On service"));
         rdbtnOffline.setSelected(table.getValueAt(index, 3).toString().equalsIgnoreCase("Offline"));
         rdbtnPlusType.setSelected(table.getValueAt(index, 2).toString().equalsIgnoreCase("Plus"));
@@ -672,7 +787,7 @@ public class GUImainFrame extends JFrame{
 
     private TableModel createTableModel() {
         DefaultTableModel model = new DefaultTableModel(
-            new Object[] {"Station ID", "Name", "Type", "Status", "Mechanical Bikes","Electrical Bikes", "Free Slots","Location"
+            new Object[] {"Station ID", "Name", "Type", "Status", "Mechanical Bikes","Electrical Bikes", "Free Slots","xLocation","yLocation"
     				}, 0
         ){
             /**
@@ -730,11 +845,11 @@ public class GUImainFrame extends JFrame{
 		DefaultTableModel stationModel=new DefaultTableModel(new Object[][] {
 		},
 		new String[] {
-			"Station ID", "Name", "Type", "Status", "Mechanical Bikes","Electrical Bikes", "Free Slots","Location"
+			"Station ID", "Name", "Type", "Status", "Mechanical Bikes","Electrical Bikes", "Free Slots","xLocation","yLocation"
 		}
 	);
 		for (Station stat:Reseau.getInstance().getStationList()) {
-				stationModel.addRow(new Object[] {stat.getStationID(),stat.getName(),stat.getTypeStation(),stat.getState(),stat.NumberAvailableBike("Mechanical"),stat.NumberAvailableBike("Electrical"),stat.getFreeSlots(),stat.getPosition()});	
+				stationModel.addRow(new Object[] {stat.getStationID(),stat.getName(),stat.getTypeStation(),stat.getState(),stat.NumberAvailableBike("Mechanical"),stat.NumberAvailableBike("Electrical"),stat.getFreeSlots(),stat.getPosition().getLatittude(),stat.getPosition().getLongitude()});	
 			}
 		stationsList.getTable().setModel(stationModel);
 	};
@@ -751,8 +866,37 @@ public class GUImainFrame extends JFrame{
 		usersList.getTable().setModel(userModel);
 	};
 	
+	public static void refreshLocations() {
+		DefaultTableModel locationsModel=new DefaultTableModel(new Object[][] {
+			},
+				new String[] {
+						"User ","Bicycle Type","Ride Policy","Departure Position","Departure Station","Arrival Position","Arrival Station","Departure Time",
+				});
+		for(Location loc : Reseau.getInstance().getLocationList()) {
+			locationsModel.addRow(new Object[] {loc.getUser().getUserID()+". "+loc.getUser().getFirstName()+" "+loc.getUser().getName(),loc.getBike().getTypeBike(),loc.getRidePolicy().getRidePolicy(),loc.getStart(),loc.getDeparture().getName(),loc.getEnd(),loc.getArrival().getName(),loc.getTimeStart().toString()});
+		}
+	}
+	
 	public static void refresh() {
 		refreshStations();
 		refreshUsers();
 	}
+
+	public static double getxBoundary() {
+		return xBoundary;
+	}
+
+	public static void setxBoundary(double xBoundary) {
+		GUImainFrame.xBoundary = xBoundary;
+	}
+
+	public static double getyBoundary() {
+		return yBoundary;
+	}
+
+	public static void setyBoundary(double yBoundary) {
+		GUImainFrame.yBoundary = yBoundary;
+	}
+	
+	
 }

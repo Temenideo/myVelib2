@@ -4,6 +4,7 @@ import myVelib.GPScoord;
 import myVelib.Station;
 
 public interface RidePolicy {
+	public static String policyType="Ride";
 	/**
 	 * Fonction permettant d'obtenir la station de départ au vue d'un critère donné
 	 * @param start coordonnées GPS du point de départ sous le format GPScoord
@@ -23,4 +24,6 @@ public interface RidePolicy {
 	 * @throws NoEndStationAvailableException Erreur lorsqu'aucune station d'arrivée n'est possible
 	 */
 	public Station computeEnd(GPScoord start,GPScoord end,String typeBike) throws NoEndStationAvailableException;
+	public String getRidePolicy();
+	
 }

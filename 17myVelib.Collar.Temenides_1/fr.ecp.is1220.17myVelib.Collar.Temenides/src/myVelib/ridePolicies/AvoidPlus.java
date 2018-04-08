@@ -9,6 +9,7 @@ import myVelib.Station;
  *
  */
 public class AvoidPlus implements RidePolicy{
+	public static String policyType="Avoid Plus";
 	@Override
 	public Station computeStart(GPScoord start,GPScoord end,String typeBike) throws NoStartStationAvailableException {
 		double dist=-1;
@@ -50,4 +51,9 @@ public class AvoidPlus implements RidePolicy{
 		else
 			throw new NoEndStationAvailableException();
 	}
+	@Override
+	public String getRidePolicy() {
+		return policyType;
+	}
+
 }

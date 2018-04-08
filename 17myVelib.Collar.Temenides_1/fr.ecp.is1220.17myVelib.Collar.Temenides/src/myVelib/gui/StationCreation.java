@@ -48,8 +48,8 @@ public class StationCreation extends JFrame{
 		XCoordinate.setValue(0);
 		XCoordinate.setPaintLabels(true);
 		XCoordinate.setSnapToTicks(true);
-		XCoordinate.setMaximum(2000);
-		XCoordinate.setMinimum(-2000);
+		XCoordinate.setMaximum((int) (GUImainFrame.xBoundary/2));
+		XCoordinate.setMinimum(-(int) (GUImainFrame.xBoundary/2));
 		XCoordinate.setBounds(8, 20, 130, 25);
 		Xpanel.add(XCoordinate);
 		
@@ -63,8 +63,8 @@ public class StationCreation extends JFrame{
 		YCoordinate.setPaintLabels(true);
 		YCoordinate.setSnapToTicks(true);
 		YCoordinate.setValue(0);
-		YCoordinate.setMinimum(-2000);
-		YCoordinate.setMaximum(2000);
+		YCoordinate.setMinimum(-(int) (GUImainFrame.yBoundary/2));
+		YCoordinate.setMaximum((int) (GUImainFrame.yBoundary/2));
 		YCoordinate.setBounds(8, 20, 130, 25);
 		Ypanel.add(YCoordinate);
 		

@@ -10,7 +10,7 @@ import myVelib.User;
  *
  */
 public class FastestPath implements RidePolicy{
-
+	public static String policyType="Fastest Path";
 	@Override
 	public Station computeStart(GPScoord start, GPScoord end, String typeBike)
 			throws NoStartStationAvailableException, NoEndStationAvailableException {
@@ -55,6 +55,11 @@ public class FastestPath implements RidePolicy{
 		}
 		else
 			throw new NoEndStationAvailableException();
+	}
+
+	@Override
+	public String getRidePolicy() {
+		return policyType;
 	}
 
 }

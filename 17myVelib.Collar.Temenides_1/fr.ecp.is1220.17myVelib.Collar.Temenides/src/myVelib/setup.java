@@ -3,6 +3,7 @@ package myVelib;
 import myVelib.Bicycle.Electrical;
 import myVelib.Bicycle.Mechanical;
 import myVelib.ridePolicies.NoEndStationAvailableException;
+import java.util.concurrent.ThreadLocalRandom;
 /**
  * Classe remplissant le cahier des charges de la partie 2.5 sur l'initialisation d'un reseau
  * @author xavier
@@ -11,24 +12,25 @@ import myVelib.ridePolicies.NoEndStationAvailableException;
 public class setup {
 	/**
 	 * Créer un reseau avec des stations, des parkings slots et des vélos selon les demandes de l'utilisateur
-	 * @param n nombre de station à créer
-	 * @param m nombre de parking slot à créer par station
+	 * @param stationNumber nombre de station à créer
+	 * @param slotsperStation nombre de parking slot à créer par station
 	 * @throws BadStateStationCreationException
 	 * @throws BadTypeStationCreationException
 	 * @throws BadParkingSlotCreationException
 	 * @throws NoEndStationAvailableException
 	 */
-	public static void startMyVelib(int n, int m) throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException{
-		Reseau res=Reseau.getInstance();
+	public static void startMyVelib(int stationNumber, int slotsperStation, double x, double y, double occupied, double ebike) throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoEndStationAvailableException{	
 		Station statTempo;
-		if (n>0 && m>0){
-			for (int i=0;i<n;i++){
-				statTempo=new Station("Standard", "on service", new GPScoord(i, i), "Station"+i);
-				for (int z=0;z<0.3*m;z++){
+		if (stationNumber>0 && slotsperStation>0){
+			for (int i=0;i<stationNumber;i++){
+				double xi= ThreadLocalRandom.current().nextDouble(-x/2,x/2+1);
+				double yi= ThreadLocalRandom.current().nextDouble(-y/2,y/2+1);
+				statTempo=new Station("Standard", "on service", new GPScoord((float)xi,(float)yi), "Station"+i);
+				for (int z=1;z<(1-occupied)*slotsperStation;z++){
 					new ParkingSlot(null, "Free", statTempo);
 				}
-				for(int z=0;z<m-((int) (0.3*m)+1);z++){
-					if (z<0.3*(m-((int) (0.3*m)+1))){
+				for(int z=0;z<occupied*slotsperStation;z++){
+					if (z<ebike*occupied*slotsperStation){
 						new ParkingSlot(new Electrical(),"Occupied",statTempo);
 					}
 					else {

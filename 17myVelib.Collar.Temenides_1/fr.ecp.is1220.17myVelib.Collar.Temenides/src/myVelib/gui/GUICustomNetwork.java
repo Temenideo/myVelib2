@@ -4,10 +4,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-
 import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
@@ -19,10 +16,7 @@ import javax.swing.border.TitledBorder;
 import myVelib.BadParkingSlotCreationException;
 import myVelib.BadStateStationCreationException;
 import myVelib.BadTypeStationCreationException;
-import myVelib.GPScoord;
-import myVelib.ParkingSlot;
-import myVelib.Station;
-import myVelib.Bicycle.BicycleFactory;
+import myVelib.setup;
 import myVelib.ridePolicies.NoEndStationAvailableException;
 import javax.swing.SwingConstants;
 
@@ -54,6 +48,7 @@ public class GUICustomNetwork extends JFrame{
 		
 		JSpinner xSpinner = new JSpinner();
 		xSpinner.setBounds(20, 19, 165, 22);
+		xSpinner.setValue(4000);
 		Xpanel.add(xSpinner);
 		
 		JPanel Ypanel = new JPanel();
@@ -64,6 +59,7 @@ public class GUICustomNetwork extends JFrame{
 		
 		JSpinner ySpinner = new JSpinner();
 		ySpinner.setBounds(20, 19, 165, 22);
+		ySpinner.setValue(4000);
 		Ypanel.add(ySpinner);
 		
 		JPanel stationNumber = new JPanel();
@@ -74,6 +70,7 @@ public class GUICustomNetwork extends JFrame{
 		
 		JSpinner stationNumberSpinner = new JSpinner();
 		stationNumberSpinner.setBounds(20, 18, 370, 22);
+		stationNumberSpinner.setValue(10);
 		stationNumber.add(stationNumberSpinner);
 		
 		JButton btnConfirm = new JButton("Confirm");
@@ -118,10 +115,29 @@ public class GUICustomNetwork extends JFrame{
 		
 		JSpinner slotSpinner = new JSpinner();
 		slotSpinner.setBounds(20, 18, 370, 22);
+		slotSpinner.setValue(10);
 		slotPanel.add(slotSpinner);
 	
 	ActionListener confirm = new ActionListener() {
 		public void actionPerformed(final ActionEvent e) {
+			try {
+				int stationNumber = (int) stationNumberSpinner.getValue();
+				int slotperStation = (int) slotSpinner.getValue();
+				double xBoundary = (double)(int) xSpinner.getValue();
+				double yBoundary = (double)(int) ySpinner.getValue();
+				double bikeNumber = (double)(int) bikeNumberSlider.getValue()/100;
+				double elecBike = (double)(int) elecBikeSlider.getValue()/100;
+				setup.startMyVelib(stationNumber,slotperStation,xBoundary,yBoundary,bikeNumber,elecBike);
+				GUImainFrame.setxBoundary(xBoundary);
+				GUImainFrame.setyBoundary(yBoundary);
+			} catch (BadStateStationCreationException | BadTypeStationCreationException
+					| BadParkingSlotCreationException | NoEndStationAvailableException e1) {
+				e1.printStackTrace();
+			}
+			GUImainFrame mainFrame= new GUImainFrame();			
+			mainFrame.setVisible(true);
+			mainFrame.setTitle(txtStationName.getText());
+			GUImainFrame.refresh();
 			dispose();
 			}
 	};

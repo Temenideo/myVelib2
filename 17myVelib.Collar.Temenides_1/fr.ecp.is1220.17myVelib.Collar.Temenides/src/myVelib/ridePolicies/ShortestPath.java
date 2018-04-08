@@ -9,7 +9,7 @@ import myVelib.Station;
  *
  */
 public class ShortestPath implements RidePolicy{
-
+	public static String policyType="Shortest Path";
 	@Override
 	public Station computeStart(GPScoord start, GPScoord end, String typeBike)
 			throws NoStartStationAvailableException {
@@ -62,5 +62,10 @@ public class ShortestPath implements RidePolicy{
 		// si ce n'est pas le cas on renvoie une erreur
 		else
 			throw new NoEndStationAvailableException();
+	}
+
+	@Override
+	public String getRidePolicy() {
+		return policyType;
 	}
 }

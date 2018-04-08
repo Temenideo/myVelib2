@@ -110,9 +110,9 @@ public class ParkingSlot {
 			return false;
 		}
 		else {
+			System.out.println(bike.getTypeBike()+" bike "+bike.getBikeID()+" has been parked in parking slot "+this.slotID);
 			this.setState("Occupied");
 			this.bicycle=bike;
-			System.out.println(bike.getTypeBike()+" bike "+bike.getBikeID()+" has been parked in parking slot "+this.slotID);
 			return true;
 		}
 	}

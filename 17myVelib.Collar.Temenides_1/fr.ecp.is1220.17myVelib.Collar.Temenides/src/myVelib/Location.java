@@ -144,11 +144,10 @@ public class Location implements Observer{
 	 */
 	public void returnBike(Station arrival) throws BadParkingSlotCreationException, NoEndStationAvailableException {
 		boolean stored = false;
-		while(stored==false) {
-			for(ParkingSlot pS : arrival.getParkingSlotList()){
+		for(ParkingSlot pS : arrival.getParkingSlotList()){
+			if(stored==false){
 				stored = pS.storeBike(this.bike);
 			}
-			break;
 		}
 		if(stored==true) {
 			this.arrival=arrival;

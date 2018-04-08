@@ -841,6 +841,119 @@ public class GUImainFrame extends JFrame{
     }
 }
     
+    class LocationTable extends JPanel {
+
+        /**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
+		private final JTable table;
+        private final TableModel tableModel;
+        private final ListSelectionModel listSelectionModel;
+
+    private void setFields(int index) {
+        uId.setText(table.getValueAt(index, 0).toString());
+        uName.setText(table.getValueAt(index, 2).toString()+" "+table.getValueAt(index, 1).toString());
+        uCard.setText(table.getValueAt(index, 3).toString());
+        uCharge.setText(table.getValueAt(index, 4).toString());
+        uTime.setText(table.getValueAt(index, 5).toString());
+        uCredits.setText(table.getValueAt(index, 6).toString());
+        }
+
+    private void clearFields() {
+    	uId.setText("");
+        uName.setText("");
+        uCard.setText("");
+        uCharge.setText("");
+        uTime.setText("");
+        uCredits.setText("");
+        uId.setText("");
+    }
+
+    public LocationTable() {
+        table = new JTable();
+        tableModel = createTableModel();
+        table.setModel(tableModel);
+        table.setSelectionMode(ListSelectionModel.SINGLE_INTERVAL_SELECTION);
+        table.add(table.getTableHeader(), BorderLayout.PAGE_START);
+        table.setFillsViewportHeight(true);
+
+        listSelectionModel = table.getSelectionModel();
+        table.setSelectionModel(listSelectionModel);
+        listSelectionModel.addListSelectionListener(new SharedListSelectionHandler());
+        table.setSelectionModel(listSelectionModel);
+
+        this.setLayout(new GridBagLayout());
+    GridBagConstraints gbc = new GridBagConstraints();
+    gbc.anchor = GridBagConstraints.NORTHWEST;
+    gbc.fill = GridBagConstraints.BOTH;
+    gbc.gridx = 0;
+    gbc.gridy = 0;
+    gbc.gridheight = 1;
+    gbc.gridwidth = 3;
+    gbc.insets = new Insets(5, 5, 5, 5);
+    gbc.ipadx = 2;
+    gbc.ipady = 2;
+    gbc.weightx = 1;
+    gbc.weighty = 1;
+        this.add(new JScrollPane(table), gbc);
+    }
+
+    private TableModel createTableModel() {
+        DefaultTableModel model = new DefaultTableModel(
+            new Object[] {"User ID", "Last Name", "First Name","Card Type", "Total Use Time", "Total Charges", "Earned Credits"
+    				}, 0
+        ){
+            /**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+			@Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        return model;
+    }
+    
+    public JTable getTable() {
+    	return this.table;
+    }
+
+    
+
+    class SharedListSelectionHandler implements ListSelectionListener {
+
+        @Override
+        public void valueChanged(ListSelectionEvent e) {
+            ListSelectionModel lsm = (ListSelectionModel) e.getSource();
+            String contents = "";
+
+            if(lsm.isSelectionEmpty()) {
+                System.out.println("<none>");
+            } else {
+                int minIndex = lsm.getMinSelectionIndex();
+                int maxIndex = lsm.getMaxSelectionIndex();
+                if (minIndex==maxIndex) {
+                    setFields(minIndex);
+                } else {
+                    clearFields();
+                    for(int i = minIndex; i <= maxIndex; i++) {
+                        if(lsm.isSelectedIndex(i)) {
+                            for(int j = 0; j < table.getColumnCount(); j++) {
+                                contents += table.getValueAt(i, j) + " ";
+                            }
+                        }
+                    }
+                    System.out.println(contents);
+                }
+            }
+        }
+
+    }
+}
+    
     public static void refreshStations() {
 		DefaultTableModel stationModel=new DefaultTableModel(new Object[][] {
 		},

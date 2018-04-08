@@ -39,7 +39,7 @@ public class LeastOccupiedTest {
 		res.resetReseau();
 		Station departure = new Station(new ArrayList<ParkingSlot>(), "Standard", "on service", new GPScoord(0,0), null);
 		ParkingSlot ps1=new ParkingSlot(new Mechanical(),"Occupied",departure);
-		departure.setName("name1");
+		departure.setName("Station 1");
 		String string = "2018.03.25 AD at 12:08:56 PDT";
 		String string2 = "2018.03.25 AD at 12:38:56 PDT";
 		DateFormat format = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss z", Locale.ENGLISH);
@@ -49,7 +49,7 @@ public class LeastOccupiedTest {
 		ps1.getHistory().add(new TimeState(true,datestart));
 		ps1.getHistory().get(0).setEnd(dateend);
 		Station departure2 = new Station(new ArrayList<ParkingSlot>(), "Standard", "on service", new GPScoord(0,0), null);
-		departure2.setName("name2");
+		departure2.setName("Station 2");
 		ParkingSlot ps2=new ParkingSlot(null,"Free",departure2);
 		ps2.getHistory().remove(0);
 		ps2.getHistory().add(new TimeState(false,datestart));

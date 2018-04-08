@@ -115,6 +115,14 @@ public class FastestPathTest {
 		assertEquals(stat2, stat3);
 		
 	}
+	/**
+	 * Test le renvoie d'une erreur s'il n'y a pas de station d'arrivée disponible
+	 * @throws BadStateStationCreationException
+	 * @throws BadTypeStationCreationException
+	 * @throws BadParkingSlotCreationException
+	 * @throws NoStartStationAvailableException
+	 * @throws NoEndStationAvailableException
+	 */
 	@Test(expected=NoEndStationAvailableException.class)
 	public void testComputeError() throws BadStateStationCreationException, BadTypeStationCreationException, BadParkingSlotCreationException, NoStartStationAvailableException, NoEndStationAvailableException {
 		Reseau res = Reseau.getInstance();

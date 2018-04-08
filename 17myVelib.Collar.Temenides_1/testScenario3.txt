@@ -1,0 +1,13 @@
+rest;
+reseau;
+station;0;0;Standard;20;5;5;Alexandre Dumas;
+station;10;10;Standard;20;5;6;Basilique Saint Denis;
+user;Paul;Dupont;
+simulationlocation;444000000;1;2;180;Mechanical;
+simulationlocation;444000000;1;2;180;Electrical;
+subscribe;444000000;VmaxCard;
+simulationlocation;444000000;1;2;180;Mechanical;
+simulationlocation;444000000;1;2;180;Electrical;
+subscribe;444000000;VLibreCard;
+simulationlocation;444000000;1;2;180;Mechanical;
+simulationlocation;444000000;1;2;180;Electrical;

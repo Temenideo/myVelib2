@@ -91,6 +91,11 @@ public class ScenarioTester {
 					SM=new Statistiqueuser();
 					SM.execute(array);
 					break;
+				
+				}
+				case "subscribe" : {
+					SM=new Subscribe();
+					SM.execute(array);
 				}
 				}
 			}
@@ -110,6 +115,6 @@ public class ScenarioTester {
 		}
 	}
 	public static void main(String[] args) {
-		executeScenario("testScenario2.txt");
+		executeScenario("testScenario3.txt");
 	}
 }

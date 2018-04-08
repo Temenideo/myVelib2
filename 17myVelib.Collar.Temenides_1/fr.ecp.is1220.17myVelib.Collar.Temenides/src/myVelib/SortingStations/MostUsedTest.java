@@ -37,7 +37,7 @@ public class MostUsedTest {
 		Station departure = new Station(new ArrayList<ParkingSlot>(), "Standard", "on service", new GPScoord(0,0), null);
 		new ParkingSlot(new Mechanical(),"Occupied",departure);
 		User user1 = new User("Jean","Paul");
-		departure.setName("name1");
+		departure.setName("Station 1");
 		for (int i=0;i<10;i++){
 			Location loc2 = new Location(user1,departure);
 			loc2.setArrivalForTest(departure);
@@ -45,7 +45,7 @@ public class MostUsedTest {
 			loc2.setHasEnded(true);
 		}
 		Station departure2 = new Station(new ArrayList<ParkingSlot>(), "Standard", "on service", new GPScoord(0,0), null);
-		departure2.setName("name2");
+		departure2.setName("Station 2");
 		for (int i=0;i<5;i++){
 			Location loc2 = new Location(user1,departure2);
 			loc2.setArrivalForTest(departure2);

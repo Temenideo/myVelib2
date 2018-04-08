@@ -136,51 +136,57 @@
   <class id="14" language="java" name="scenarioTest.ScenarioTester" project="17myVelib.Collar.Temenides_1" 
     file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/ScenarioTester.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="431" y="96"/>    
+    <position height="-1" width="-1" x="519" y="65"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <realization id="15">    
+  <class id="15" language="java" name="scenarioTest.strategy.Subscribe" project="17myVelib.Collar.Temenides_1" 
+    file="/17myVelib.Collar.Temenides_1/fr.ecp.is1220.17myVelib.Collar.Temenides/src/scenarioTest/strategy/Subscribe.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="303" y="68"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <realization id="16">    
     <end type="SOURCE" refId="1"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
-  <realization id="16">    
-    <end type="SOURCE" refId="2"/>    
-    <end type="TARGET" refId="13"/>  
-  </realization>  
   <realization id="17">    
-    <end type="SOURCE" refId="3"/>    
-    <end type="TARGET" refId="13"/>  
-  </realization>  
-  <realization id="18">    
     <end type="SOURCE" refId="6"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
+  <realization id="18">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
   <realization id="19">    
-    <end type="SOURCE" refId="9"/>    
+    <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
-  <dependency id="20">    
-    <end type="SOURCE" refId="14"/>    
-    <end type="TARGET" refId="13"/>  
-  </dependency>  
-  <realization id="21">    
-    <end type="SOURCE" refId="7"/>    
-    <end type="TARGET" refId="13"/>  
-  </realization>  
-  <realization id="22">    
+  <realization id="20">    
     <end type="SOURCE" refId="10"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
-  <realization id="23">    
+  <realization id="21">    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <realization id="22">    
     <end type="SOURCE" refId="5"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
+  <realization id="23">    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
   <realization id="24">    
-    <end type="SOURCE" refId="12"/>    
+    <end type="SOURCE" refId="7"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
   <realization id="25">    
@@ -188,13 +194,21 @@
     <end type="TARGET" refId="13"/>  
   </realization>  
   <realization id="26">    
-    <end type="SOURCE" refId="4"/>    
+    <end type="SOURCE" refId="12"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
   <realization id="27">    
-    <end type="SOURCE" refId="8"/>    
+    <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="13"/>  
   </realization>  
+  <realization id="28">    
+    <end type="SOURCE" refId="15"/>    
+    <end type="TARGET" refId="13"/>  
+  </realization>  
+  <dependency id="29">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="13"/>  
+  </dependency>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
     sort-features="false" accessors="true" visibility="true">    
     <attributes public="true" package="true" protected="true" private="true" static="true"/>    
